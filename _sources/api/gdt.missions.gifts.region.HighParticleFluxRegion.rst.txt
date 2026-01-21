@@ -1,0 +1,33 @@
+HighParticleFluxRegion
+======================
+
+.. currentmodule:: gdt.missions.gifts.region
+
+.. autoclass:: HighParticleFluxRegion
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~HighParticleFluxRegion.latitude
+      ~HighParticleFluxRegion.longitude
+      ~HighParticleFluxRegion.num_points
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~HighParticleFluxRegion.is_closed
+      ~HighParticleFluxRegion.is_convex
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: latitude
+   .. autoattribute:: longitude
+   .. autoattribute:: num_points
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: is_closed
+   .. automethod:: is_convex

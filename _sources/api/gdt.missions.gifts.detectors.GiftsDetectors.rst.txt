@@ -1,0 +1,27 @@
+GiftsDetectors
+==============
+
+.. currentmodule:: gdt.missions.gifts.detectors
+
+.. autoclass:: GiftsDetectors
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~GiftsDetectors.G0
+      ~GiftsDetectors.G1
+      ~GiftsDetectors.G2
+      ~GiftsDetectors.G3
+      ~GiftsDetectors.G4
+      ~GiftsDetectors.G5
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: G0
+   .. autoattribute:: G1
+   .. autoattribute:: G2
+   .. autoattribute:: G3
+   .. autoattribute:: G4
+   .. autoattribute:: G5

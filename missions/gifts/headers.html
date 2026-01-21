@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GIFTS FITS Headers (gdt.missions.gifts.headers) &#8212; GIFTS Gamma-ray Data Tools 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-astropy.css?v=cfc02a30" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+    
+    <script src="../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script type="text/javascript" src="../../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../../_static/copybutton.js"></script>
+    <link rel="icon" href="../../_static/gdt_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="HealpixHeaders" href="../../api/gdt.missions.gifts.headers.HealpixHeaders.html" />
+    <link rel="prev" title="GiftsSouthRegion300" href="../../api/gdt.missions.gifts.region.GiftsSouthRegion300.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../../index.html"><span id="logotext1">gdt</span><span id="logotext2">-gifts</span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="../../api/gdt.missions.gifts.headers.HealpixHeaders.html" title="HealpixHeaders">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="../../api/gdt.missions.gifts.region.GiftsSouthRegion300.html" title="GiftsSouthRegion300">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../../index.html">GIFTS Gamma-ray Data Tools 0.1.0 documentation</a>
+	 &#187;
+      </li>
+      
+      <li>GIFTS FITS Headers (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.headers</span></code>)</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="gifts-fits-headers-gdt-missions-gifts-headers">
+<span id="gifts-headers"></span><h1>GIFTS FITS Headers (<a class="reference internal" href="#module-gdt.missions.gifts.headers" title="gdt.missions.gifts.headers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.headers</span></code></a>)<a class="headerlink" href="#gifts-fits-headers-gdt-missions-gifts-headers" title="Link to this heading">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The GIFTS FITS headers implementation and this document are currently based on those provided by
+the <a class="reference external" href="https://astro-gdt.readthedocs.io/projects/astro-gdt-fermi/en/latest/index.html#gdt-fermi" title="(in The Gamma-ray Data Tools v2.2.2)"><span class="xref std std-ref">Fermi Gamma-ray Data Tools</span></a>, and will be revised in future versions.</p>
+</div>
+<p>This module defines all of the FITS headers for the public data files. While
+these classes are not usually directly called by the user, we may load one
+and see the contents and default values.  For example, here is the set of
+header definitions for Trigger Data files:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gdt.missions.gifts.headers</span> <span class="kn">import</span> <span class="n">TrigdatHeaders</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdrs</span> <span class="o">=</span> <span class="n">TrigdatHeaders</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hdrs</span>
+<span class="go">&lt;TrigdatHeaders: 6 headers&gt;</span>
+</pre></div>
+</div>
+<p>Here is the <code class="docutils literal notranslate"><span class="pre">PRIMARY</span></code> header and default values (retrieved by index):</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">hdrs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">CREATOR = &#39;Gamma-ray Data Tools 2.2.1.dev0&#39; / Software and version creating file</span>
+<span class="go">FILETYPE= &#39;GIFTS TRIGDAT&#39;      / Name for this type of FITS file</span>
+<span class="go">FILE-VER= &#39;0.1.0   &#39;           / Version of the format for this filetype</span>
+<span class="go">TELESCOP= &#39;GIFTS (P.I.: McBreen)&#39; / Name of mission/satellite</span>
+<span class="go">INSTRUME= &#39;GIFTS   &#39;           / Specific instrument used for observation</span>
+<span class="go">OBSERVER= &#39;O&#39;&#39;Callaghan&#39;       / GIFTS Pipeline Development</span>
+<span class="go">ORIGIN  = &#39;GIFTS Team&#39;         / Name of organization making file</span>
+<span class="go">DATE    = &#39;2025-10-02T17:33:40.671&#39; / file creation date (YYYY-MM-DDThh:mm:ss UT</span>
+<span class="go">DATE-OBS= &#39;&#39; / Date of start of observation</span>
+<span class="go">DATE-END= &#39;&#39; / Date of end of observation</span>
+<span class="go">TIMESYS = &#39;TT      &#39;           / Time system used in time keywords</span>
+<span class="go">TIMEUNIT= &#39;s       &#39;           / Time since MJDREF, used in TSTART and TSTOP</span>
+<span class="go">MJDREFI =                51910 / MJD of GIFTS reference epoch, integer part</span>
+<span class="go">MJDREFF = &#39;7.428703703703703e-4&#39; / MJD of GIFTS reference epoch, fractional part</span>
+<span class="go">TSTART  =                  0.0 / [GIFTS MET] Observation start time</span>
+<span class="go">TSTOP   =                  0.0 / [GIFTS MET] Observation stop time</span>
+<span class="go">FILENAME= &#39;&#39; / Name of this file</span>
+<span class="go">TRIGTIME=                  0.0 / Trigger time relative to MJDREF, double precisi</span>
+<span class="go">OBJECT  = &#39;&#39; / Burst name in standard format, yymmddfff</span>
+<span class="go">RADECSYS= &#39;FK5     &#39;           / Stellar reference frame</span>
+<span class="go">EQUINOX =               2000.0 / Equinox for RA and Dec</span>
+<span class="go">RA_OBJ  =                  0.0 / Calculated RA of burst</span>
+<span class="go">DEC_OBJ =                  0.0 / Calculated Dec of burst</span>
+<span class="go">ERR_RAD =                  0.0 / Calculated Location Error Radius</span>
+<span class="go">TRIGSCAL=                    0 / [ms] Triggered timescale</span>
+<span class="go">TRIG_ALG=                    0 / Triggered algorithm number</span>
+<span class="go">CHAN_LO =                    0 / Trigger channel: low</span>
+<span class="go">CHAN_HI =                    0 / Trigger channel: high</span>
+<span class="go">ADC_LO  =                    0 / Trigger channel: low (ADC: 0 - 4095)</span>
+<span class="go">ADC_HI  =                    0 / Trigger channel: high (ADC: 0 - 4095)</span>
+<span class="go">TRIG_SIG=                  0.0 / Trigger significance (sigma)</span>
+<span class="go">GEO_LONG=                  0.0 / [deg] Spacecraft geographical east longitude</span>
+<span class="go">GEO_LAT =                  0.0 / [deg] Spacecraft geographical north latitude</span>
+<span class="go">DET_MASK= &#39;&#39; / Triggered detectors: (0-5)</span>
+<span class="go">RA_SCX  =                  0.0 / [deg] Pointing of spacecraft x-axis: RA</span>
+<span class="go">DEC_SCX =                  0.0 / [deg] Pointing of spacecraft x-axis: Dec</span>
+<span class="go">RA_SCZ  =                  0.0 / [deg] Pointing of spacecraft z-axis: RA</span>
+<span class="go">DEC_SCZ =                  0.0 / [deg] Pointing of spacecraft z-axis: Dec</span>
+<span class="go">INFILE01= &#39;&#39; / GBM catalog input data file</span>
+</pre></div>
+</div>
+<p>And here is the <code class="docutils literal notranslate"><span class="pre">TRIGRATE</span></code> header and default values:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">EXTNAME</span> <span class="o">=</span> <span class="s1">&#39;TRIGRATE&#39;</span>           <span class="o">/</span> <span class="n">name</span> <span class="n">of</span> <span class="n">this</span> <span class="n">binary</span> <span class="n">table</span> <span class="n">extension</span>
+<span class="go">TELESCOP= &#39;GIFTS (P.I.: McBreen)&#39; / Name of mission/satellite</span>
+<span class="go">INSTRUME= &#39;GIFTS   &#39;           / Specific instrument used for observation</span>
+<span class="go">OBSERVER= &#39;O&#39;&#39;Callaghan&#39;       / GIFTS Pipeline Development</span>
+<span class="go">ORIGIN  = &#39;GIFTS Team&#39;         / Name of organization making file</span>
+<span class="go">DATE    = &#39;2025-10-02T17:33:40.671&#39; / file creation date (YYYY-MM-DDThh:mm:ss UT</span>
+<span class="go">DATE-OBS= &#39;&#39; / Date of start of observation</span>
+<span class="go">DATE-END= &#39;&#39; / Date of end of observation</span>
+<span class="go">TIMESYS = &#39;TT      &#39;           / Time system used in time keywords</span>
+<span class="go">TIMEUNIT= &#39;s       &#39;           / Time since MJDREF, used in TSTART and TSTOP</span>
+<span class="go">MJDREFI =                51910 / MJD of GIFTS reference epoch, integer part</span>
+<span class="go">MJDREFF = &#39;7.428703703703703e-4&#39; / MJD of GIFTS reference epoch, fractional part</span>
+<span class="go">TSTART  =                  0.0 / [GIFTS MET] Observation start time</span>
+<span class="go">TSTOP   =                  0.0 / [GIFTS MET] Observation stop time</span>
+<span class="go">TRIGTIME=                  0.0 / Trigger time relative to MJDREF, double precisi</span>
+<span class="go">OBJECT  = &#39;&#39; / Burst name in standard format, yymmddfff</span>
+<span class="go">RADECSYS= &#39;FK5     &#39;           / Stellar reference frame</span>
+<span class="go">EQUINOX =               2000.0 / Equinox for RA and Dec</span>
+<span class="go">RA_OBJ  =                  0.0 / Calculated RA of burst</span>
+<span class="go">DEC_OBJ =                  0.0 / Calculated Dec of burst</span>
+<span class="go">ERR_RAD =                  0.0 / Calculated Location Error Radius</span>
+</pre></div>
+</div>
+<p>See <a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/core/headers.html#core-headers" title="(in The Gamma-ray Data Tools v2.2.2)"><span class="xref std std-ref">Data File Headers</span></a> for more information about
+creating and using FITS headers.</p>
+<section id="reference-api">
+<h2>Reference/API<a class="headerlink" href="#reference-api" title="Link to this heading">¶</a></h2>
+<section id="module-gdt.missions.gifts.headers">
+<span id="gdt-missions-gifts-headers-module"></span><h3>gdt.missions.gifts.headers Module<a class="headerlink" href="#module-gdt.missions.gifts.headers" title="Link to this heading">¶</a></h3>
+<section id="classes">
+<h4>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h4>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../api/gdt.missions.gifts.headers.HealpixHeaders.html#gdt.missions.gifts.headers.HealpixHeaders" title="gdt.missions.gifts.headers.HealpixHeaders"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HealpixHeaders</span></code></a>()</p></td>
+<td><p>FITS headers for localization HEALPix files</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../api/gdt.missions.gifts.headers.PhaiiHeaders.html#gdt.missions.gifts.headers.PhaiiHeaders" title="gdt.missions.gifts.headers.PhaiiHeaders"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PhaiiHeaders</span></code></a>()</p></td>
+<td><p>FITS headers for continuous TODO CTIME and CSPEC files</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../api/gdt.missions.gifts.headers.PhaiiTriggerHeaders.html#gdt.missions.gifts.headers.PhaiiTriggerHeaders" title="gdt.missions.gifts.headers.PhaiiTriggerHeaders"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PhaiiTriggerHeaders</span></code></a>()</p></td>
+<td><p>FITS headers for trigger TODO CTIME and CSPEC files</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../api/gdt.missions.gifts.headers.PosHistHeaders.html#gdt.missions.gifts.headers.PosHistHeaders" title="gdt.missions.gifts.headers.PosHistHeaders"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PosHistHeaders</span></code></a>()</p></td>
+<td><p>FITS headers for position history files</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../api/gdt.missions.gifts.headers.TcatHeaders.html#gdt.missions.gifts.headers.TcatHeaders" title="gdt.missions.gifts.headers.TcatHeaders"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TcatHeaders</span></code></a>()</p></td>
+<td><p>FITS headers for trigger catalog files</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../api/gdt.missions.gifts.headers.TrigdatHeaders.html#gdt.missions.gifts.headers.TrigdatHeaders" title="gdt.missions.gifts.headers.TrigdatHeaders"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TrigdatHeaders</span></code></a>()</p></td>
+<td><p>FITS headers for TRIGDAT files</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../api/gdt.missions.gifts.headers.TteHeaders.html#gdt.missions.gifts.headers.TteHeaders" title="gdt.missions.gifts.headers.TteHeaders"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TteHeaders</span></code></a>()</p></td>
+<td><p>FITS headers for continuous TTE files</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../api/gdt.missions.gifts.headers.TteTriggerHeaders.html#gdt.missions.gifts.headers.TteTriggerHeaders" title="gdt.missions.gifts.headers.TteTriggerHeaders"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TteTriggerHeaders</span></code></a>()</p></td>
+<td><p>FITS headers for trigger TTE files</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="class-inheritance-diagram">
+<h4>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Link to this heading">¶</a></h4>
+<div class="graphviz"><img src="../../_images/inheritance-ab2793bf7a7b8946f41f0778edde93c9df5ef08a.png" alt="Inheritance diagram of gdt.missions.gifts.headers.HealpixHeaders, gdt.missions.gifts.headers.PhaiiHeaders, gdt.missions.gifts.headers.PhaiiTriggerHeaders, gdt.missions.gifts.headers.PosHistHeaders, gdt.missions.gifts.headers.TcatHeaders, gdt.missions.gifts.headers.TrigdatHeaders, gdt.missions.gifts.headers.TteHeaders, gdt.missions.gifts.headers.TteTriggerHeaders" usemap="#inheritance18c610674d" class="inheritance graphviz" /></div>
+<map id="inheritance18c610674d" name="inheritance18c610674d">
+<area shape="rect" id="node1" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.headers.FileHeaders.html#gdt.core.headers.FileHeaders" target="_top" title="A collection of FITS headers. This class should be further sub&#45;classed " alt="" coords="5,129,104,155"/>
+<area shape="rect" id="node7" href="../../api/gdt.missions.gifts.headers.PosHistHeaders.html#gdt.missions.gifts.headers.PosHistHeaders" target="_top" title="FITS headers for position history files" alt="" coords="154,153,279,179"/>
+<area shape="rect" id="node3" href="../../api/gdt.missions.gifts.headers.HealpixHeaders.html#gdt.missions.gifts.headers.HealpixHeaders" target="_top" title="FITS headers for localization HEALPix files" alt="" coords="349,5,476,31"/>
+<area shape="rect" id="node8" href="../../api/gdt.missions.gifts.headers.TcatHeaders.html#gdt.missions.gifts.headers.TcatHeaders" target="_top" title="FITS headers for trigger catalog files" alt="" coords="361,104,464,129"/>
+<area shape="rect" id="node9" href="../../api/gdt.missions.gifts.headers.TrigdatHeaders.html#gdt.missions.gifts.headers.TrigdatHeaders" target="_top" title="FITS headers for TRIGDAT files" alt="" coords="353,153,473,179"/>
+<area shape="rect" id="node5" href="../../api/gdt.missions.gifts.headers.PhaiiHeaders.html#gdt.missions.gifts.headers.PhaiiHeaders" target="_top" title="FITS headers for continuous TODO CTIME and CSPEC files" alt="" coords="566,31,674,56"/>
+<area shape="rect" id="node6" href="../../api/gdt.missions.gifts.headers.PhaiiTriggerHeaders.html#gdt.missions.gifts.headers.PhaiiTriggerHeaders" target="_top" title="FITS headers for trigger TODO CTIME and CSPEC files" alt="" coords="544,80,696,105"/>
+<area shape="rect" id="node11" href="../../api/gdt.missions.gifts.headers.TteHeaders.html#gdt.missions.gifts.headers.TteHeaders" target="_top" title="FITS headers for continuous TTE files" alt="" coords="571,177,669,203"/>
+<area shape="rect" id="node12" href="../../api/gdt.missions.gifts.headers.TteTriggerHeaders.html#gdt.missions.gifts.headers.TteTriggerHeaders" target="_top" title="FITS headers for trigger TTE files" alt="" coords="549,227,691,252"/>
+</map></section>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">GIFTS FITS Headers (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.headers</span></code>)</a><ul>
+<li><a class="reference internal" href="#reference-api">Reference/API</a><ul>
+<li><a class="reference internal" href="#module-gdt.missions.gifts.headers">gdt.missions.gifts.headers Module</a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#class-inheritance-diagram">Class Inheritance Diagram</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../../api/gdt.missions.gifts.region.GiftsSouthRegion300.html"
+                          title="previous chapter">GiftsSouthRegion300</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../../api/gdt.missions.gifts.headers.HealpixHeaders.html"
+                          title="next chapter">HealpixHeaders</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/missions/gifts/headers.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<form action="../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="../../_sources/missions/gifts/headers.rst.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright .<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 7.2.6. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

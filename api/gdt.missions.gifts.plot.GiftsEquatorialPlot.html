@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GiftsEquatorialPlot &#8212; GIFTS Gamma-ray Data Tools 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-astropy.css?v=cfc02a30" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="icon" href="../_static/gdt_favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="GiftsLightcurve" href="gdt.missions.gifts.plot.GiftsLightcurve.html" />
+    <link rel="prev" title="GiftsEarthPlot" href="gdt.missions.gifts.plot.GiftsEarthPlot.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../index.html"><span id="logotext1">gdt</span><span id="logotext2">-gifts</span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="gdt.missions.gifts.plot.GiftsLightcurve.html" title="GiftsLightcurve">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="gdt.missions.gifts.plot.GiftsEarthPlot.html" title="GiftsEarthPlot">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../index.html">GIFTS Gamma-ray Data Tools 0.1.0 documentation</a>
+	 &#187;
+      </li>
+      <li><a href="../missions/gifts/plot.html" accesskey="U">GIFTS-specific Plot Classes (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.plot</span></code>)</a> &#187;</li>
+      
+      <li>GiftsEquatorialPlot</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="giftsequatorialplot">
+<h1>GiftsEquatorialPlot<a class="headerlink" href="#giftsequatorialplot" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gdt.missions.gifts.plot.</span></span><span class="sig-name descname"><span class="pre">GiftsEquatorialPlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">projection</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mollweide'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flipped</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xticks_res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yticks_res</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">15</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gdt/missions/gifts/plot.html#GiftsEquatorialPlot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.plot.sky.EquatorialPlot.html#gdt.core.plot.sky.EquatorialPlot" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">EquatorialPlot</span></code></a></p>
+<p class="rubric">Attributes Summary</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.ax" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.ax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ax</span></code></a></p></td>
+<td><p>The matplotlib axes object for the plot</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.canvas" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.canvas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">canvas</span></code></a></p></td>
+<td><p>The plotting canvas, if set upon initialization.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.detectors" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.detectors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">detectors</span></code></a></p></td>
+<td><p>The collection of detector plot elements</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.earth" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.earth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">earth</span></code></a></p></td>
+<td><p>The Earth plot element</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.effective_area" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.effective_area"><code class="xref py py-obj docutils literal notranslate"><span class="pre">effective_area</span></code></a></p></td>
+<td><p>The effective area plot element</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.fig" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.fig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fig</span></code></a></p></td>
+<td><p>The matplotlib figure object</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.fontsize" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.fontsize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fontsize</span></code></a></p></td>
+<td><p>The font size of the text labels.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.galactic_plane" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.galactic_plane"><code class="xref py py-obj docutils literal notranslate"><span class="pre">galactic_plane</span></code></a></p></td>
+<td><p>The galactic plane plot element</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.loc_contours" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.loc_contours"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loc_contours</span></code></a></p></td>
+<td><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">PlotElementCollection</span></code> of         <code class="xref py py-class docutils literal notranslate"><span class="pre">SkyLine</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">SkyPolygon</span></code>): The localization contour plot elements</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.loc_posterior" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.loc_posterior"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loc_posterior</span></code></a></p></td>
+<td><p>The localization gradient plot element</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.sun" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.sun"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sun</span></code></a></p></td>
+<td><p>The Sun plot element</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.text_color" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.text_color"><code class="xref py py-obj docutils literal notranslate"><span class="pre">text_color</span></code></a></p></td>
+<td><p>The color of the text labels</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.xlim" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.xlim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xlim</span></code></a></p></td>
+<td><p>The plotting range of the x axis</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.xscale" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.xscale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xscale</span></code></a></p></td>
+<td><p>The scale of the x axis, either 'linear' or 'log'.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.ylim" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.ylim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ylim</span></code></a></p></td>
+<td><p>The plotting range of the y axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.yscale" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.yscale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">yscale</span></code></a></p></td>
+<td><p>The scale of the y axis, either 'linear' or 'log'.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Summary</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.add_effective_area" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.add_effective_area"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_effective_area</span></code></a>(hpx[, frame])</p></td>
+<td><p>Add a HealPixEffectiveArea object to plot the effective area.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.add_frame" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.add_frame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_frame</span></code></a>(frame[, trigtime, detectors, ...])</p></td>
+<td><p>Add a SpacecraftFrame object to plot the location of the Earth, Sun, and detector pointings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.add_localization" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.add_localization"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_localization</span></code></a>(hpx[, gradient, clevels, ...])</p></td>
+<td><p>Add a HealPixLocalization object to plot a localization and optionally plot the location of the Earth, Sun, and detector pointings.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_detector" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_detector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_detector</span></code></a>(det_coord, det[, radius])</p></td>
+<td><p>Plot a detector pointing.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_earth" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_earth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_earth</span></code></a>(geo_coord, radius, **kwargs)</p></td>
+<td><p>Plot the Earth.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_galactic_plane" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_galactic_plane"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_galactic_plane</span></code></a>()</p></td>
+<td><p>Plot the Galactic plane.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_heatmap" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_heatmap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_heatmap</span></code></a>(heatmap, lon_array, lat_array, ...)</p></td>
+<td><p>Plot a heatmap on the sky.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_sun" title="gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_sun"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_sun</span></code></a>(time, **kwargs)</p></td>
+<td><p>Plot the sun.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes Documentation</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.ax">
+<span class="sig-name descname"><span class="pre">ax</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.ax" title="Link to this definition">¶</a></dt>
+<dd><p>The matplotlib axes object for the plot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">matplotlib.axes</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.canvas">
+<span class="sig-name descname"><span class="pre">canvas</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.canvas" title="Link to this definition">¶</a></dt>
+<dd><p>The plotting canvas, if set upon
+initialization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(Canvas Backend object)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.detectors">
+<span class="sig-name descname"><span class="pre">detectors</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.detectors" title="Link to this definition">¶</a></dt>
+<dd><p>The collection of detector
+plot elements</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">PlotElementCollection</span></code> of         <code class="xref py py-class docutils literal notranslate"><span class="pre">DetectorPointing</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.earth">
+<span class="sig-name descname"><span class="pre">earth</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.earth" title="Link to this definition">¶</a></dt>
+<dd><p>The Earth plot element</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">SkyCircle</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.effective_area">
+<span class="sig-name descname"><span class="pre">effective_area</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.effective_area" title="Link to this definition">¶</a></dt>
+<dd><p>The effective area plot element</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">SkyHeatmap</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.fig">
+<span class="sig-name descname"><span class="pre">fig</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.fig" title="Link to this definition">¶</a></dt>
+<dd><p>The matplotlib figure object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">matplotlib.figure</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.fontsize">
+<span class="sig-name descname"><span class="pre">fontsize</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.fontsize" title="Link to this definition">¶</a></dt>
+<dd><p>The font size of the text labels.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.galactic_plane">
+<span class="sig-name descname"><span class="pre">galactic_plane</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.galactic_plane" title="Link to this definition">¶</a></dt>
+<dd><p>The galactic plane plot
+element</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">GalacticPlane</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.loc_contours">
+<span class="sig-name descname"><span class="pre">loc_contours</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.loc_contours" title="Link to this definition">¶</a></dt>
+<dd><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">PlotElementCollection</span></code> of         <code class="xref py py-class docutils literal notranslate"><span class="pre">SkyLine</span></code> or <code class="xref py py-class docutils literal notranslate"><span class="pre">SkyPolygon</span></code>):
+The localization contour plot elements</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.loc_posterior">
+<span class="sig-name descname"><span class="pre">loc_posterior</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.loc_posterior" title="Link to this definition">¶</a></dt>
+<dd><p>The localization gradient plot
+element</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">SkyHeatmap</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.sun">
+<span class="sig-name descname"><span class="pre">sun</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.sun" title="Link to this definition">¶</a></dt>
+<dd><p>The Sun plot element</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">Sun</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.text_color">
+<span class="sig-name descname"><span class="pre">text_color</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.text_color" title="Link to this definition">¶</a></dt>
+<dd><p>The color of the text labels</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.xlim">
+<span class="sig-name descname"><span class="pre">xlim</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.xlim" title="Link to this definition">¶</a></dt>
+<dd><p>The plotting range of the x axis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(float, float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.xscale">
+<span class="sig-name descname"><span class="pre">xscale</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.xscale" title="Link to this definition">¶</a></dt>
+<dd><p>The scale of the x axis, either ‘linear’ or ‘log’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.ylim">
+<span class="sig-name descname"><span class="pre">ylim</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.ylim" title="Link to this definition">¶</a></dt>
+<dd><p>The plotting range of the y axis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(float, float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.yscale">
+<span class="sig-name descname"><span class="pre">yscale</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.yscale" title="Link to this definition">¶</a></dt>
+<dd><p>The scale of the y axis, either ‘linear’ or ‘log’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Methods Documentation</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.add_effective_area">
+<span class="sig-name descname"><span class="pre">add_effective_area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hpx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frame</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.add_effective_area" title="Link to this definition">¶</a></dt>
+<dd><p>Add a HealPixEffectiveArea object to plot the effective area.
+Optionally add a SpacecraftFrame object to plot the location of the
+Earth, Sun, galactic plane, and detector pointings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hpx</strong> (<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.healpix.HealPixEffectiveArea.html#gdt.core.healpix.HealPixEffectiveArea" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">HealPixEffectiveArea</span></code></a>) – The HEALPix object</p></li>
+<li><p><strong>frame</strong> (<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.coords.SpacecraftFrame.html#gdt.core.coords.SpacecraftFrame" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdt.core.coords.SpacecraftFrame</span></code></a>, optional) – The spacecraft frame containing position and orientation
+information</p></li>
+<li><p><strong>detectors</strong> (<em>'all'</em><em> or </em><em>list</em>) – A list of detectors or “all” to plot the pointings on the sky</p></li>
+<li><p><strong>earth</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, plot the Earth. Default is True.</p></li>
+<li><p><strong>sun</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, plot the Sun. Default is True.</p></li>
+<li><p><strong>galactic_plane</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, plot the Galactic plane. Default is True.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.add_frame">
+<span class="sig-name descname"><span class="pre">add_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigtime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detectors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">earth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sun</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">galactic_plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.add_frame" title="Link to this definition">¶</a></dt>
+<dd><p>Add a SpacecraftFrame object to plot the location of the Earth, Sun,
+and detector pointings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frame</strong> (<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.coords.SpacecraftFrame.html#gdt.core.coords.SpacecraftFrame" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">gdt.core.coords.SpacecraftFrame</span></code></a>) – The spacecraft
+frame containing position and orientation information</p></li>
+<li><p><strong>trigtime</strong> (<em>astropy.time.Time</em><em>, </em><em>optional</em>) – The time of interest. This must be set if <code class="docutils literal notranslate"><span class="pre">frame</span></code> contains
+more than one frame with a corresponding time.  If <code class="docutils literal notranslate"><span class="pre">frame</span></code> is
+of size=1, then the corresponding time for that frame will be
+used.</p></li>
+<li><p><strong>detectors</strong> (<em>list</em><em> or </em><em>&quot;all&quot;</em>) – A list of detectors or “all” to plot the
+pointings on the sky.</p></li>
+<li><p><strong>earth</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, plot the Earth. Default is True.</p></li>
+<li><p><strong>sun</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, plot the Sun. Default is True.</p></li>
+<li><p><strong>galactic_plane</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, plot the Galactic plane. Default is True.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.add_localization">
+<span class="sig-name descname"><span class="pre">add_localization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hpx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gradient</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clevels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sun</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">earth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">detectors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">galactic_plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.add_localization" title="Link to this definition">¶</a></dt>
+<dd><p>Add a HealPixLocalization object to plot a localization and
+optionally plot the location of the Earth, Sun, and detector pointings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hpx</strong> (<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.healpix.HealPixLocalization.html#gdt.core.healpix.HealPixLocalization" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">HealPixLocalization</span></code></a>) – The HEALPix object</p></li>
+<li><p><strong>gradient</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, plots the posterior as a color gradient. If False,
+plot the posterior as color-filled confidence regions.</p></li>
+<li><p><strong>clevels</strong> (<em>list</em><em> of </em><em>float</em><em>, </em><em>optional</em>) – The confidence levels to plot contours. Default plots at the
+1, 2, and 3 sigma level.</p></li>
+<li><p><strong>detectors</strong> (<em>'all'</em><em> or </em><em>list</em>) – A list of detectors or “all” to plot the pointings on the sky</p></li>
+<li><p><strong>earth</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, plot the Earth. Default is True.</p></li>
+<li><p><strong>sun</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, plot the Sun. Default is True.</p></li>
+<li><p><strong>galactic_plane</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, plot the Galactic plane. Default is True.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Setting <cite>gradient=False</cite> when plotting an annulus may produce
+unexpected results at this time.  It is suggested to use
+<cite>gradient=True</cite> for plotting annuli maps.</p>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_detector">
+<span class="sig-name descname"><span class="pre">plot_detector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">det_coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">det</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10.0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_detector" title="Link to this definition">¶</a></dt>
+<dd><p>Plot a detector pointing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>det_coord</strong> (<em>astropy.coordinates.SkyCoord</em>) – The detector coordinate</p></li>
+<li><p><strong>det</strong> (<em>str</em>) – The detector name</p></li>
+<li><p><strong>radius</strong> (<em>float</em><em>, </em><em>optional</em>) – The radius of pointing, in degrees.
+Default is 10.0</p></li>
+<li><p><strong>**kwargs</strong> – Options to pass to <code class="xref py py-class docutils literal notranslate"><span class="pre">SkyCircle</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_earth">
+<span class="sig-name descname"><span class="pre">plot_earth</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">geo_coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_earth" title="Link to this definition">¶</a></dt>
+<dd><p>Plot the Earth.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>geo_coord</strong> (<em>astropy.coordinates.SkyCoord</em>) – The coordinates of the
+geocenter.</p></li>
+<li><p><strong>radius</strong> (<em>astropy.quantity.Quantity</em>) – The angular radius of the Earth</p></li>
+<li><p><strong>**kwargs</strong> – Options to pass to <code class="xref py py-class docutils literal notranslate"><span class="pre">SkyCircle</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_galactic_plane">
+<span class="sig-name descname"><span class="pre">plot_galactic_plane</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_galactic_plane" title="Link to this definition">¶</a></dt>
+<dd><p>Plot the Galactic plane.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_heatmap">
+<span class="sig-name descname"><span class="pre">plot_heatmap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">heatmap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat_array</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gdt/missions/gifts/plot.html#GiftsEquatorialPlot.plot_heatmap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_heatmap" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>Plot a heatmap on the sky.</dt><dd><p>This is a workaround for the issue in the parent SkyPlot.plot_heatmap(),
+where the meshgrid results in a lon_array starting/ending with 0 degrees.
+This causes issues where the heatmap generated from a HEALPix location
+is populated at both RA=0/360 degrees, resulting in an unexpected output
+from the subsequent call to Matplotlib’s pcolormesh().</p>
+<p>The old GBM Data Tools didn’t generate a meshgrid, and just passes the
+specified coordinate arrays unchanged.</p>
+<blockquote>
+<div><p>TODO: confirm whether this is still required with latest gdt-core</p>
+</div></blockquote>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>heatmap</strong> (<em>np.array</em>) – A 2D array of values</p></li>
+<li><p><strong>ra_array</strong> (<em>np.array</em>) – The array of longitudinal gridpoints</p></li>
+<li><p><strong>dec_array</strong> (<em>np.array</em>) – The array of latitudinal gridpoints</p></li>
+<li><p><strong>**kwargs</strong> – Options to pass to <code class="xref py py-class docutils literal notranslate"><span class="pre">SkyHeatmap</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_sun">
+<span class="sig-name descname"><span class="pre">plot_sun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_sun" title="Link to this definition">¶</a></dt>
+<dd><p>Plot the sun.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time</strong> (<em>astropy.time.Time</em>) – The time at which to plot the sun</p></li>
+<li><p><strong>**kwargs</strong> – Options to pass to <code class="xref py py-class docutils literal notranslate"><span class="pre">Sun</span></code></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">GiftsEquatorialPlot</a><ul>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot</span></code></a><ul>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.ax"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.ax</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.canvas"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.canvas</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.detectors"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.detectors</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.earth"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.earth</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.effective_area"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.effective_area</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.fig"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.fig</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.fontsize"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.fontsize</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.galactic_plane"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.galactic_plane</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.loc_contours"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.loc_contours</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.loc_posterior"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.loc_posterior</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.sun"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.sun</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.text_color"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.text_color</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.xlim"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.xlim</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.xscale"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.xscale</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.ylim"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.ylim</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.yscale"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.yscale</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.add_effective_area"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.add_effective_area()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.add_frame"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.add_frame()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.add_localization"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.add_localization()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_detector"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.plot_detector()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_earth"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.plot_earth()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_galactic_plane"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.plot_galactic_plane()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_heatmap"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.plot_heatmap()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_sun"><code class="docutils literal notranslate"><span class="pre">GiftsEquatorialPlot.plot_sun()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="gdt.missions.gifts.plot.GiftsEarthPlot.html"
+                          title="previous chapter">GiftsEarthPlot</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="gdt.missions.gifts.plot.GiftsLightcurve.html"
+                          title="next chapter">GiftsLightcurve</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/gdt.missions.gifts.plot.GiftsEquatorialPlot.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="../_sources/api/gdt.missions.gifts.plot.GiftsEquatorialPlot.rst.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright .<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 7.2.6. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GiftsHealPix &#8212; GIFTS Gamma-ray Data Tools 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-astropy.css?v=cfc02a30" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="icon" href="../_static/gdt_favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="GIFTS PHAII Data (gdt.missions.gifts.phaii)" href="../missions/gifts/phaii.html" />
+    <link rel="prev" title="GIFTS Localizations (gdt.missions.gifts.localization)" href="../missions/gifts/localization.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../index.html"><span id="logotext1">gdt</span><span id="logotext2">-gifts</span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="../missions/gifts/phaii.html" title="GIFTS PHAII Data (gdt.missions.gifts.phaii)">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="../missions/gifts/localization.html" title="GIFTS Localizations (gdt.missions.gifts.localization)">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../index.html">GIFTS Gamma-ray Data Tools 0.1.0 documentation</a>
+	 &#187;
+      </li>
+      <li><a href="../missions/gifts/localization.html" accesskey="U">GIFTS Localizations (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.localization</span></code>)</a> &#187;</li>
+      
+      <li>GiftsHealPix</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="giftshealpix">
+<h1>GiftsHealPix<a class="headerlink" href="#giftshealpix" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gdt.missions.gifts.localization.</span></span><span class="sig-name descname"><span class="pre">GiftsHealPix</span></span><a class="reference internal" href="../_modules/gdt/missions/gifts/localization.html#GiftsHealPix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://astro-gdt.readthedocs.io/projects/astro-gdt-fermi/en/latest/api/gdt.missions.fermi.gbm.localization.GbmHealPix.html#gdt.missions.fermi.gbm.localization.GbmHealPix" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">GbmHealPix</span></code></a></p>
+<p>Class for GIFTS HEALPix localization files.</p>
+<p class="rubric">Attributes Summary</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.centroid" title="gdt.missions.gifts.localization.GiftsHealPix.centroid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">centroid</span></code></a></p></td>
+<td><p>The RA, Dec of the centroid</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.filename" title="gdt.missions.gifts.localization.GiftsHealPix.filename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filename</span></code></a></p></td>
+<td><p>The filename</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.frame" title="gdt.missions.gifts.localization.GiftsHealPix.frame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">frame</span></code></a></p></td>
+<td><p>The spacecraft frame at the time of the localization</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.geo_location" title="gdt.missions.gifts.localization.GiftsHealPix.geo_location"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geo_location</span></code></a></p></td>
+<td><p>The geocenter location at <a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.trigtime" title="gdt.missions.gifts.localization.GiftsHealPix.trigtime"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trigtime</span></code></a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.geo_probability" title="gdt.missions.gifts.localization.GiftsHealPix.geo_probability"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geo_probability</span></code></a></p></td>
+<td><p>The amount of localization probability on the Earth</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.geo_radius" title="gdt.missions.gifts.localization.GiftsHealPix.geo_radius"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geo_radius</span></code></a></p></td>
+<td><p>The apparent angular radius of the Earth at <a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.trigtime" title="gdt.missions.gifts.localization.GiftsHealPix.trigtime"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trigtime</span></code></a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.hdulist" title="gdt.missions.gifts.localization.GiftsHealPix.hdulist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hdulist</span></code></a></p></td>
+<td><p>The list of Header Data Units</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.headers" title="gdt.missions.gifts.localization.GiftsHealPix.headers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">headers</span></code></a></p></td>
+<td><p>The headers</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.npix" title="gdt.missions.gifts.localization.GiftsHealPix.npix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">npix</span></code></a></p></td>
+<td><p>Number of pixels in the HEALPix map</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.nside" title="gdt.missions.gifts.localization.GiftsHealPix.nside"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nside</span></code></a></p></td>
+<td><p>The HEALPix resolution</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.num_hdus" title="gdt.missions.gifts.localization.GiftsHealPix.num_hdus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_hdus</span></code></a></p></td>
+<td><p>The number of HDUs</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.pixel_area" title="gdt.missions.gifts.localization.GiftsHealPix.pixel_area"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pixel_area</span></code></a></p></td>
+<td><p>The area of each pixel in square degrees</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.prob" title="gdt.missions.gifts.localization.GiftsHealPix.prob"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prob</span></code></a></p></td>
+<td><p>The HEALPix array for the probability/pixel</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.quaternion" title="gdt.missions.gifts.localization.GiftsHealPix.quaternion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quaternion</span></code></a></p></td>
+<td><p>The spacecraft attitude quaternion</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.scpos" title="gdt.missions.gifts.localization.GiftsHealPix.scpos"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scpos</span></code></a></p></td>
+<td><p>(astropy.coordinates.CartesianRepresentation): The spacecraft position in Earth inertial coordinates</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.sig" title="gdt.missions.gifts.localization.GiftsHealPix.sig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sig</span></code></a></p></td>
+<td><p>The HEALPix array for the significance of each pixel</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.sun_location" title="gdt.missions.gifts.localization.GiftsHealPix.sun_location"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sun_location</span></code></a></p></td>
+<td><p>The Sun location at <a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.trigtime" title="gdt.missions.gifts.localization.GiftsHealPix.trigtime"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trigtime</span></code></a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.trigtime" title="gdt.missions.gifts.localization.GiftsHealPix.trigtime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trigtime</span></code></a></p></td>
+<td><p>The reference time</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Summary</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.area" title="gdt.missions.gifts.localization.GiftsHealPix.area"><code class="xref py py-obj docutils literal notranslate"><span class="pre">area</span></code></a>(clevel)</p></td>
+<td><p>Calculate the sky area contained within a given confidence region</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.close" title="gdt.missions.gifts.localization.GiftsHealPix.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>()</p></td>
+<td><p>Close the file</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.column" title="gdt.missions.gifts.localization.GiftsHealPix.column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">column</span></code></a>(hdu_num, col_name)</p></td>
+<td><p>Return a column from an HDU as an array.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.columns_as_array" title="gdt.missions.gifts.localization.GiftsHealPix.columns_as_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">columns_as_array</span></code></a>(hdu_num, col_names[, dtype])</p></td>
+<td><p>Return a list of columns from an HDU as an array.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.confidence" title="gdt.missions.gifts.localization.GiftsHealPix.confidence"><code class="xref py py-obj docutils literal notranslate"><span class="pre">confidence</span></code></a>(ra, dec)</p></td>
+<td><p>Calculate the localization confidence level for a given point.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.confidence_region_path" title="gdt.missions.gifts.localization.GiftsHealPix.confidence_region_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">confidence_region_path</span></code></a>(clevel[, numpts_ra, ...])</p></td>
+<td><p>Return the bounding path for a given confidence region.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.convolve" title="gdt.missions.gifts.localization.GiftsHealPix.convolve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">convolve</span></code></a>(model, *args, **kwargs)</p></td>
+<td><p>Convolve the map with a model kernel.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.from_annulus" title="gdt.missions.gifts.localization.GiftsHealPix.from_annulus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_annulus</span></code></a>(center_ra, center_dec, radius, ...)</p></td>
+<td><p>Create a HealPixLocalization object of a Gaussian-width annulus.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.from_chi2grid" title="gdt.missions.gifts.localization.GiftsHealPix.from_chi2grid"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_chi2grid</span></code></a>(chi2grid[, nside, headers, ...])</p></td>
+<td><p>Create a GbmHealPix object from a <code class="xref py py-class docutils literal notranslate"><span class="pre">Chi2Grid</span></code> object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.from_data" title="gdt.missions.gifts.localization.GiftsHealPix.from_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_data</span></code></a>(prob_arr, sig_arr[, trigtime, ...])</p></td>
+<td><p>Create a GiftsHealPix object from a healpix array.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.from_gaussian" title="gdt.missions.gifts.localization.GiftsHealPix.from_gaussian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_gaussian</span></code></a>(center_ra, center_dec, sigma)</p></td>
+<td><p>Create a HealPixLocalization object of a Gaussian</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.from_vertices" title="gdt.missions.gifts.localization.GiftsHealPix.from_vertices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_vertices</span></code></a>(ra_pts, dec_pts[, nside, ...])</p></td>
+<td><p>Create a HealPixLocalization object from a list of RA, Dec vertices.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.get_column_names" title="gdt.missions.gifts.localization.GiftsHealPix.get_column_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_column_names</span></code></a>(hdu_num)</p></td>
+<td><p>Get the column names in a HDU.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.multiply" title="gdt.missions.gifts.localization.GiftsHealPix.multiply"><code class="xref py py-obj docutils literal notranslate"><span class="pre">multiply</span></code></a>(healpix1, healpix2[, primary, ...])</p></td>
+<td><p>Multiply two GbmHealPix maps and return a new map.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.observable_fraction" title="gdt.missions.gifts.localization.GiftsHealPix.observable_fraction"><code class="xref py py-obj docutils literal notranslate"><span class="pre">observable_fraction</span></code></a>(healpix)</p></td>
+<td><p>The observable fraction of a healpix probability region on the sky.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.open" title="gdt.missions.gifts.localization.GiftsHealPix.open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open</span></code></a>(file_path, **kwargs)</p></td>
+<td><p>Open a GIFTS HEALPix FITS file and return the GiftsHealPix object</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.prob_array" title="gdt.missions.gifts.localization.GiftsHealPix.prob_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prob_array</span></code></a>([numpts_ra, numpts_dec, ...])</p></td>
+<td><p>Return the localization probability mapped to a grid on the sky</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.probability" title="gdt.missions.gifts.localization.GiftsHealPix.probability"><code class="xref py py-obj docutils literal notranslate"><span class="pre">probability</span></code></a>(ra, dec[, per_pixel])</p></td>
+<td><p>Calculate the localization probability at a given point.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.region_probability" title="gdt.missions.gifts.localization.GiftsHealPix.region_probability"><code class="xref py py-obj docutils literal notranslate"><span class="pre">region_probability</span></code></a>(healpix[, prior])</p></td>
+<td><p>The probability that the localization is associated with the localization region from another map.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.remove_earth" title="gdt.missions.gifts.localization.GiftsHealPix.remove_earth"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_earth</span></code></a>()</p></td>
+<td><p>Return a new GbmHealPix with the probability on the Earth masked out.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.source_probability" title="gdt.missions.gifts.localization.GiftsHealPix.source_probability"><code class="xref py py-obj docutils literal notranslate"><span class="pre">source_probability</span></code></a>(ra, dec[, prior])</p></td>
+<td><p>The probability that the GbmHealPix localization is associated with a known point location.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.write" title="gdt.missions.gifts.localization.GiftsHealPix.write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write</span></code></a>(directory[, filename])</p></td>
+<td><p>Write the file to disk.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes Documentation</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.centroid">
+<span class="sig-name descname"><span class="pre">centroid</span></span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.centroid" title="Link to this definition">¶</a></dt>
+<dd><p>The RA, Dec of the centroid</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(float, float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.filename">
+<span class="sig-name descname"><span class="pre">filename</span></span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.filename" title="Link to this definition">¶</a></dt>
+<dd><p>The filename</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.frame">
+<span class="sig-name descname"><span class="pre">frame</span></span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.frame" title="Link to this definition">¶</a></dt>
+<dd><p>The spacecraft frame at
+the time of the localization</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.coords.SpacecraftFrame.html#gdt.core.coords.SpacecraftFrame" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpacecraftFrame</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.geo_location">
+<span class="sig-name descname"><span class="pre">geo_location</span></span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.geo_location" title="Link to this definition">¶</a></dt>
+<dd><p>The geocenter location at
+<a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.trigtime" title="gdt.missions.gifts.localization.GiftsHealPix.trigtime"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trigtime</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(astropy.coordinates.SkyCoord)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.geo_probability">
+<span class="sig-name descname"><span class="pre">geo_probability</span></span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.geo_probability" title="Link to this definition">¶</a></dt>
+<dd><p>The amount of localization probability on the Earth</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.geo_radius">
+<span class="sig-name descname"><span class="pre">geo_radius</span></span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.geo_radius" title="Link to this definition">¶</a></dt>
+<dd><p>The apparent angular radius of the Earth at
+<a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.trigtime" title="gdt.missions.gifts.localization.GiftsHealPix.trigtime"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trigtime</span></code></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If a <a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.scpos" title="gdt.missions.gifts.localization.GiftsHealPix.scpos"><code class="xref py py-attr docutils literal notranslate"><span class="pre">scpos</span></code></a> isn’t set, then an average 67.5 deg is returned</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(astropy.units.Quantity)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.hdulist">
+<span class="sig-name descname"><span class="pre">hdulist</span></span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.hdulist" title="Link to this definition">¶</a></dt>
+<dd><p>The list of Header Data Units</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(astropy.io.fits.hdu.HDUList)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.headers">
+<span class="sig-name descname"><span class="pre">headers</span></span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.headers" title="Link to this definition">¶</a></dt>
+<dd><p>The headers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.headers.FileHeaders.html#gdt.core.headers.FileHeaders" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">FileHeaders</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.npix">
+<span class="sig-name descname"><span class="pre">npix</span></span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.npix" title="Link to this definition">¶</a></dt>
+<dd><p>Number of pixels in the HEALPix map</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.nside">
+<span class="sig-name descname"><span class="pre">nside</span></span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.nside" title="Link to this definition">¶</a></dt>
+<dd><p>The HEALPix resolution</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.num_hdus">
+<span class="sig-name descname"><span class="pre">num_hdus</span></span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.num_hdus" title="Link to this definition">¶</a></dt>
+<dd><p>The number of HDUs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.pixel_area">
+<span class="sig-name descname"><span class="pre">pixel_area</span></span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.pixel_area" title="Link to this definition">¶</a></dt>
+<dd><p>The area of each pixel in square degrees</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.prob">
+<span class="sig-name descname"><span class="pre">prob</span></span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.prob" title="Link to this definition">¶</a></dt>
+<dd><p>The HEALPix array for the probability/pixel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(np.array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.quaternion">
+<span class="sig-name descname"><span class="pre">quaternion</span></span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.quaternion" title="Link to this definition">¶</a></dt>
+<dd><p>The spacecraft attitude
+quaternion</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.coords.Quaternion.html#gdt.core.coords.Quaternion" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Quaternion</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.scpos">
+<span class="sig-name descname"><span class="pre">scpos</span></span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.scpos" title="Link to this definition">¶</a></dt>
+<dd><p>(astropy.coordinates.CartesianRepresentation):
+The spacecraft position in Earth inertial coordinates</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.sig">
+<span class="sig-name descname"><span class="pre">sig</span></span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.sig" title="Link to this definition">¶</a></dt>
+<dd><p>The HEALPix array for the significance of each pixel</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(np.array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.sun_location">
+<span class="sig-name descname"><span class="pre">sun_location</span></span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.sun_location" title="Link to this definition">¶</a></dt>
+<dd><p>The Sun location at
+<a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.trigtime" title="gdt.missions.gifts.localization.GiftsHealPix.trigtime"><code class="xref py py-attr docutils literal notranslate"><span class="pre">trigtime</span></code></a></p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(astropy.coordinates.SkyCoord)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.trigtime">
+<span class="sig-name descname"><span class="pre">trigtime</span></span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.trigtime" title="Link to this definition">¶</a></dt>
+<dd><p>The reference time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Methods Documentation</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.area">
+<span class="sig-name descname"><span class="pre">area</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clevel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.area" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate the sky area contained within a given confidence region</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>clevel</strong> (<em>float</em>) – The localization confidence level (valid range 0-1)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.close" title="Link to this definition">¶</a></dt>
+<dd><p>Close the file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.column">
+<span class="sig-name descname"><span class="pre">column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">array</span></span></span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.column" title="Link to this definition">¶</a></dt>
+<dd><p>Return a column from an HDU as an array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdu_num</strong> (<em>int</em>) – The HDU number</p></li>
+<li><p><strong>col_name</strong> (<em>str</em>) – The name of the column</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(np.array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.columns_as_array">
+<span class="sig-name descname"><span class="pre">columns_as_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dtype</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">array</span></span></span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.columns_as_array" title="Link to this definition">¶</a></dt>
+<dd><p>Return a list of columns from an HDU as an array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdu_num</strong> (<em>int</em>) – The HDU number</p></li>
+<li><p><strong>col_names</strong> (<em>list</em><em> of </em><em>str</em>) – The names of the columns</p></li>
+<li><p><strong>dtype</strong> (<em>np.dtype</em><em>, </em><em>optional</em>) – The custom dtype of the output array</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(np.array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.confidence">
+<span class="sig-name descname"><span class="pre">confidence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.confidence" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate the localization confidence level for a given point.
+This function interpolates the map at the requested point rather than
+providing the value at the nearest pixel center.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ra</strong> (<em>float</em>) – The RA</p></li>
+<li><p><strong>dec</strong> (<em>float</em>) – The Dec</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.confidence_region_path">
+<span class="sig-name descname"><span class="pre">confidence_region_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clevel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numpts_ra</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">360</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numpts_dec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">180</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.confidence_region_path" title="Link to this definition">¶</a></dt>
+<dd><p>Return the bounding path for a given confidence region.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>clevel</strong> (<em>float</em>) – The localization confidence level (valid range 0-1)</p></li>
+<li><p><strong>numpts_ra</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of grid points along the RA
+axis. Default is 360.</p></li>
+<li><p><strong>numpts_dec</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of grid points along the Dec
+axis. Default is 180.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p><em>([(np.array, np.array), …])</em> –</p>
+<dl class="simple">
+<dt>A list of RA, Dec points, where each</dt><dd><p>item in the list is a continuous
+closed path.</p>
+</dd>
+</dl>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.convolve">
+<span class="sig-name descname"><span class="pre">convolve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.convolve" title="Link to this definition">¶</a></dt>
+<dd><p>Convolve the map with a model kernel.  The model can be a Gaussian
+kernel or any mixture of Gaussian kernels. Uses <a class="reference external" href="https://healpy.readthedocs.io/en/latest/generated/healpy.sphtfunc.smoothing.html">healpy.smoothing</a>.</p>
+<p>An example of a model kernel with a 50%/50% mixture of two Gaussians,
+one with a 1-deg width, and the other with a 3-deg width:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gauss_mix_example</span><span class="p">():</span>
+    <span class="n">sigma1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">sigma2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mf">3.0</span><span class="p">)</span>
+    <span class="n">frac1</span> <span class="o">=</span> <span class="mf">0.50</span>
+    <span class="k">return</span> <span class="p">([</span><span class="n">sigma1</span><span class="p">,</span> <span class="n">sigma2</span><span class="p">],</span> <span class="p">[</span><span class="n">frac1</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> (<em>&lt;function&gt;</em>) – The function representing the model kernel</p></li>
+<li><p><strong>*args</strong> – Arguments to be passed to the model kernel function</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">GbmHealPix</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.from_annulus">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_annulus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">center_ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_dec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nside</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigtime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.from_annulus" title="Link to this definition">¶</a></dt>
+<dd><p>Create a HealPixLocalization object of a Gaussian-width annulus.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>center_ra</strong> (<em>float</em>) – The RA of the center of the annulus</p></li>
+<li><p><strong>center_dec</strong> (<em>float</em>) – The Dec of the center of the annulus</p></li>
+<li><p><strong>radius</strong> (<em>float</em>) – The radius of the annulus, in degrees, measured to
+the center of the of the annulus</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – The Gaussian standard deviation width of the annulus,
+in degrees</p></li>
+<li><p><strong>nside</strong> (<em>int</em><em>, </em><em>optional</em>) – The nside of the HEALPix to make. By default,
+the nside is automatically determined by the
+<code class="docutils literal notranslate"><span class="pre">sigma</span></code> width.  Set this argument to
+override the default.</p></li>
+<li><p><strong>trigtime</strong> (<em>float</em><em>, </em><em>optional</em>) – The reference time for the map</p></li>
+<li><p><strong>filename</strong> (<em>str</em><em>, </em><em>optional</em>) – The filename</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">HealPixLocalization</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.from_chi2grid">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_chi2grid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chi2grid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nside</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exact_nearest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_nearest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.from_chi2grid" title="Link to this definition">¶</a></dt>
+<dd><p>Create a GbmHealPix object from a <code class="xref py py-class docutils literal notranslate"><span class="pre">Chi2Grid</span></code> object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>chi2grid</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Chi2Grid</span></code>) – The chi2grid object containing the
+chi-squared/log-likelihood info.</p></li>
+<li><p><strong>nside</strong> (<em>int</em><em>, </em><em>optional</em>) – The nside resolution to use. Default is 128.</p></li>
+<li><p><strong>headers</strong> (<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.headers.FileHeaders.html#gdt.core.headers.FileHeaders" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">FileHeaders</span></code></a>, optional) – The file headers</p></li>
+<li><p><strong>filename</strong> (<em>str</em><em>, </em><em>optional</em>) – The filename</p></li>
+<li><p><strong>exact_nearest</strong> (<em>bool</em>) – Use exact nearest pixel interpolation when True.
+This method is slow O(minute) due to
+angular difference calculation.</p></li>
+<li><p><strong>grid_nearest</strong> (<em>bool</em>) – Use approximate nearest pixel interpolation when True.
+This method is fast O(second) by using 2D grid.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">GbmHealPix</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.from_data">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prob_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sig_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigtime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quaternion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scpos</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gdt/missions/gifts/localization.html#GiftsHealPix.from_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.from_data" title="Link to this definition">¶</a></dt>
+<dd><p>Create a GiftsHealPix object from a healpix array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prob_arr</strong> (<em>np.array</em>) – The HEALPix array containing the probability/pixel</p></li>
+<li><p><strong>sig_arr</strong> (<em>np.array</em>) – The HEALPix array containing the significance/pixel</p></li>
+<li><p><strong>trigtime</strong> (<em>float</em><em>, </em><em>optional</em>) – The time corresponding to the localization</p></li>
+<li><p><strong>headers</strong> (<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.headers.FileHeaders.html#gdt.core.headers.FileHeaders" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">FileHeaders</span></code></a>, optional) – The file headers</p></li>
+<li><p><strong>filename</strong> (<em>str</em><em>, </em><em>optional</em>) – The filename</p></li>
+<li><p><strong>quaternion</strong> (<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.coords.Quaternion.html#gdt.core.coords.Quaternion" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Quaternion</span></code></a>, optional) – The associated spacecraft quaternion used to determine the
+detector pointings in equatorial coordinates</p></li>
+<li><p><strong>scpos</strong> (<em>astropy.coordinates.representation.CartesianRepresentation</em><em>, </em><em>optional</em>) – The associated spacecraft position in Earth inertial coordinates
+used to determine the geocenter location in equatorial
+coordinates</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix" title="gdt.missions.gifts.localization.GiftsHealPix"><code class="xref py py-class docutils literal notranslate"><span class="pre">GiftsHealPix</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.from_gaussian">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_gaussian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">center_ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center_dec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nside</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigtime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.from_gaussian" title="Link to this definition">¶</a></dt>
+<dd><p>Create a HealPixLocalization object of a Gaussian</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>center_ra</strong> (<em>float</em>) – The RA of the center of the Gaussian</p></li>
+<li><p><strong>center_dec</strong> (<em>float</em>) – The Dec of the center of the Gaussian</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – The Gaussian standard deviation, in degrees</p></li>
+<li><p><strong>nside</strong> (<em>int</em><em>, </em><em>optional</em>) – The nside of the HEALPix to make. By default,
+the nside is automatically determined by the
+<cite>sigma</cite> of the Gaussian.  Set this argument
+to override the default.</p></li>
+<li><p><strong>trigtime</strong> (<em>float</em><em>, </em><em>optional</em>) – The reference time for the map</p></li>
+<li><p><strong>filename</strong> (<em>str</em><em>, </em><em>optional</em>) – The filename</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">HealPixLocalization</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.from_vertices">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_vertices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra_pts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec_pts</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nside</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigtime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.from_vertices" title="Link to this definition">¶</a></dt>
+<dd><p>Create a HealPixLocalization object from a list of RA, Dec vertices.
+The probability within the vertices will be distributed uniformly and
+zero probability outside the vertices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ra_pts</strong> (<em>np.array</em>) – The array of RA coordinates</p></li>
+<li><p><strong>dec_pts</strong> (<em>np.array</em>) – The array of Dec coordinates</p></li>
+<li><p><strong>nside</strong> (<em>int</em><em>, </em><em>optional</em>) – The nside of the HEALPix to make. Default is 64.</p></li>
+<li><p><strong>trigtime</strong> (<em>float</em><em>, </em><em>optional</em>) – The reference time for the map</p></li>
+<li><p><strong>filename</strong> (<em>str</em><em>, </em><em>optional</em>) – The filename</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">HealPixLocalization</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.get_column_names">
+<span class="sig-name descname"><span class="pre">get_column_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.get_column_names" title="Link to this definition">¶</a></dt>
+<dd><p>Get the column names in a HDU.  Returns empty if there is no data
+extension in the HDU.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hdu_num</strong> (<em>int</em>) – The HDU number</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(tuple)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.multiply">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">multiply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">healpix1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">healpix2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">primary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_nside</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.multiply" title="Link to this definition">¶</a></dt>
+<dd><p>Multiply two GbmHealPix maps and return a new map.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Either <code class="docutils literal notranslate"><span class="pre">healpix1</span></code> <em>or</em> <code class="docutils literal notranslate"><span class="pre">healpix2</span></code> can be a non-GbmHealPix
+object, however at least one of them must be a GbmHealPix object
+<strong>and</strong> the <code class="docutils literal notranslate"><span class="pre">primary</span></code> argument must be set to the appropriate
+GbmHealPix object otherwise a TypeError will be raised.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>healpix1</strong> (<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.healpix.HealPix.html#gdt.core.healpix.HealPix" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">HealPix</span></code></a> or <code class="xref py py-class docutils literal notranslate"><span class="pre">GbmHealPix</span></code>) – One of the HEALPix maps to multiply</p></li>
+<li><p><strong>healpix2</strong> (<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.healpix.HealPix.html#gdt.core.healpix.HealPix" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">HealPix</span></code></a> or <code class="xref py py-class docutils literal notranslate"><span class="pre">GbmHealPix</span></code>) – The other HEALPix map to multiply</p></li>
+<li><p><strong>primary</strong> (<em>int</em><em>, </em><em>optional</em>) – If 0, use the first map header information,
+or if 1, use the second map header
+information. Default is 1.</p></li>
+<li><p><strong>output_nside</strong> (<em>int</em><em>, </em><em>optional</em>) – The nside of the multiplied map.
+Default is 128.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Returns</dt><dd><p><code class="xref py py-class docutils literal notranslate"><span class="pre">GbmHealPix</span></code>: The multiplied map</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.observable_fraction">
+<span class="sig-name descname"><span class="pre">observable_fraction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">healpix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.observable_fraction" title="Link to this definition">¶</a></dt>
+<dd><p>The observable fraction of a healpix probability region on the sky.
+Non-observable regions are ones that are behind the Earth.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>healpix</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">HealPix</span></code>) – The healpix region for which to
+calculate the observable fraction.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.open">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gdt/missions/gifts/localization.html#GiftsHealPix.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.open" title="Link to this definition">¶</a></dt>
+<dd><p>Open a GIFTS HEALPix FITS file and return the GiftsHealPix object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – The file path of the FITS file</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix" title="gdt.missions.gifts.localization.GiftsHealPix"><code class="xref py py-class docutils literal notranslate"><span class="pre">GiftsHealPix</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.prob_array">
+<span class="sig-name descname"><span class="pre">prob_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numpts_ra</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">360</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numpts_dec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">180</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sqdegrees</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.prob_array" title="Link to this definition">¶</a></dt>
+<dd><p>Return the localization probability mapped to a grid on the sky</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>numpts_ra</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of grid points along the RA
+axis. Default is 360.</p></li>
+<li><p><strong>numpts_dec</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of grid points along the Dec
+axis. Default is 180.</p></li>
+<li><p><strong>sqdegrees</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, the prob_array is in units of probability per square
+degrees, otherwise in units of probability per pixel.
+Default is True</p></li>
+<li><p><strong>sig</strong> (<em>bool</em><em>, </em><em>optional</em>) – Set True to retun the significance map on a
+grid instead of the probability.
+Default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p><em>3-tuple containing</em> –</p>
+<ul class="simple">
+<li><p><em>np.array</em>: The probability (or significance) array with shape                       (<code class="docutils literal notranslate"><span class="pre">numpts_dec</span></code>, <code class="docutils literal notranslate"><span class="pre">numpts_ra</span></code>)</p></li>
+<li><p><em>np.array</em>: The RA grid points</p></li>
+<li><p><em>np.array</em>: The Dec grid points</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.probability">
+<span class="sig-name descname"><span class="pre">probability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">per_pixel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.probability" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate the localization probability at a given point.  This
+function interpolates the map at the requested point rather than
+providing the vale at the nearest pixel center.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ra</strong> (<em>float</em>) – The RA</p></li>
+<li><p><strong>dec</strong> (<em>float</em>) – The Dec</p></li>
+<li><p><strong>per_pixel</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, return probability per pixel, otherwise return
+probability per square degree. Default is False.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.region_probability">
+<span class="sig-name descname"><span class="pre">region_probability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">healpix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prior</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.region_probability" title="Link to this definition">¶</a></dt>
+<dd><p>The probability that the localization is associated with
+the localization region from another map.  This is calculated
+against the null hypothesis that the two maps represent
+unassociated sources:</p>
+<p><span class="math notranslate nohighlight">\(P(A | \mathcal{I}) =
+\frac{P(\mathcal{I} | A) \ P(A)}
+{P(\mathcal{I} | A) \ P(A) + P(\mathcal{I} | \neg A) \ P(\neg A)}\)</span></p>
+<p>where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(\mathcal{I} | A)\)</span> is the integral over the overlap of the two
+maps once the Earth occultation has been removed for <em>this</em> map.</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(\mathcal{I} | \neg A)\)</span> is the integral over the overlap of
+<em>this</em> map with a uniform distribution on the sky (i.e. the probability
+the localization is associated with a random point on the sky)</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(A)\)</span> is the prior probability that <em>this</em> localization is
+associated with the <em>other</em> HEALPix map.</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The localization region of <em>this</em> map overlapping the Earth will be
+removed and the remaining unocculted region is used for the
+calculation.  The <em>other</em> map is assumed to have no exclusionary
+region.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>healpix</strong> (<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.healpix.HealPixLocalization.html#gdt.core.healpix.HealPixLocalization" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">HealPixLocalization</span></code></a>) – The healpix map for which to calculate the spatial association.</p></li>
+<li><p><strong>prior</strong> (<em>float</em><em>, </em><em>optional</em>) – The prior probability that the localization
+is associated with the source. Default is
+0.5.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.remove_earth">
+<span class="sig-name descname"><span class="pre">remove_earth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.remove_earth" title="Link to this definition">¶</a></dt>
+<dd><p>Return a new GbmHealPix with the probability on the Earth masked out.
+The remaining probability on the sky is renormalized.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.geo_location" title="gdt.missions.gifts.localization.GiftsHealPix.geo_location"><code class="xref py py-attr docutils literal notranslate"><span class="pre">geo_location</span></code></a> attribute must be available to use this
+function.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">GbmHealPix</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.source_probability">
+<span class="sig-name descname"><span class="pre">source_probability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ra</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prior</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.source_probability" title="Link to this definition">¶</a></dt>
+<dd><p>The probability that the GbmHealPix localization is associated with
+a known point location.  This is calculated against the null hypothesis
+that the localization originates from an unassociated random source
+that has equal probability of origination anywhere in the sky:</p>
+<p><span class="math notranslate nohighlight">\(P(A | \mathcal{I}) =
+\frac{P(\mathcal{I} | A) \ P(A)}
+{P(\mathcal{I} | A) \ P(A) + P(\mathcal{I} | \neg A) \ P(\neg A)}\)</span></p>
+<p>where</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(\mathcal{I} | A)\)</span> is the probability of the localization at
+the point source once the Earth occultation has been removed</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(\mathcal{I} | \neg A)\)</span> is the probability per pixel assuming
+a uniform distribution on the sky (i.e. the probability the
+localization is associated with a random point on the sky)</p></li>
+<li><p><span class="math notranslate nohighlight">\(P(A)\)</span> is the prior probability that the localization is
+associated with the point source</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the point source is behind the Earth, then it is assumed that
+GBM could not observe it, therefore the probability will be zero.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ra</strong> (<em>float</em>) – The RA of the known source location</p></li>
+<li><p><strong>dec</strong> (<em>float</em>) – The Dec of the known source location</p></li>
+<li><p><strong>prior</strong> (<em>float</em><em>, </em><em>optional</em>) – The prior probability that the localization
+is associated with the source. Default is
+0.5.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.localization.GiftsHealPix.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.localization.GiftsHealPix.write" title="Link to this definition">¶</a></dt>
+<dd><p>Write the file to disk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>directory</strong> (<em>str</em>) – The directory to write the file.</p></li>
+<li><p><strong>filename</strong> (<em>str</em><em>, </em><em>optional</em>) – The filename.  If omitted, attempts to use
+the <code class="xref py py-attr docutils literal notranslate"><span class="pre">filename</span></code>
+if set.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">GiftsHealPix</a><ul>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix</span></code></a><ul>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.centroid"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.centroid</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.filename"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.filename</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.frame"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.frame</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.geo_location"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.geo_location</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.geo_probability"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.geo_probability</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.geo_radius"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.geo_radius</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.hdulist"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.hdulist</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.headers"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.headers</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.npix"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.npix</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.nside"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.nside</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.num_hdus"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.num_hdus</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.pixel_area"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.pixel_area</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.prob"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.prob</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.quaternion"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.quaternion</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.scpos"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.scpos</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.sig"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.sig</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.sun_location"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.sun_location</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.trigtime"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.trigtime</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.area"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.area()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.close"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.close()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.column"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.column()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.columns_as_array"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.columns_as_array()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.confidence"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.confidence()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.confidence_region_path"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.confidence_region_path()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.convolve"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.convolve()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.from_annulus"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.from_annulus()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.from_chi2grid"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.from_chi2grid()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.from_data"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.from_data()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.from_gaussian"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.from_gaussian()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.from_vertices"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.from_vertices()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.get_column_names"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.get_column_names()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.multiply"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.multiply()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.observable_fraction"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.observable_fraction()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.open"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.open()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.prob_array"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.prob_array()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.probability"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.probability()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.region_probability"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.region_probability()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.remove_earth"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.remove_earth()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.source_probability"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.source_probability()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.localization.GiftsHealPix.write"><code class="docutils literal notranslate"><span class="pre">GiftsHealPix.write()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../missions/gifts/localization.html"
+                          title="previous chapter">GIFTS Localizations (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.localization</span></code>)</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../missions/gifts/phaii.html"
+                          title="next chapter">GIFTS PHAII Data (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.phaii</span></code>)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/gdt.missions.gifts.localization.GiftsHealPix.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="../_sources/api/gdt.missions.gifts.localization.GiftsHealPix.rst.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright .<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 7.2.6. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

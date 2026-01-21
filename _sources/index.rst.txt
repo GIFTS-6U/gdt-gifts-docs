@@ -1,0 +1,156 @@
+.. _gdt-gifts:
+
+****************************************************
+GIFTS Gamma-ray Data Tools Documentation
+****************************************************
+
+.. figure:: images/gdt-gifts_logo.png
+
+The `GIFTS Gamma-ray Data Tools (GDT) <https://github.com/GIFTS-6U/gdt-gifts>`_ is a toolkit for GIFTS data products, which is built on the 
+:external:ref:`GDT Core Package<gdt-core>` and :external:ref:`Fermi Gamma-ray Data Tools<gdt-fermi>`. 
+
+Gamma-ray Investigation of the Full Transient Sky (GIFTS) is a 6U CubeSat under development, whose mission aim 
+is the detection and localization of gamma-ray bursts (GRBs) from low Earth orbit in the multi-messenger 
+era. The GIFTS instrument comprises six cerium bromide (:math:`\mathrm{CeBr}_3`) scintillator detectors with different
+orientations, which are arranged into two three-detector clusters within the CubeSat housing,
+and will have the capability to detect gamma rays in an energy range of approximately 30 keV to 2 MeV.
+The current toolkit is a prototype that services an `exemplar GIFTS catalog containing simulated GIFTS data products <https://zenodo.org/records/17295200>`_ 
+generated during 
+payload processing pipeline development. This exemplar catalog illustrates the expected contents of the 
+the public data catalog that will be provided following the GIFTS mission launch, which will also be accompanied
+by corresponding future versions of the toolkit.
+
+
+.. note::
+
+   The current version of the toolkit is intended to be illustrative of the expected post-launch version,
+   with the implementation and documentation intentionally inspired by and similar to that of the :external:ref:`Fermi Gamma-ray Data Tools<gdt-fermi>`.
+   It is envisaged that the toolkit and documentation will be significantly revised in future releases.
+
+   All :ref:`GIFTS data product types <gifts-data-types>` are described using products contained in the 
+   :ref:`current exemplar GIFTS burst catalog <gifts-catalogs>`, which were created using the approach described in 
+   `O'Callaghan et al., CubeSat Payload Processing Pipeline Development For Gamma-Ray Burst Detection (2026) (will be updated following publication) <http://2026_GIFTS_paper>`_.
+
+.. rubric:: Citing
+
+If you use the GIFTS Gamma-ray Data Tools in your research and publications, 
+please acknowledgment and cite this work (the entry for the journal paper will updated following publication) using the following BibTex entries:
+
+::
+
+ @article{OCallaghanCubesatPayloadProcessingGrb2026,
+          author = {Derek O'Callaghan and Alexey Uliyanov and Cathal McCabe and Pádraig McDermott and Cuán de Barra and Sheila McBreen},
+          title = {{CubeSat Payload Processing Pipeline Development For Gamma-Ray Burst Detection}},
+          volume = {TODO},
+          journal = {TODO},
+          number = {TODO},
+          publisher = {TODO},
+          pages = {TODO},
+          year = {2026},
+          doi = {TODO_doi},
+          URL = {https://doi.org/TODO_doi}
+ }
+ 
+::
+
+ @misc{GDT-GIFTS,
+       author = {Derek O'Callaghan},
+       title = {GIFTS Gamma-ray Data Tools: v0.1.0},
+       year = 2026,
+       url = {https://github.com/GIFTS-6U/gdt-gifts}
+ }
+
+::
+
+ @dataset{OCallaghanGiftsExemplarCatalog2026,
+  author       = {Derek O'Callaghan},
+  title        = {GIFTS Exemplar Gamma-ray Bursts (GRBs) Catalog [Data set]},
+  month        = jan,
+  year         = 2026,
+  publisher    = {Zenodo},
+  version      = {0.1.0},
+  doi          = {10.5281/zenodo.17295200},
+  url          = {https://doi.org/10.5281/zenodo.17295200},
+ }
+
+
+.. rubric:: Acknowledgments
+
+This publication has emanated from research funded by Taighde Éireann - Research Ireland under Grant numbers 21/FFP-A/9043, 17/CDA/4723, 19/FFP/6777, and GOIPG/2023/3741 and also supported by the Disruptive Technologies Innovation Fund (Call 4), managed by the Department of Enterprise, Trade and Employment and administered by Enterprise Ireland. NSSPI: National Space Subsystems and Payloads Initiative, Contract Ref: DT 2021 0353.
+
+
+***************
+Getting Started
+***************
+.. toctree::
+   :maxdepth: 1
+
+   install
+
+******************
+User Documentation
+******************
+
+GIFTS Definitions
+=================
+.. toctree::
+   :maxdepth: 1
+
+   missions/gifts/time
+   missions/gifts/frame
+   missions/gifts/plot
+
+
+GIFTS
+=========
+
+Instrument Definitions
+----------------------
+
+.. toctree::
+   :maxdepth: 1
+
+   missions/gifts/detectors
+   missions/gifts/region
+   missions/gifts/headers
+
+.. _gifts-data-types:
+
+Data Types
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   missions/gifts/tcat
+   missions/gifts/trigdat
+   missions/gifts/tte
+   missions/gifts/localization
+   missions/gifts/phaii
+
+
+Data Catalogs
+-------------------------
+
+.. toctree::
+   :maxdepth: 1
+
+   missions/gifts/catalogs
+
+----
+
+*******
+License
+*******
+.. toctree::
+   :maxdepth: 1
+   
+   license
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

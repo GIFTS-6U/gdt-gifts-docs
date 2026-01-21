@@ -1,0 +1,45 @@
+MaxRates
+========
+
+.. currentmodule:: gdt.missions.gifts.trigdat
+
+.. autoclass:: MaxRates
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~MaxRates.all_rates
+      ~MaxRates.eic
+      ~MaxRates.num_chans
+      ~MaxRates.num_dets
+      ~MaxRates.quaternion
+      ~MaxRates.time_range
+      ~MaxRates.timescale
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~MaxRates.create
+      ~MaxRates.from_recarray
+      ~MaxRates.get_detector
+      ~MaxRates.to_recarray
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: all_rates
+   .. autoattribute:: eic
+   .. autoattribute:: num_chans
+   .. autoattribute:: num_dets
+   .. autoattribute:: quaternion
+   .. autoattribute:: time_range
+   .. autoattribute:: timescale
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: create
+   .. automethod:: from_recarray
+   .. automethod:: get_detector
+   .. automethod:: to_recarray

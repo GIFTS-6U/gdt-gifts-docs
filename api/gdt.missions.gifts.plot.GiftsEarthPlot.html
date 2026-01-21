@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GiftsEarthPlot &#8212; GIFTS Gamma-ray Data Tools 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-astropy.css?v=cfc02a30" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="icon" href="../_static/gdt_favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="GiftsEquatorialPlot" href="gdt.missions.gifts.plot.GiftsEquatorialPlot.html" />
+    <link rel="prev" title="GIFTS-specific Plot Classes (gdt.missions.gifts.plot)" href="../missions/gifts/plot.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../index.html"><span id="logotext1">gdt</span><span id="logotext2">-gifts</span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="gdt.missions.gifts.plot.GiftsEquatorialPlot.html" title="GiftsEquatorialPlot">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="../missions/gifts/plot.html" title="GIFTS-specific Plot Classes (gdt.missions.gifts.plot)">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../index.html">GIFTS Gamma-ray Data Tools 0.1.0 documentation</a>
+	 &#187;
+      </li>
+      <li><a href="../missions/gifts/plot.html" accesskey="U">GIFTS-specific Plot Classes (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.plot</span></code>)</a> &#187;</li>
+      
+      <li>GiftsEarthPlot</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="giftsearthplot">
+<h1>GiftsEarthPlot<a class="headerlink" href="#giftsearthplot" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEarthPlot">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gdt.missions.gifts.plot.</span></span><span class="sig-name descname"><span class="pre">GiftsEarthPlot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="gdt.missions.gifts.region.HighParticleFluxRegion.html#gdt.missions.gifts.region.HighParticleFluxRegion" title="gdt.missions.gifts.region.HighParticleFluxRegion"><span class="pre">HighParticleFluxRegion</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gdt/missions/gifts/plot.html#GiftsEarthPlot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEarthPlot" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.plot.earthplot.EarthPlot.html#gdt.core.plot.earthplot.EarthPlot" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">EarthPlot</span></code></a></p>
+<p>Class for plotting GIFTS orbit and high particle flux regions</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This class requires installation of Cartopy.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>regions</strong> – list of GIFTS high particle flux regions to be included in the plot</p></li>
+<li><p><strong>**kwargs</strong> – Options to pass to <a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.plot.plot.GdtPlot.html#gdt.core.plot.plot.GdtPlot" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">GdtPlot</span></code></a></p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Attributes Summary</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.ax" title="gdt.missions.gifts.plot.GiftsEarthPlot.ax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ax</span></code></a></p></td>
+<td><p>The matplotlib axes object for the plot</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.canvas" title="gdt.missions.gifts.plot.GiftsEarthPlot.canvas"><code class="xref py py-obj docutils literal notranslate"><span class="pre">canvas</span></code></a></p></td>
+<td><p>The plotting canvas, if set upon initialization.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.fig" title="gdt.missions.gifts.plot.GiftsEarthPlot.fig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fig</span></code></a></p></td>
+<td><p>The matplotlib figure object</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.geoaxes" title="gdt.missions.gifts.plot.GiftsEarthPlot.geoaxes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geoaxes</span></code></a></p></td>
+<td><p>The Cartopy axes</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.orbit" title="gdt.missions.gifts.plot.GiftsEarthPlot.orbit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">orbit</span></code></a></p></td>
+<td><p>The orbital path</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.saa" title="gdt.missions.gifts.plot.GiftsEarthPlot.saa"><code class="xref py py-obj docutils literal notranslate"><span class="pre">saa</span></code></a></p></td>
+<td><p>The SAA polygon</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.spacecraft" title="gdt.missions.gifts.plot.GiftsEarthPlot.spacecraft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spacecraft</span></code></a></p></td>
+<td><p>A plot point representing the spacecraft position</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.xlim" title="gdt.missions.gifts.plot.GiftsEarthPlot.xlim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xlim</span></code></a></p></td>
+<td><p>The plotting range of the x axis</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.xscale" title="gdt.missions.gifts.plot.GiftsEarthPlot.xscale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">xscale</span></code></a></p></td>
+<td><p>The scale of the x axis, either 'linear' or 'log'.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.ylim" title="gdt.missions.gifts.plot.GiftsEarthPlot.ylim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ylim</span></code></a></p></td>
+<td><p>The plotting range of the y axis.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.yscale" title="gdt.missions.gifts.plot.GiftsEarthPlot.yscale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">yscale</span></code></a></p></td>
+<td><p>The scale of the y axis, either 'linear' or 'log'.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Summary</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.add_spacecraft_frame" title="gdt.missions.gifts.plot.GiftsEarthPlot.add_spacecraft_frame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_spacecraft_frame</span></code></a>(frame[, tstart, tstop, ...])</p></td>
+<td><p>Add a SpacecraftFrame object to plot the orbital path and optionally the spacecraft position at a particular time.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.plot_high_particle_flux_region" title="gdt.missions.gifts.plot.GiftsEarthPlot.plot_high_particle_flux_region"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot_high_particle_flux_region</span></code></a>(region[, ...])</p></td>
+<td><p>Include a high particle flux region in the plot</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.standard_title" title="gdt.missions.gifts.plot.GiftsEarthPlot.standard_title"><code class="xref py py-obj docutils literal notranslate"><span class="pre">standard_title</span></code></a>()</p></td>
+<td><p>Add a standard plot title containing orbital position of the spacecraft.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes Documentation</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEarthPlot.ax">
+<span class="sig-name descname"><span class="pre">ax</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEarthPlot.ax" title="Link to this definition">¶</a></dt>
+<dd><p>The matplotlib axes object for the plot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">matplotlib.axes</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEarthPlot.canvas">
+<span class="sig-name descname"><span class="pre">canvas</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEarthPlot.canvas" title="Link to this definition">¶</a></dt>
+<dd><p>The plotting canvas, if set upon
+initialization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(Canvas Backend object)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEarthPlot.fig">
+<span class="sig-name descname"><span class="pre">fig</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEarthPlot.fig" title="Link to this definition">¶</a></dt>
+<dd><p>The matplotlib figure object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">matplotlib.figure</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEarthPlot.geoaxes">
+<span class="sig-name descname"><span class="pre">geoaxes</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEarthPlot.geoaxes" title="Link to this definition">¶</a></dt>
+<dd><p>The Cartopy axes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(cartopy.mpl.geoaxes.GeoAxesSubplot)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEarthPlot.orbit">
+<span class="sig-name descname"><span class="pre">orbit</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEarthPlot.orbit" title="Link to this definition">¶</a></dt>
+<dd><p>The orbital path</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">EarthLine</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEarthPlot.saa">
+<span class="sig-name descname"><span class="pre">saa</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEarthPlot.saa" title="Link to this definition">¶</a></dt>
+<dd><p>The SAA polygon</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">SAA</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEarthPlot.spacecraft">
+<span class="sig-name descname"><span class="pre">spacecraft</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEarthPlot.spacecraft" title="Link to this definition">¶</a></dt>
+<dd><p>A plot point representing the
+spacecraft position</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">EarthPoints</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEarthPlot.xlim">
+<span class="sig-name descname"><span class="pre">xlim</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEarthPlot.xlim" title="Link to this definition">¶</a></dt>
+<dd><p>The plotting range of the x axis</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(float, float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEarthPlot.xscale">
+<span class="sig-name descname"><span class="pre">xscale</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEarthPlot.xscale" title="Link to this definition">¶</a></dt>
+<dd><p>The scale of the x axis, either ‘linear’ or ‘log’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEarthPlot.ylim">
+<span class="sig-name descname"><span class="pre">ylim</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEarthPlot.ylim" title="Link to this definition">¶</a></dt>
+<dd><p>The plotting range of the y axis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(float, float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEarthPlot.yscale">
+<span class="sig-name descname"><span class="pre">yscale</span></span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEarthPlot.yscale" title="Link to this definition">¶</a></dt>
+<dd><p>The scale of the y axis, either ‘linear’ or ‘log’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Methods Documentation</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEarthPlot.add_spacecraft_frame">
+<span class="sig-name descname"><span class="pre">add_spacecraft_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">frame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tstart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tstop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigtime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEarthPlot.add_spacecraft_frame" title="Link to this definition">¶</a></dt>
+<dd><p>Add a SpacecraftFrame object to plot the orbital path and
+optionally the spacecraft position at a particular time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>frame</strong> (<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.coords.SpacecraftFrame.html#gdt.core.coords.SpacecraftFrame" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpacecraftFrame</span></code></a>) – The spacecraft frame containing position information</p></li>
+<li><p><strong>tstart</strong> – (astropy.time.Time, optional):
+The start time to plot the orbit.  If not set, then uses the
+first <code class="docutils literal notranslate"><span class="pre">frame.obstime</span></code>.</p></li>
+<li><p><strong>tstop</strong> – (astropy.time.Time, astropy.units.Quantity, or float, optional):
+Either a time value signifying the end of the range, the
+duration of the time range as a Quantity with appropriate unit,
+or an int/float representing the number of seconds.  If not set,
+then uses the last <code class="docutils literal notranslate"><span class="pre">frame.obstime</span></code>.</p></li>
+<li><p><strong>step</strong> (<em>datetime.TimeDelta</em><em>, </em><em>astropy.units.Quantity</em><em>, or </em><em>float</em><em>, </em><em>optional</em>) – Either a TimeDelta value, Quantity with appropriate unit, or an
+int/float representing the number of seconds. Default is 1.0</p></li>
+<li><p><strong>trigtime</strong> (<em>astropy.time.Time</em>) – Set to a particular time of interest to plot the location.</p></li>
+<li><p><strong>icon</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">EarthPoints</span></code>) – A subclass of EarthPoints that defines a specialized spacecraft
+icon.  If not set, will default to standard matplotlib markers.</p></li>
+<li><p><strong>**kwargs</strong> – Arguments to be passed to
+<code class="xref py py-class docutils literal notranslate"><span class="pre">EarthPoints</span></code> if <code class="docutils literal notranslate"><span class="pre">icon</span></code> is not set.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEarthPlot.plot_high_particle_flux_region">
+<span class="sig-name descname"><span class="pre">plot_high_particle_flux_region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="gdt.missions.gifts.region.HighParticleFluxRegion.html#gdt.missions.gifts.region.HighParticleFluxRegion" title="gdt.missions.gifts.region.HighParticleFluxRegion"><span class="pre">HighParticleFluxRegion</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'darkred'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gdt/missions/gifts/plot.html#GiftsEarthPlot.plot_high_particle_flux_region"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEarthPlot.plot_high_particle_flux_region" title="Link to this definition">¶</a></dt>
+<dd><p>Include a high particle flux region in the plot</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>region</strong> – GIFTS high particle flux region for a particular altitude</p></li>
+<li><p><strong>color</strong> – region polygon fill color</p></li>
+<li><p><strong>alpha</strong> – region polygon fill alpha</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.plot.GiftsEarthPlot.standard_title">
+<span class="sig-name descname"><span class="pre">standard_title</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.plot.GiftsEarthPlot.standard_title" title="Link to this definition">¶</a></dt>
+<dd><p>Add a standard plot title containing orbital position of the
+spacecraft.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">GiftsEarthPlot</a><ul>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot"><code class="docutils literal notranslate"><span class="pre">GiftsEarthPlot</span></code></a><ul>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.ax"><code class="docutils literal notranslate"><span class="pre">GiftsEarthPlot.ax</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.canvas"><code class="docutils literal notranslate"><span class="pre">GiftsEarthPlot.canvas</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.fig"><code class="docutils literal notranslate"><span class="pre">GiftsEarthPlot.fig</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.geoaxes"><code class="docutils literal notranslate"><span class="pre">GiftsEarthPlot.geoaxes</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.orbit"><code class="docutils literal notranslate"><span class="pre">GiftsEarthPlot.orbit</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.saa"><code class="docutils literal notranslate"><span class="pre">GiftsEarthPlot.saa</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.spacecraft"><code class="docutils literal notranslate"><span class="pre">GiftsEarthPlot.spacecraft</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.xlim"><code class="docutils literal notranslate"><span class="pre">GiftsEarthPlot.xlim</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.xscale"><code class="docutils literal notranslate"><span class="pre">GiftsEarthPlot.xscale</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.ylim"><code class="docutils literal notranslate"><span class="pre">GiftsEarthPlot.ylim</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.yscale"><code class="docutils literal notranslate"><span class="pre">GiftsEarthPlot.yscale</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.add_spacecraft_frame"><code class="docutils literal notranslate"><span class="pre">GiftsEarthPlot.add_spacecraft_frame()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.plot_high_particle_flux_region"><code class="docutils literal notranslate"><span class="pre">GiftsEarthPlot.plot_high_particle_flux_region()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.plot.GiftsEarthPlot.standard_title"><code class="docutils literal notranslate"><span class="pre">GiftsEarthPlot.standard_title()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../missions/gifts/plot.html"
+                          title="previous chapter">GIFTS-specific Plot Classes (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.plot</span></code>)</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="gdt.missions.gifts.plot.GiftsEquatorialPlot.html"
+                          title="next chapter">GiftsEquatorialPlot</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/gdt.missions.gifts.plot.GiftsEarthPlot.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="../_sources/api/gdt.missions.gifts.plot.GiftsEarthPlot.rst.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright .<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 7.2.6. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

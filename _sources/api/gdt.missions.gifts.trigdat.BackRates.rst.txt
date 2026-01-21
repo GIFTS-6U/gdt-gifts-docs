@@ -1,0 +1,41 @@
+BackRates
+=========
+
+.. currentmodule:: gdt.missions.gifts.trigdat
+
+.. autoclass:: BackRates
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~BackRates.all_rates
+      ~BackRates.num_chans
+      ~BackRates.num_dets
+      ~BackRates.quality
+      ~BackRates.time_range
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~BackRates.create
+      ~BackRates.from_recarray
+      ~BackRates.get_detector
+      ~BackRates.to_recarray
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: all_rates
+   .. autoattribute:: num_chans
+   .. autoattribute:: num_dets
+   .. autoattribute:: quality
+   .. autoattribute:: time_range
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: create
+   .. automethod:: from_recarray
+   .. automethod:: get_detector
+   .. automethod:: to_recarray

@@ -1,0 +1,51 @@
+GiftsEarthPlot
+==============
+
+.. currentmodule:: gdt.missions.gifts.plot
+
+.. autoclass:: GiftsEarthPlot
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~GiftsEarthPlot.ax
+      ~GiftsEarthPlot.canvas
+      ~GiftsEarthPlot.fig
+      ~GiftsEarthPlot.geoaxes
+      ~GiftsEarthPlot.orbit
+      ~GiftsEarthPlot.saa
+      ~GiftsEarthPlot.spacecraft
+      ~GiftsEarthPlot.xlim
+      ~GiftsEarthPlot.xscale
+      ~GiftsEarthPlot.ylim
+      ~GiftsEarthPlot.yscale
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~GiftsEarthPlot.add_spacecraft_frame
+      ~GiftsEarthPlot.plot_high_particle_flux_region
+      ~GiftsEarthPlot.standard_title
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: ax
+   .. autoattribute:: canvas
+   .. autoattribute:: fig
+   .. autoattribute:: geoaxes
+   .. autoattribute:: orbit
+   .. autoattribute:: saa
+   .. autoattribute:: spacecraft
+   .. autoattribute:: xlim
+   .. autoattribute:: xscale
+   .. autoattribute:: ylim
+   .. autoattribute:: yscale
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: add_spacecraft_frame
+   .. automethod:: plot_high_particle_flux_region
+   .. automethod:: standard_title

@@ -1,0 +1,9 @@
+<map id="inheritanceb89736ca87" name="inheritanceb89736ca87">
+<area shape="rect" id="node1" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.plot.earthplot.EarthPlot.html#gdt.core.plot.earthplot.EarthPlot" target="_top" title="Class for plotting the Earth, primarily related to a spacecraft&#39;s " alt="" coords="173,29,255,55"/>
+<area shape="rect" id="node5" href="../../api/gdt.missions.gifts.plot.GiftsEarthPlot.html#gdt.missions.gifts.plot.GiftsEarthPlot" target="_top" title="Class for plotting GIFTS orbit and high particle flux regions" alt="" coords="304,29,415,55"/>
+<area shape="rect" id="node2" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.plot.plot.GdtPlot.html#gdt.core.plot.plot.GdtPlot" target="_top" title="Base class for plots in the GDT." alt="" coords="29,55,101,80"/>
+<area shape="rect" id="node4" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.plot.sky.SkyPlot.html#gdt.core.plot.sky.SkyPlot" target="_top" title="Base class for an all&#45;sky plot." alt="" coords="178,79,250,104"/>
+<area shape="rect" id="node3" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.plot.sky.EquatorialPlot.html#gdt.core.plot.sky.EquatorialPlot" target="_top" title="Plotting the sky in Equatorial (GCRS) coordinates." alt="" coords="303,79,416,104"/>
+<area shape="rect" id="node6" href="../../api/gdt.missions.gifts.plot.GiftsEquatorialPlot.html#gdt.missions.gifts.plot.GiftsEquatorialPlot" target="_top" title="GiftsEquatorialPlot" alt="" coords="464,79,607,104"/>
+<area shape="rect" id="node7" href="../../api/gdt.missions.gifts.plot.GiftsLightcurve.html#gdt.missions.gifts.plot.GiftsLightcurve" target="_top" title="Temporally bin a set of TTEs, and generate a single lightcurve " alt="" coords="5,5,125,31"/>
+</map>

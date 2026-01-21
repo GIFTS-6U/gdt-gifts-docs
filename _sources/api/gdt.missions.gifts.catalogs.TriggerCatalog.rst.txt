@@ -1,0 +1,49 @@
+TriggerCatalog
+==============
+
+.. currentmodule:: gdt.missions.gifts.catalogs
+
+.. autoclass:: TriggerCatalog
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~TriggerCatalog.catalog
+      ~TriggerCatalog.catalog_type
+      ~TriggerCatalog.columns
+      ~TriggerCatalog.config
+      ~TriggerCatalog.num_columns
+      ~TriggerCatalog.num_rows
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~TriggerCatalog.column_range
+      ~TriggerCatalog.get_healpix
+      ~TriggerCatalog.get_table
+      ~TriggerCatalog.get_tcat
+      ~TriggerCatalog.get_trigdat
+      ~TriggerCatalog.get_tte
+      ~TriggerCatalog.to_dataframe
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: catalog
+   .. autoattribute:: catalog_type
+   .. autoattribute:: columns
+   .. autoattribute:: config
+   .. autoattribute:: num_columns
+   .. autoattribute:: num_rows
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: column_range
+   .. automethod:: get_healpix
+   .. automethod:: get_table
+   .. automethod:: get_tcat
+   .. automethod:: get_trigdat
+   .. automethod:: get_tte
+   .. automethod:: to_dataframe

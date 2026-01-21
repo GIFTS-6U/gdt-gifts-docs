@@ -1,0 +1,8 @@
+<map id="inheritance10c5789d07" name="inheritance10c5789d07">
+<area shape="rect" id="node1" href="https://astro-gdt.readthedocs.io/projects/astro-gdt-fermi/en/latest/api/gdt.missions.fermi.time.GbmBurstNumber.html#gdt.missions.fermi.time.GbmBurstNumber" target="_top" title="Represent date as Fermi GBM burst number" alt="" coords="313,5,452,31"/>
+<area shape="rect" id="node3" href="../../api/gdt.missions.gifts.time.GiftsBurstNumber.html#gdt.missions.gifts.time.GiftsBurstNumber" target="_top" title="Represent date as GIFTS burst number." alt="" coords="500,5,639,31"/>
+<area shape="rect" id="node2" title="Base class for time formats that can uniquely create a time object" alt="" coords="159,5,261,31"/>
+<area shape="rect" id="node4" href="../../api/gdt.missions.gifts.time.GiftsSecTime.html#gdt.missions.gifts.time.GiftsSecTime" target="_top" title="Represents the number of seconds elapsed since Jan 1, 2001, 00:00:00 UTC," alt="" coords="515,55,623,80"/>
+<area shape="rect" id="node5" title="Base class for times that represent the interval from a particular" alt="" coords="319,55,446,80"/>
+<area shape="rect" id="node6" title="Base class for time representations." alt="" coords="5,31,107,56"/>
+</map>

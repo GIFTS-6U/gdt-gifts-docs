@@ -1,0 +1,59 @@
+GiftsSecTime
+============
+
+.. currentmodule:: gdt.missions.gifts.time
+
+.. autoclass:: GiftsSecTime
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~GiftsSecTime.epoch
+      ~GiftsSecTime.epoch_format
+      ~GiftsSecTime.epoch_scale
+      ~GiftsSecTime.epoch_val
+      ~GiftsSecTime.epoch_val2
+      ~GiftsSecTime.in_subfmt
+      ~GiftsSecTime.jd1
+      ~GiftsSecTime.jd2
+      ~GiftsSecTime.name
+      ~GiftsSecTime.out_subfmt
+      ~GiftsSecTime.precision
+      ~GiftsSecTime.scale
+      ~GiftsSecTime.subfmts
+      ~GiftsSecTime.unit
+      ~GiftsSecTime.value
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~GiftsSecTime.fill_value
+      ~GiftsSecTime.set_jds
+      ~GiftsSecTime.to_value
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: epoch
+   .. autoattribute:: epoch_format
+   .. autoattribute:: epoch_scale
+   .. autoattribute:: epoch_val
+   .. autoattribute:: epoch_val2
+   .. autoattribute:: in_subfmt
+   .. autoattribute:: jd1
+   .. autoattribute:: jd2
+   .. autoattribute:: name
+   .. autoattribute:: out_subfmt
+   .. autoattribute:: precision
+   .. autoattribute:: scale
+   .. autoattribute:: subfmts
+   .. autoattribute:: unit
+   .. autoattribute:: value
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: fill_value
+   .. automethod:: set_jds
+   .. automethod:: to_value

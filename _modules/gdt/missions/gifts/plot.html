@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gdt.missions.gifts.plot &#8212; GIFTS Gamma-ray Data Tools 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/bootstrap-astropy.css?v=cfc02a30" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=eafc0fe6" />
+    
+    <script src="../../../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
+    <link rel="icon" href="../../../../_static/gdt_favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../../../../index.html"><span id="logotext1">gdt</span><span id="logotext2">-gifts</span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../../../../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../../../../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../../../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li>
+	<a href="../../../../index.html">GIFTS Gamma-ray Data Tools 0.1.0 documentation</a>
+	 &#187;
+      </li>
+      <li><a href="../../../index.html" accesskey="U">Module code</a> &#187;</li>
+      
+       
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for gdt.missions.gifts.plot</h1><div class="highlight"><pre>
+<span></span><span class="c1">#</span>
+<span class="c1"># Copyright 2026 by University College Dublin. All rights reserved.</span>
+<span class="c1">#</span>
+<span class="c1"># Developed by: Derek O&#39;Callaghan</span>
+<span class="c1">#               University College Dublin</span>
+<span class="c1">#               https://www.ucd.ie/</span>
+<span class="c1">#</span>
+<span class="c1"># Builds on:</span>
+<span class="c1">#               Gamma-ray Data Tools - Core Components (https://github.com/USRA-STI/gdt-core)</span>
+<span class="c1">#               Gamma-ray Data Tools - Fermi mission components (https://github.com/USRA-STI/gdt-fermi/)</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except</span>
+<span class="c1"># in compliance with the License. You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#    http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software distributed under the License</span>
+<span class="c1"># is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or</span>
+<span class="c1"># implied. See the License for the specific language governing permissions and limitations under the</span>
+<span class="c1"># License.</span>
+<span class="c1">#</span>
+<span class="kn">from</span> <span class="nn">collections.abc</span> <span class="kn">import</span> <span class="n">Callable</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
+<span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">to_rgba</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span>
+
+<span class="kn">from</span> <span class="nn">gdt.core.binning.unbinned</span> <span class="kn">import</span> <span class="n">bin_by_time</span>
+<span class="kn">from</span> <span class="nn">gdt.core.plot.plot</span> <span class="kn">import</span> <span class="n">SAA</span><span class="p">,</span> <span class="n">SkyHeatmap</span>
+<span class="kn">from</span> <span class="nn">gdt.core.plot.earthplot</span> <span class="kn">import</span> <span class="n">EarthPlot</span>
+<span class="kn">from</span> <span class="nn">gdt.core.plot.sky</span> <span class="kn">import</span> <span class="n">EquatorialPlot</span>
+
+<span class="kn">from</span> <span class="nn">gdt.missions.gifts.region</span> <span class="kn">import</span> <span class="n">HighParticleFluxRegion</span>
+<span class="kn">from</span> <span class="nn">gdt.missions.gifts.trigdat</span> <span class="kn">import</span> <span class="n">Trigdat</span>
+<span class="kn">from</span> <span class="nn">gdt.missions.gifts.tte</span> <span class="kn">import</span> <span class="n">GiftsTte</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;GiftsEarthPlot&quot;</span><span class="p">,</span> <span class="s2">&quot;GiftsEquatorialPlot&quot;</span><span class="p">,</span> <span class="s2">&quot;GiftsLightcurve&quot;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="GiftsEarthPlot">
+<a class="viewcode-back" href="../../../../api/gdt.missions.gifts.plot.GiftsEarthPlot.html#gdt.missions.gifts.plot.GiftsEarthPlot">[docs]</a>
+<span class="k">class</span> <span class="nc">GiftsEarthPlot</span><span class="p">(</span><span class="n">EarthPlot</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class for plotting GIFTS orbit and high particle flux regions</span>
+<span class="sd">    </span>
+<span class="sd">    Note:</span>
+<span class="sd">        This class requires installation of Cartopy.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        regions: list of GIFTS high particle flux regions to be included in the plot</span>
+<span class="sd">        **kwargs: Options to pass to :class:`~gdt.core.plot.plot.GdtPlot`        </span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">regions</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">HighParticleFluxRegion</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># Default full latitude and longitude ranges will be used for GIFTS plots</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_region_polygons</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">regions</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">region</span> <span class="ow">in</span> <span class="n">regions</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">plot_high_particle_flux_region</span><span class="p">(</span><span class="n">region</span><span class="p">)</span>
+    
+<div class="viewcode-block" id="GiftsEarthPlot.plot_high_particle_flux_region">
+<a class="viewcode-back" href="../../../../api/gdt.missions.gifts.plot.GiftsEarthPlot.html#gdt.missions.gifts.plot.GiftsEarthPlot.plot_high_particle_flux_region">[docs]</a>
+    <span class="k">def</span> <span class="nf">plot_high_particle_flux_region</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">region</span><span class="p">:</span> <span class="n">HighParticleFluxRegion</span><span class="p">,</span> <span class="n">color</span><span class="p">:</span> <span class="nb">str</span><span class="o">=</span><span class="s2">&quot;darkred&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="mf">0.3</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Include a high particle flux region in the plot</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            region: GIFTS high particle flux region for a particular altitude</span>
+<span class="sd">            color: region polygon fill color</span>
+<span class="sd">            alpha: region polygon fill alpha</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_region_polygons</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SAA</span><span class="p">(</span><span class="n">region</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_m</span><span class="o">.</span><span class="n">projection</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_m</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="GiftsEquatorialPlot">
+<a class="viewcode-back" href="../../../../api/gdt.missions.gifts.plot.GiftsEquatorialPlot.html#gdt.missions.gifts.plot.GiftsEquatorialPlot">[docs]</a>
+<span class="k">class</span> <span class="nc">GiftsEquatorialPlot</span><span class="p">(</span><span class="n">EquatorialPlot</span><span class="p">):</span>
+<div class="viewcode-block" id="GiftsEquatorialPlot.plot_heatmap">
+<a class="viewcode-back" href="../../../../api/gdt.missions.gifts.plot.GiftsEquatorialPlot.html#gdt.missions.gifts.plot.GiftsEquatorialPlot.plot_heatmap">[docs]</a>
+    <span class="k">def</span> <span class="nf">plot_heatmap</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">heatmap</span><span class="p">,</span> <span class="n">lon_array</span><span class="p">,</span> <span class="n">lat_array</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Plot a heatmap on the sky.</span>
+<span class="sd">           This is a workaround for the issue in the parent SkyPlot.plot_heatmap(),</span>
+<span class="sd">           where the meshgrid results in a lon_array starting/ending with 0 degrees.</span>
+<span class="sd">           This causes issues where the heatmap generated from a HEALPix location</span>
+<span class="sd">           is populated at both RA=0/360 degrees, resulting in an unexpected output</span>
+<span class="sd">           from the subsequent call to Matplotlib&#39;s pcolormesh().</span>
+
+<span class="sd">           The old GBM Data Tools didn&#39;t generate a meshgrid, and just passes the</span>
+<span class="sd">           specified coordinate arrays unchanged.</span>
+
+<span class="sd">            TODO: confirm whether this is still required with latest gdt-core</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            heatmap (np.array): A 2D array of values</span>
+<span class="sd">            ra_array (np.array): The array of longitudinal gridpoints</span>
+<span class="sd">            dec_array (np.array): The array of latitudinal gridpoints</span>
+<span class="sd">            **kwargs: Options to pass to :class:`~gdt.plot.plot.SkyHeatmap`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">heatmap</span> <span class="o">=</span> <span class="n">SkyHeatmap</span><span class="p">(</span>
+            <span class="n">lon_array</span><span class="p">,</span>
+            <span class="n">lat_array</span><span class="p">,</span>
+            <span class="n">heatmap</span><span class="p">,</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">ax</span><span class="p">,</span>
+            <span class="n">frame</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_frame</span><span class="p">,</span>
+            <span class="n">flipped</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_flipped</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">kwargs</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">heatmap</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="GiftsLightcurve">
+<a class="viewcode-back" href="../../../../api/gdt.missions.gifts.plot.GiftsLightcurve.html#gdt.missions.gifts.plot.GiftsLightcurve">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">GiftsLightcurve</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Temporally bin a set of TTEs, and generate a single lightcurve </span>
+<span class="sd">    plot for all detectors.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">trigdat</span><span class="p">:</span> <span class="n">Trigdat</span>
+    <span class="n">ttes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">GiftsTte</span><span class="p">]</span>
+    <span class="n">bin_method</span><span class="p">:</span> <span class="n">Callable</span> <span class="o">=</span> <span class="n">bin_by_time</span>
+    <span class="n">binning_times</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.024</span> <span class="o">*</span> <span class="mi">2</span><span class="o">**</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">]])</span>
+    <span class="n">time_range</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">energy_range</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">steps</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">errorbars</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">def</span> <span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Add some buffer time to end to ensure all steps are plotted</span>
+        <span class="n">rate_time_range</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">time_range</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">5</span><span class="p">]</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_range</span> <span class="k">else</span> <span class="kc">None</span>
+    
+        <span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_tte_lightcurves</span><span class="p">(</span><span class="n">time_range</span><span class="o">=</span><span class="n">rate_time_range</span><span class="p">)</span>
+        <span class="n">df</span><span class="p">[</span><span class="s2">&quot;detector_label&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">detector</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="s1">&#39; Trig&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">trigdat</span><span class="o">.</span><span class="n">triggered_detectors</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">hue_order</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">binning_time</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+        <span class="n">num_hue</span> <span class="o">=</span> <span class="n">hue_order</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+        <span class="c1"># https://stackoverflow.com/questions/66667334/python-seaborn-alpha-by-hue</span>
+        <span class="n">hue_alpha</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="c1"># May need to restrict number of time bins</span>
+        <span class="n">palette</span> <span class="o">=</span> <span class="p">[</span><span class="n">to_rgba</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span><span class="p">,</span> <span class="n">a</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">color_palette</span><span class="p">()[:</span><span class="n">num_hue</span><span class="p">],</span> <span class="n">hue_alpha</span><span class="p">[:</span><span class="n">num_hue</span><span class="p">])]</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_range</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">time_range</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">df</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+            <span class="n">rate_time_range</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_range</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">errorbars</span><span class="p">:</span>
+            <span class="c1"># will be used for error bars x, matching &quot;steps-post&quot;</span>
+            <span class="n">df</span><span class="p">[</span><span class="s2">&quot;time_step&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">time</span> <span class="o">+</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">binning_time</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+
+        <span class="n">plot_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="o">.</span><span class="n">time</span> <span class="o">&gt;=</span> <span class="n">rate_time_range</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">time</span> <span class="o">&lt;=</span> <span class="n">rate_time_range</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+
+        <span class="k">with</span> <span class="n">sns</span><span class="o">.</span><span class="n">axes_style</span><span class="p">(</span><span class="s2">&quot;ticks&quot;</span><span class="p">):</span>
+            <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">relplot</span><span class="p">(</span>
+                <span class="n">data</span><span class="o">=</span><span class="n">plot_df</span><span class="p">,</span>
+                <span class="n">x</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">,</span>
+                <span class="n">y</span><span class="o">=</span><span class="s2">&quot;rate&quot;</span><span class="p">,</span>
+                <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;binning_time&quot;</span><span class="p">,</span>
+                <span class="n">hue_order</span><span class="o">=</span><span class="n">hue_order</span><span class="p">,</span>
+                <span class="n">size</span><span class="o">=</span><span class="s2">&quot;binning_time&quot;</span><span class="p">,</span>
+                <span class="n">col</span><span class="o">=</span><span class="s2">&quot;detector_label&quot;</span><span class="p">,</span>
+                <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;line&quot;</span><span class="p">,</span>
+                <span class="n">sizes</span><span class="o">=</span><span class="p">(</span><span class="mf">0.75</span><span class="p">,</span> <span class="mf">1.75</span><span class="p">),</span> <span class="c1"># if shorter binning times should be larger, use: 1.75, 0.75),</span>
+                <span class="n">palette</span><span class="o">=</span><span class="n">palette</span><span class="p">,</span>
+                <span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+                <span class="n">aspect</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span>
+                <span class="n">col_wrap</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                <span class="n">drawstyle</span><span class="o">=</span><span class="s1">&#39;steps-post&#39;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">steps</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="n">facet_kws</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">sharex</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+            <span class="p">)</span>
+
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">errorbars</span><span class="p">:</span>
+                <span class="c1"># https://stackoverflow.com/questions/75137582/how-can-i-plot-st-error-bars-with-seaborn-relplot</span>
+                <span class="c1"># add the errorbars</span>
+                <span class="c1"># Iterate through each facet of the facetgrid</span>
+                <span class="k">for</span> <span class="n">detector_label</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">axes_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">detector_data</span> <span class="o">=</span> <span class="n">plot_df</span><span class="p">[</span><span class="n">plot_df</span><span class="o">.</span><span class="n">detector_label</span><span class="o">==</span><span class="n">detector_label</span><span class="p">]</span>
+                    <span class="k">for</span> <span class="n">group</span><span class="p">,</span> <span class="n">selected</span> <span class="ow">in</span> <span class="n">detector_data</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;binning_time&quot;</span><span class="p">):</span>
+                        <span class="c1"># plot the errorbar with the correct color for each group</span>
+                        <span class="n">group_index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">binning_time</span><span class="p">)</span><span class="o">==</span><span class="n">group</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+                        <span class="n">ax</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">selected</span><span class="p">,</span>
+                                    <span class="n">x</span><span class="o">=</span><span class="s2">&quot;time_step&quot;</span> <span class="k">if</span> <span class="n">steps</span> <span class="k">else</span> <span class="s2">&quot;time&quot;</span><span class="p">,</span>
+                                    <span class="n">y</span><span class="o">=</span><span class="s2">&quot;rate&quot;</span><span class="p">,</span>
+                                    <span class="n">yerr</span><span class="o">=</span><span class="s2">&quot;rate_uncertainty&quot;</span><span class="p">,</span>
+                                    <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">,</span>
+                                    <span class="n">color</span><span class="o">=</span><span class="n">palette</span><span class="p">[</span><span class="n">group_index</span><span class="p">],</span>
+                                    <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;none&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Plot x limit max will be the specified time range max, to ensure all steps are plotted</span>
+            <span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">time_range</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="n">plot_df</span><span class="o">.</span><span class="n">rate</span> <span class="o">+</span> <span class="n">plot_df</span><span class="o">.</span><span class="n">rate_uncertainty</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()))</span>
+              <span class="o">.</span><span class="n">set_titles</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{col_name}</span><span class="s1">&#39;</span><span class="p">)</span>
+              <span class="o">.</span><span class="n">set_xlabels</span><span class="p">(</span><span class="s2">&quot;Time (s)&quot;</span><span class="p">)</span>
+              <span class="o">.</span><span class="n">set_ylabels</span><span class="p">(</span><span class="s2">&quot;Rate (count / bin s)&quot;</span><span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">g</span><span class="o">.</span><span class="n">legend</span><span class="o">.</span><span class="n">get_title</span><span class="p">()</span><span class="o">.</span><span class="n">set_text</span><span class="p">(</span><span class="s2">&quot;Time bin (s)&quot;</span><span class="p">)</span>
+            <span class="n">g</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">subplots_adjust</span><span class="p">(</span><span class="n">hspace</span><span class="o">=</span><span class="mf">0.40</span><span class="p">,</span> <span class="n">wspace</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="mf">0.92</span><span class="p">)</span>
+            <span class="n">energy_range_title</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">energy_range</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">energy_range</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> keV&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">energy_range</span> <span class="k">else</span> <span class="s2">&quot;all energy bins&quot;</span>
+            <span class="n">g</span><span class="o">.</span><span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;GIFTS </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">trigdat</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;OBJECT&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> Light Curves (</span><span class="si">{</span><span class="n">energy_range_title</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">);</span>
+
+    <span class="k">def</span> <span class="nf">_tte_lightcurves</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">time_range</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a DataFrame containing PHAII rates for the specified TTEs</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            time_range: Requested TTE time range</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            Lightcurves in a DataFrame</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">time_range</span><span class="p">:</span>
+            <span class="c1"># As the underlying GIFTS TTEs can have different time ranges,</span>
+            <span class="c1"># use the narrowest range that&#39;s common to all detectors</span>
+            <span class="n">tte_time_ranges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">tte</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">time_range</span> <span class="k">for</span> <span class="n">tte</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ttes</span><span class="p">])</span>
+            <span class="n">time_range</span> <span class="o">=</span> <span class="p">(</span><span class="n">tte_time_ranges</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">tte_time_ranges</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+        
+        <span class="n">dfs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">tte</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">ttes</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">binning_time</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">binning_times</span><span class="p">:</span>
+                <span class="n">phaii</span> <span class="o">=</span> <span class="n">tte</span><span class="o">.</span><span class="n">to_phaii</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bin_method</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">binning_time</span><span class="p">,</span> <span class="n">time_range</span><span class="o">=</span><span class="n">time_range</span><span class="p">)</span>
+                <span class="n">lc_data</span> <span class="o">=</span> <span class="n">phaii</span><span class="o">.</span><span class="n">to_lightcurve</span><span class="p">(</span><span class="n">energy_range</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">energy_range</span><span class="p">)</span>
+                <span class="n">dfs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                        <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+                            <span class="p">{</span>
+                                <span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="n">lc_data</span><span class="o">.</span><span class="n">lo_edges</span><span class="p">,</span>
+                                <span class="s2">&quot;rate&quot;</span><span class="p">:</span> <span class="n">lc_data</span><span class="o">.</span><span class="n">rates</span><span class="p">,</span>
+                                <span class="s2">&quot;rate_uncertainty&quot;</span><span class="p">:</span> <span class="n">lc_data</span><span class="o">.</span><span class="n">rate_uncertainty</span><span class="p">,</span>
+                                <span class="s2">&quot;detector&quot;</span><span class="p">:</span> <span class="n">tte</span><span class="o">.</span><span class="n">detector</span><span class="p">,</span>
+                                <span class="s2">&quot;binning_time&quot;</span><span class="p">:</span> <span class="n">binning_time</span><span class="p">,</span>
+                            <span class="p">}</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>    
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">dfs</span><span class="p">)</span></div>
+
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+
+
+<form action="../../../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright .<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 7.2.6. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

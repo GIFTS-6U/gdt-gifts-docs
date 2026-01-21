@@ -1,0 +1,55 @@
+GiftsGbmDetectors
+=================
+
+.. currentmodule:: gdt.missions.gifts.detectors
+
+.. autoclass:: GiftsGbmDetectors
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~GiftsGbmDetectors.G0
+      ~GiftsGbmDetectors.G1
+      ~GiftsGbmDetectors.G2
+      ~GiftsGbmDetectors.G3
+      ~GiftsGbmDetectors.G4
+      ~GiftsGbmDetectors.G5
+      ~GiftsGbmDetectors.b0
+      ~GiftsGbmDetectors.b1
+      ~GiftsGbmDetectors.n0
+      ~GiftsGbmDetectors.n1
+      ~GiftsGbmDetectors.n2
+      ~GiftsGbmDetectors.n3
+      ~GiftsGbmDetectors.n4
+      ~GiftsGbmDetectors.n5
+      ~GiftsGbmDetectors.n6
+      ~GiftsGbmDetectors.n7
+      ~GiftsGbmDetectors.n8
+      ~GiftsGbmDetectors.n9
+      ~GiftsGbmDetectors.na
+      ~GiftsGbmDetectors.nb
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: G0
+   .. autoattribute:: G1
+   .. autoattribute:: G2
+   .. autoattribute:: G3
+   .. autoattribute:: G4
+   .. autoattribute:: G5
+   .. autoattribute:: b0
+   .. autoattribute:: b1
+   .. autoattribute:: n0
+   .. autoattribute:: n1
+   .. autoattribute:: n2
+   .. autoattribute:: n3
+   .. autoattribute:: n4
+   .. autoattribute:: n5
+   .. autoattribute:: n6
+   .. autoattribute:: n7
+   .. autoattribute:: n8
+   .. autoattribute:: n9
+   .. autoattribute:: na
+   .. autoattribute:: nb

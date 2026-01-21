@@ -1,0 +1,6 @@
+<map id="inheritance92e3336386" name="inheritance92e3336386">
+<area shape="rect" id="node1" href="../../api/gdt.missions.gifts.catalogs.BurstCatalog.html#gdt.missions.gifts.catalogs.BurstCatalog" target="_top" title="GIFTS catalog for detected and confirmed bursts" alt="" coords="295,5,402,31"/>
+<area shape="rect" id="node2" title="Base class for GIFTS catalogs" alt="" coords="171,31,243,56"/>
+<area shape="rect" id="node4" href="../../api/gdt.missions.gifts.catalogs.TriggerCatalog.html#gdt.missions.gifts.catalogs.TriggerCatalog" target="_top" title="GIFTS catalog for triggers" alt="" coords="291,55,407,80"/>
+<area shape="rect" id="node3" title="FsspecStorage(config: str = None, _base_cache_path: str = &#39;./giftscache&#39;, _catalog_archive_url: str = &#39;simplecache://::~/zenodo_url/gifts_bursts_catalog_v0_1_0.tar.gz&#39;)" alt="" coords="5,31,123,56"/>
+</map>

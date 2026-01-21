@@ -1,0 +1,53 @@
+FswLocation
+===========
+
+.. currentmodule:: gdt.missions.gifts.trigdat
+
+.. autoclass:: FswLocation
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~FswLocation.fluence
+      ~FswLocation.hardness_ratio
+      ~FswLocation.intensity
+      ~FswLocation.location
+      ~FswLocation.location_sc
+      ~FswLocation.next_classification
+      ~FswLocation.rates
+      ~FswLocation.significance
+      ~FswLocation.spectrum
+      ~FswLocation.time
+      ~FswLocation.timescale
+      ~FswLocation.top_classification
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~FswLocation.create
+      ~FswLocation.from_recarray
+      ~FswLocation.to_recarray
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: fluence
+   .. autoattribute:: hardness_ratio
+   .. autoattribute:: intensity
+   .. autoattribute:: location
+   .. autoattribute:: location_sc
+   .. autoattribute:: next_classification
+   .. autoattribute:: rates
+   .. autoattribute:: significance
+   .. autoattribute:: spectrum
+   .. autoattribute:: time
+   .. autoattribute:: timescale
+   .. autoattribute:: top_classification
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: create
+   .. automethod:: from_recarray
+   .. automethod:: to_recarray

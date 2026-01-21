@@ -1,0 +1,37 @@
+GiftsNorthRegion500
+===================
+
+.. currentmodule:: gdt.missions.gifts.region
+
+.. autoclass:: GiftsNorthRegion500
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~GiftsNorthRegion500.altitude
+      ~GiftsNorthRegion500.latitude
+      ~GiftsNorthRegion500.longitude
+      ~GiftsNorthRegion500.num_points
+      ~GiftsNorthRegion500.region
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~GiftsNorthRegion500.is_closed
+      ~GiftsNorthRegion500.is_convex
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: altitude
+   .. autoattribute:: latitude
+   .. autoattribute:: longitude
+   .. autoattribute:: num_points
+   .. autoattribute:: region
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: is_closed
+   .. automethod:: is_convex

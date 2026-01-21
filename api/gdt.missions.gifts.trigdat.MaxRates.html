@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>MaxRates &#8212; GIFTS Gamma-ray Data Tools 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-astropy.css?v=cfc02a30" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="icon" href="../_static/gdt_favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="BackRates" href="gdt.missions.gifts.trigdat.BackRates.html" />
+    <link rel="prev" title="Trigdat" href="gdt.missions.gifts.trigdat.Trigdat.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../index.html"><span id="logotext1">gdt</span><span id="logotext2">-gifts</span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="gdt.missions.gifts.trigdat.BackRates.html" title="BackRates">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="gdt.missions.gifts.trigdat.Trigdat.html" title="Trigdat">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../index.html">GIFTS Gamma-ray Data Tools 0.1.0 documentation</a>
+	 &#187;
+      </li>
+      <li><a href="../missions/gifts/trigdat.html" accesskey="U">GIFTS Trigger Data (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.trigdat</span></code>)</a> &#187;</li>
+      
+      <li>MaxRates</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="maxrates">
+<h1>MaxRates<a class="headerlink" href="#maxrates" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.MaxRates">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gdt.missions.gifts.trigdat.</span></span><span class="sig-name descname"><span class="pre">MaxRates</span></span><a class="reference internal" href="../_modules/gdt/missions/gifts/trigdat.html#MaxRates"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gdt.missions.gifts.trigdat.MaxRates" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://astro-gdt.readthedocs.io/projects/astro-gdt-fermi/en/latest/api/gdt.missions.fermi.gbm.trigdat.MaxRates.html#gdt.missions.fermi.gbm.trigdat.MaxRates" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MaxRates</span></code></a></p>
+<p>GIFTS MAXRATES and TRIGRATE data in Trigdat.</p>
+<p class="rubric">Attributes Summary</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.all_rates" title="gdt.missions.gifts.trigdat.MaxRates.all_rates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">all_rates</span></code></a></p></td>
+<td><p>An array (<a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.num_chans" title="gdt.missions.gifts.trigdat.MaxRates.num_chans"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_chans</span></code></a>, <a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.num_dets" title="gdt.missions.gifts.trigdat.MaxRates.num_dets"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_dets</span></code></a>) of the maxrates</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.eic" title="gdt.missions.gifts.trigdat.MaxRates.eic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eic</span></code></a></p></td>
+<td><p>The position of Fermi in Earth inertial coordinates</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.num_chans" title="gdt.missions.gifts.trigdat.MaxRates.num_chans"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_chans</span></code></a></p></td>
+<td><p>The number of energy channels</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.num_dets" title="gdt.missions.gifts.trigdat.MaxRates.num_dets"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_dets</span></code></a></p></td>
+<td><p>The number of detectors</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.quaternion" title="gdt.missions.gifts.trigdat.MaxRates.quaternion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">quaternion</span></code></a></p></td>
+<td><p>The quaternions at the maxrates time</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.time_range" title="gdt.missions.gifts.trigdat.MaxRates.time_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_range</span></code></a></p></td>
+<td><p>The time range of the maxrates</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.timescale" title="gdt.missions.gifts.trigdat.MaxRates.timescale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">timescale</span></code></a></p></td>
+<td><p>The timescale of the maxrates</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Summary</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.create" title="gdt.missions.gifts.trigdat.MaxRates.create"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create</span></code></a>([tstart, tstop, quaternion, eic, rates])</p></td>
+<td><p>Create a MaxRates object from keywords.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.from_recarray" title="gdt.missions.gifts.trigdat.MaxRates.from_recarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_recarray</span></code></a>(rec_array)</p></td>
+<td><p>Create from a FITS or numpy record array.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.get_detector" title="gdt.missions.gifts.trigdat.MaxRates.get_detector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_detector</span></code></a>(det)</p></td>
+<td><p>Retrieve the rates for a detector</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.to_recarray" title="gdt.missions.gifts.trigdat.MaxRates.to_recarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_recarray</span></code></a>()</p></td>
+<td><p>Convert contents of the object to a numpy record array.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes Documentation</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.MaxRates.all_rates">
+<span class="sig-name descname"><span class="pre">all_rates</span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.MaxRates.all_rates" title="Link to this definition">¶</a></dt>
+<dd><p>An array (<a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.num_chans" title="gdt.missions.gifts.trigdat.MaxRates.num_chans"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_chans</span></code></a>, <a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.num_dets" title="gdt.missions.gifts.trigdat.MaxRates.num_dets"><code class="xref py py-attr docutils literal notranslate"><span class="pre">num_dets</span></code></a>) of
+the maxrates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(np.array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.MaxRates.eic">
+<span class="sig-name descname"><span class="pre">eic</span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.MaxRates.eic" title="Link to this definition">¶</a></dt>
+<dd><p>The position of Fermi in Earth inertial coordinates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(np.array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.MaxRates.num_chans">
+<span class="sig-name descname"><span class="pre">num_chans</span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.MaxRates.num_chans" title="Link to this definition">¶</a></dt>
+<dd><p>The number of energy channels</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.MaxRates.num_dets">
+<span class="sig-name descname"><span class="pre">num_dets</span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.MaxRates.num_dets" title="Link to this definition">¶</a></dt>
+<dd><p>The number of detectors</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.MaxRates.quaternion">
+<span class="sig-name descname"><span class="pre">quaternion</span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.MaxRates.quaternion" title="Link to this definition">¶</a></dt>
+<dd><p>The quaternions at the maxrates time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(np.array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.MaxRates.time_range">
+<span class="sig-name descname"><span class="pre">time_range</span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.MaxRates.time_range" title="Link to this definition">¶</a></dt>
+<dd><p>The time range of the maxrates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(float, float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.MaxRates.timescale">
+<span class="sig-name descname"><span class="pre">timescale</span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.MaxRates.timescale" title="Link to this definition">¶</a></dt>
+<dd><p>The timescale of the maxrates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Methods Documentation</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.MaxRates.create">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">create</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tstart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tstop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">quaternion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gdt/missions/fermi/gbm/trigdat.html#MaxRates.create"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gdt.missions.gifts.trigdat.MaxRates.create" title="Link to this definition">¶</a></dt>
+<dd><p>Create a MaxRates object from keywords.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tstart</strong> (<em>float</em><em>, </em><em>optional</em>) – The start time of the MaxRates interval</p></li>
+<li><p><strong>tstop</strong> (<em>float</em><em>, </em><em>optional</em>) – The stop time of the MaxRates interval</p></li>
+<li><p><strong>quaternion</strong> (<em>np.array</em><em>, </em><em>optional</em>) – The attitude quaternion</p></li>
+<li><p><strong>eic</strong> (<em>np.array</em><em>, </em><em>optional</em>) – The position in earth inertial coordinates</p></li>
+<li><p><strong>rates</strong> (<em>np.array</em>) – The (num channels, num detectors) rates array</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates" title="gdt.missions.gifts.trigdat.MaxRates"><code class="xref py py-class docutils literal notranslate"><span class="pre">MaxRates</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.MaxRates.from_recarray">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_recarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rec_array</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gdt/missions/fermi/gbm/trigdat.html#MaxRates.from_recarray"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gdt.missions.gifts.trigdat.MaxRates.from_recarray" title="Link to this definition">¶</a></dt>
+<dd><p>Create from a FITS or numpy record array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rec_array</strong> (<em>np.recarray</em>) – The FITS TRIGRATE or MAXRATES record array
+from the trigdat file</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates" title="gdt.missions.gifts.trigdat.MaxRates"><code class="xref py py-class docutils literal notranslate"><span class="pre">MaxRates</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.MaxRates.get_detector">
+<span class="sig-name descname"><span class="pre">get_detector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">det</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gdt/missions/fermi/gbm/trigdat.html#MaxRates.get_detector"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gdt.missions.gifts.trigdat.MaxRates.get_detector" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve the rates for a detector</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>det</strong> (<em>str</em>) – The detector</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(np.array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.MaxRates.to_recarray">
+<span class="sig-name descname"><span class="pre">to_recarray</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gdt/missions/fermi/gbm/trigdat.html#MaxRates.to_recarray"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gdt.missions.gifts.trigdat.MaxRates.to_recarray" title="Link to this definition">¶</a></dt>
+<dd><p>Convert contents of the object to a numpy record array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(np.recarray)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">MaxRates</a><ul>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates"><code class="docutils literal notranslate"><span class="pre">MaxRates</span></code></a><ul>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.all_rates"><code class="docutils literal notranslate"><span class="pre">MaxRates.all_rates</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.eic"><code class="docutils literal notranslate"><span class="pre">MaxRates.eic</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.num_chans"><code class="docutils literal notranslate"><span class="pre">MaxRates.num_chans</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.num_dets"><code class="docutils literal notranslate"><span class="pre">MaxRates.num_dets</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.quaternion"><code class="docutils literal notranslate"><span class="pre">MaxRates.quaternion</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.time_range"><code class="docutils literal notranslate"><span class="pre">MaxRates.time_range</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.timescale"><code class="docutils literal notranslate"><span class="pre">MaxRates.timescale</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.create"><code class="docutils literal notranslate"><span class="pre">MaxRates.create()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.from_recarray"><code class="docutils literal notranslate"><span class="pre">MaxRates.from_recarray()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.get_detector"><code class="docutils literal notranslate"><span class="pre">MaxRates.get_detector()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.MaxRates.to_recarray"><code class="docutils literal notranslate"><span class="pre">MaxRates.to_recarray()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="gdt.missions.gifts.trigdat.Trigdat.html"
+                          title="previous chapter">Trigdat</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="gdt.missions.gifts.trigdat.BackRates.html"
+                          title="next chapter">BackRates</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/gdt.missions.gifts.trigdat.MaxRates.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="../_sources/api/gdt.missions.gifts.trigdat.MaxRates.rst.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright .<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 7.2.6. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

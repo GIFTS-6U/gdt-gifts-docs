@@ -1,0 +1,69 @@
+Trigdat
+=======
+
+.. currentmodule:: gdt.missions.gifts.trigdat
+
+.. autoclass:: Trigdat
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~Trigdat.backrates
+      ~Trigdat.filename
+      ~Trigdat.fsw_locations
+      ~Trigdat.gti
+      ~Trigdat.hdulist
+      ~Trigdat.headers
+      ~Trigdat.maxrates
+      ~Trigdat.num_hdus
+      ~Trigdat.num_maxrates
+      ~Trigdat.poshist
+      ~Trigdat.time_range
+      ~Trigdat.triggered_detectors
+      ~Trigdat.trigrates
+      ~Trigdat.trigtime
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~Trigdat.close
+      ~Trigdat.column
+      ~Trigdat.columns_as_array
+      ~Trigdat.from_data
+      ~Trigdat.get_column_names
+      ~Trigdat.open
+      ~Trigdat.sum_detectors
+      ~Trigdat.to_phaii
+      ~Trigdat.write
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: backrates
+   .. autoattribute:: filename
+   .. autoattribute:: fsw_locations
+   .. autoattribute:: gti
+   .. autoattribute:: hdulist
+   .. autoattribute:: headers
+   .. autoattribute:: maxrates
+   .. autoattribute:: num_hdus
+   .. autoattribute:: num_maxrates
+   .. autoattribute:: poshist
+   .. autoattribute:: time_range
+   .. autoattribute:: triggered_detectors
+   .. autoattribute:: trigrates
+   .. autoattribute:: trigtime
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: close
+   .. automethod:: column
+   .. automethod:: columns_as_array
+   .. automethod:: from_data
+   .. automethod:: get_column_names
+   .. automethod:: open
+   .. automethod:: sum_detectors
+   .. automethod:: to_phaii
+   .. automethod:: write

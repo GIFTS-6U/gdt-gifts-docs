@@ -1,0 +1,39 @@
+PhaiiHeaders
+============
+
+.. currentmodule:: gdt.missions.gifts.headers
+
+.. autoclass:: PhaiiHeaders
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~PhaiiHeaders.filetype
+      ~PhaiiHeaders.num_headers
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~PhaiiHeaders.copy
+      ~PhaiiHeaders.creator
+      ~PhaiiHeaders.from_file_headers
+      ~PhaiiHeaders.from_headers
+      ~PhaiiHeaders.keys
+      ~PhaiiHeaders.update
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: filetype
+   .. autoattribute:: num_headers
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: copy
+   .. automethod:: creator
+   .. automethod:: from_file_headers
+   .. automethod:: from_headers
+   .. automethod:: keys
+   .. automethod:: update

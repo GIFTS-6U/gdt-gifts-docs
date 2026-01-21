@@ -1,0 +1,9 @@
+<map id="inheritance06ad5211ee" name="inheritance06ad5211ee">
+<area shape="rect" id="node1" title="Helper class that provides a standard way to create an ABC using" alt="" coords="5,5,71,28"/>
+<area shape="rect" id="node2" title="An abstract base class for context managers." alt="" coords="115,5,283,28"/>
+<area shape="rect" id="node3" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.file.FitsFileContextManager.html#gdt.core.file.FitsFileContextManager" target="_top" title="A context manager for FITS files. &#160;Includes some convenience functions." alt="" coords="327,5,488,28"/>
+<area shape="rect" id="node4" href="https://astro-gdt.readthedocs.io/projects/astro-gdt-fermi/en/latest/api/gdt.missions.fermi.gbm.localization.GbmHealPix.html#gdt.missions.fermi.gbm.localization.GbmHealPix" target="_top" title="Class for GBM HEALPix localization files." alt="" coords="532,28,625,51"/>
+<area shape="rect" id="node6" href="../../api/gdt.missions.gifts.localization.GiftsHealPix.html#gdt.missions.gifts.localization.GiftsHealPix" target="_top" title="Class for GIFTS HEALPix localization files." alt="" coords="669,28,763,51"/>
+<area shape="rect" id="node5" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.healpix.HealPixLocalization.html#gdt.core.healpix.HealPixLocalization" target="_top" title="Class for localization HEALPix files" alt="" coords="338,50,476,73"/>
+<area shape="rect" id="node7" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.healpix.HealPix.html#gdt.core.healpix.HealPix" target="_top" title="Base class for HEALPix files" alt="" coords="166,50,232,73"/>
+</map>

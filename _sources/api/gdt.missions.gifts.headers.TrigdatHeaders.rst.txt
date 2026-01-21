@@ -1,0 +1,39 @@
+TrigdatHeaders
+==============
+
+.. currentmodule:: gdt.missions.gifts.headers
+
+.. autoclass:: TrigdatHeaders
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~TrigdatHeaders.filetype
+      ~TrigdatHeaders.num_headers
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~TrigdatHeaders.copy
+      ~TrigdatHeaders.creator
+      ~TrigdatHeaders.from_file_headers
+      ~TrigdatHeaders.from_headers
+      ~TrigdatHeaders.keys
+      ~TrigdatHeaders.update
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: filetype
+   .. autoattribute:: num_headers
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: copy
+   .. automethod:: creator
+   .. automethod:: from_file_headers
+   .. automethod:: from_headers
+   .. automethod:: keys
+   .. automethod:: update

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GiftsBurstNumber &#8212; GIFTS Gamma-ray Data Tools 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-astropy.css?v=cfc02a30" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="icon" href="../_static/gdt_favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="GIFTS Spacecraft Frame (gdt.missions.gifts.frame)" href="../missions/gifts/frame.html" />
+    <link rel="prev" title="GiftsSecTime" href="gdt.missions.gifts.time.GiftsSecTime.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../index.html"><span id="logotext1">gdt</span><span id="logotext2">-gifts</span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="../missions/gifts/frame.html" title="GIFTS Spacecraft Frame (gdt.missions.gifts.frame)">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="gdt.missions.gifts.time.GiftsSecTime.html" title="GiftsSecTime">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../index.html">GIFTS Gamma-ray Data Tools 0.1.0 documentation</a>
+	 &#187;
+      </li>
+      <li><a href="../missions/gifts/time.html" accesskey="U">GIFTS Mission Epoch  (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.time</span></code>)</a> &#187;</li>
+      
+      <li>GiftsBurstNumber</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="giftsburstnumber">
+<h1>GiftsBurstNumber<a class="headerlink" href="#giftsburstnumber" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gdt.missions.gifts.time.GiftsBurstNumber">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gdt.missions.gifts.time.</span></span><span class="sig-name descname"><span class="pre">GiftsBurstNumber</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">precision</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_subfmt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_subfmt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_jd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gdt/missions/gifts/time.html#GiftsBurstNumber"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gdt.missions.gifts.time.GiftsBurstNumber" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://astro-gdt.readthedocs.io/projects/astro-gdt-fermi/en/latest/api/gdt.missions.fermi.time.GbmBurstNumber.html#gdt.missions.fermi.time.GbmBurstNumber" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">GbmBurstNumber</span></code></a></p>
+<p>Represent date as GIFTS burst number.</p>
+<p>For now, this reuses the Fermi-GBM burst number implementation.</p>
+<p class="rubric">Attributes Summary</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.in_subfmt" title="gdt.missions.gifts.time.GiftsBurstNumber.in_subfmt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">in_subfmt</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.jd1" title="gdt.missions.gifts.time.GiftsBurstNumber.jd1"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jd1</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.jd2" title="gdt.missions.gifts.time.GiftsBurstNumber.jd2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jd2</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.name" title="gdt.missions.gifts.time.GiftsBurstNumber.name"><code class="xref py py-obj docutils literal notranslate"><span class="pre">name</span></code></a></p></td>
+<td><p>The name of the time format</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.out_subfmt" title="gdt.missions.gifts.time.GiftsBurstNumber.out_subfmt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">out_subfmt</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.precision" title="gdt.missions.gifts.time.GiftsBurstNumber.precision"><code class="xref py py-obj docutils literal notranslate"><span class="pre">precision</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.scale" title="gdt.missions.gifts.time.GiftsBurstNumber.scale"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scale</span></code></a></p></td>
+<td><p>Time scale.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.subfmts" title="gdt.missions.gifts.time.GiftsBurstNumber.subfmts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">subfmts</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.value" title="gdt.missions.gifts.time.GiftsBurstNumber.value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value</span></code></a></p></td>
+<td><p>Convert to string representation of GBM burst number</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Summary</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.fill_value" title="gdt.missions.gifts.time.GiftsBurstNumber.fill_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fill_value</span></code></a>(subfmt)</p></td>
+<td><p>Return a value corresponding to J2000 (2000-01-01 12:00:00) in this format.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.set_jds" title="gdt.missions.gifts.time.GiftsBurstNumber.set_jds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_jds</span></code></a>(val1, val2)</p></td>
+<td><p>Convert burst number contained in val1 to jd1, jd2</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.to_value" title="gdt.missions.gifts.time.GiftsBurstNumber.to_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_value</span></code></a>([parent, out_subfmt])</p></td>
+<td><p>Convert to string representation of GBM burst number</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes Documentation</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.time.GiftsBurstNumber.in_subfmt">
+<span class="sig-name descname"><span class="pre">in_subfmt</span></span><a class="headerlink" href="#gdt.missions.gifts.time.GiftsBurstNumber.in_subfmt" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.time.GiftsBurstNumber.jd1">
+<span class="sig-name descname"><span class="pre">jd1</span></span><a class="headerlink" href="#gdt.missions.gifts.time.GiftsBurstNumber.jd1" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.time.GiftsBurstNumber.jd2">
+<span class="sig-name descname"><span class="pre">jd2</span></span><a class="headerlink" href="#gdt.missions.gifts.time.GiftsBurstNumber.jd2" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.time.GiftsBurstNumber.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'gifts_bn'</span></em><a class="headerlink" href="#gdt.missions.gifts.time.GiftsBurstNumber.name" title="Link to this definition">¶</a></dt>
+<dd><p>The name of the time format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.time.GiftsBurstNumber.out_subfmt">
+<span class="sig-name descname"><span class="pre">out_subfmt</span></span><a class="headerlink" href="#gdt.missions.gifts.time.GiftsBurstNumber.out_subfmt" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.time.GiftsBurstNumber.precision">
+<span class="sig-name descname"><span class="pre">precision</span></span><a class="headerlink" href="#gdt.missions.gifts.time.GiftsBurstNumber.precision" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.time.GiftsBurstNumber.scale">
+<span class="sig-name descname"><span class="pre">scale</span></span><a class="headerlink" href="#gdt.missions.gifts.time.GiftsBurstNumber.scale" title="Link to this definition">¶</a></dt>
+<dd><p>Time scale.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.time.GiftsBurstNumber.subfmts">
+<span class="sig-name descname"><span class="pre">subfmts</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#gdt.missions.gifts.time.GiftsBurstNumber.subfmts" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.time.GiftsBurstNumber.value">
+<span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#gdt.missions.gifts.time.GiftsBurstNumber.value" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to string representation of GBM burst number</p>
+</dd></dl>
+
+<p class="rubric">Methods Documentation</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.time.GiftsBurstNumber.fill_value">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fill_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subfmt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.time.GiftsBurstNumber.fill_value" title="Link to this definition">¶</a></dt>
+<dd><p>Return a value corresponding to J2000 (2000-01-01 12:00:00) in this format.</p>
+<p>This is used as a fill value for masked arrays to ensure that any ERFA
+operations on the masked array will not fail due to the masked value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.time.GiftsBurstNumber.set_jds">
+<span class="sig-name descname"><span class="pre">set_jds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.time.GiftsBurstNumber.set_jds" title="Link to this definition">¶</a></dt>
+<dd><p>Convert burst number contained in val1 to jd1, jd2</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.time.GiftsBurstNumber.to_value">
+<span class="sig-name descname"><span class="pre">to_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_subfmt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.time.GiftsBurstNumber.to_value" title="Link to this definition">¶</a></dt>
+<dd><p>Convert to string representation of GBM burst number</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">GiftsBurstNumber</a><ul>
+<li><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber"><code class="docutils literal notranslate"><span class="pre">GiftsBurstNumber</span></code></a><ul>
+<li><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.in_subfmt"><code class="docutils literal notranslate"><span class="pre">GiftsBurstNumber.in_subfmt</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.jd1"><code class="docutils literal notranslate"><span class="pre">GiftsBurstNumber.jd1</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.jd2"><code class="docutils literal notranslate"><span class="pre">GiftsBurstNumber.jd2</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.name"><code class="docutils literal notranslate"><span class="pre">GiftsBurstNumber.name</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.out_subfmt"><code class="docutils literal notranslate"><span class="pre">GiftsBurstNumber.out_subfmt</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.precision"><code class="docutils literal notranslate"><span class="pre">GiftsBurstNumber.precision</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.scale"><code class="docutils literal notranslate"><span class="pre">GiftsBurstNumber.scale</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.subfmts"><code class="docutils literal notranslate"><span class="pre">GiftsBurstNumber.subfmts</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.value"><code class="docutils literal notranslate"><span class="pre">GiftsBurstNumber.value</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.fill_value"><code class="docutils literal notranslate"><span class="pre">GiftsBurstNumber.fill_value()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.set_jds"><code class="docutils literal notranslate"><span class="pre">GiftsBurstNumber.set_jds()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.time.GiftsBurstNumber.to_value"><code class="docutils literal notranslate"><span class="pre">GiftsBurstNumber.to_value()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="gdt.missions.gifts.time.GiftsSecTime.html"
+                          title="previous chapter">GiftsSecTime</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../missions/gifts/frame.html"
+                          title="next chapter">GIFTS Spacecraft Frame (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.frame</span></code>)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/gdt.missions.gifts.time.GiftsBurstNumber.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="../_sources/api/gdt.missions.gifts.time.GiftsBurstNumber.rst.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright .<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 7.2.6. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

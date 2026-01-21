@@ -1,0 +1,81 @@
+GiftsPhaii
+==========
+
+.. currentmodule:: gdt.missions.gifts.phaii
+
+.. autoclass:: GiftsPhaii
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~GiftsPhaii.data
+      ~GiftsPhaii.detector
+      ~GiftsPhaii.ebounds
+      ~GiftsPhaii.energy_range
+      ~GiftsPhaii.filename
+      ~GiftsPhaii.gti
+      ~GiftsPhaii.hdulist
+      ~GiftsPhaii.headers
+      ~GiftsPhaii.num_chans
+      ~GiftsPhaii.num_hdus
+      ~GiftsPhaii.time_range
+      ~GiftsPhaii.trigtime
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~GiftsPhaii.close
+      ~GiftsPhaii.column
+      ~GiftsPhaii.columns_as_array
+      ~GiftsPhaii.from_data
+      ~GiftsPhaii.get_column_names
+      ~GiftsPhaii.get_exposure
+      ~GiftsPhaii.merge
+      ~GiftsPhaii.open
+      ~GiftsPhaii.rebin_energy
+      ~GiftsPhaii.rebin_time
+      ~GiftsPhaii.set_ebounds
+      ~GiftsPhaii.slice_energy
+      ~GiftsPhaii.slice_time
+      ~GiftsPhaii.to_lightcurve
+      ~GiftsPhaii.to_pha
+      ~GiftsPhaii.to_spectrum
+      ~GiftsPhaii.write
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: data
+   .. autoattribute:: detector
+   .. autoattribute:: ebounds
+   .. autoattribute:: energy_range
+   .. autoattribute:: filename
+   .. autoattribute:: gti
+   .. autoattribute:: hdulist
+   .. autoattribute:: headers
+   .. autoattribute:: num_chans
+   .. autoattribute:: num_hdus
+   .. autoattribute:: time_range
+   .. autoattribute:: trigtime
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: close
+   .. automethod:: column
+   .. automethod:: columns_as_array
+   .. automethod:: from_data
+   .. automethod:: get_column_names
+   .. automethod:: get_exposure
+   .. automethod:: merge
+   .. automethod:: open
+   .. automethod:: rebin_energy
+   .. automethod:: rebin_time
+   .. automethod:: set_ebounds
+   .. automethod:: slice_energy
+   .. automethod:: slice_time
+   .. automethod:: to_lightcurve
+   .. automethod:: to_pha
+   .. automethod:: to_spectrum
+   .. automethod:: write

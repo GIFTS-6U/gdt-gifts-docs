@@ -1,0 +1,57 @@
+Tcat
+====
+
+.. currentmodule:: gdt.missions.gifts.tcat
+
+.. autoclass:: Tcat
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~Tcat.fermi_location
+      ~Tcat.filename
+      ~Tcat.gifts_location
+      ~Tcat.hdulist
+      ~Tcat.headers
+      ~Tcat.localizing_instrument
+      ~Tcat.location
+      ~Tcat.name
+      ~Tcat.num_hdus
+      ~Tcat.time_range
+      ~Tcat.trigtime
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~Tcat.close
+      ~Tcat.column
+      ~Tcat.columns_as_array
+      ~Tcat.get_column_names
+      ~Tcat.open
+      ~Tcat.write
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: fermi_location
+   .. autoattribute:: filename
+   .. autoattribute:: gifts_location
+   .. autoattribute:: hdulist
+   .. autoattribute:: headers
+   .. autoattribute:: localizing_instrument
+   .. autoattribute:: location
+   .. autoattribute:: name
+   .. autoattribute:: num_hdus
+   .. autoattribute:: time_range
+   .. autoattribute:: trigtime
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: close
+   .. automethod:: column
+   .. automethod:: columns_as_array
+   .. automethod:: get_column_names
+   .. automethod:: open
+   .. automethod:: write

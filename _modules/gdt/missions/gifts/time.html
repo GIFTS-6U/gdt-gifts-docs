@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gdt.missions.gifts.time &#8212; GIFTS Gamma-ray Data Tools 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/bootstrap-astropy.css?v=cfc02a30" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=eafc0fe6" />
+    
+    <script src="../../../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
+    <link rel="icon" href="../../../../_static/gdt_favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../../../../index.html"><span id="logotext1">gdt</span><span id="logotext2">-gifts</span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../../../../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../../../../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../../../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li>
+	<a href="../../../../index.html">GIFTS Gamma-ray Data Tools 0.1.0 documentation</a>
+	 &#187;
+      </li>
+      <li><a href="../../../index.html" accesskey="U">Module code</a> &#187;</li>
+      
+       
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for gdt.missions.gifts.time</h1><div class="highlight"><pre>
+<span></span><span class="c1">#</span>
+<span class="c1"># Copyright 2026 by University College Dublin. All rights reserved.</span>
+<span class="c1">#</span>
+<span class="c1"># Developed by: Derek O&#39;Callaghan</span>
+<span class="c1">#               University College Dublin</span>
+<span class="c1">#               https://www.ucd.ie/</span>
+<span class="c1">#</span>
+<span class="c1"># Builds on:</span>
+<span class="c1">#               Gamma-ray Data Tools - Core Components (https://github.com/USRA-STI/gdt-core)</span>
+<span class="c1">#               Gamma-ray Data Tools - Fermi mission components (https://github.com/USRA-STI/gdt-fermi/)</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except</span>
+<span class="c1"># in compliance with the License. You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#    http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software distributed under the License</span>
+<span class="c1"># is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or</span>
+<span class="c1"># implied. See the License for the specific language governing permissions and limitations under the</span>
+<span class="c1"># License.</span>
+<span class="c1">#</span>
+<span class="kn">from</span> <span class="nn">astropy.time</span> <span class="kn">import</span> <span class="n">TimeFromEpoch</span><span class="p">,</span> <span class="n">Time</span>
+
+<span class="kn">from</span> <span class="nn">gdt.missions.fermi.time</span> <span class="kn">import</span> <span class="n">GbmBurstNumber</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;GiftsSecTime&#39;</span><span class="p">,</span> <span class="s1">&#39;GiftsBurstNumber&#39;</span><span class="p">,</span> <span class="s1">&#39;Time&#39;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="GiftsSecTime">
+<a class="viewcode-back" href="../../../../api/gdt.missions.gifts.time.GiftsSecTime.html#gdt.missions.gifts.time.GiftsSecTime">[docs]</a>
+<span class="k">class</span> <span class="nc">GiftsSecTime</span><span class="p">(</span><span class="n">TimeFromEpoch</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Represents the number of seconds elapsed since Jan 1, 2001, 00:00:00 UTC,</span>
+<span class="sd">    including leap seconds</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;gifts&#39;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;(str): Name of the mission&quot;&quot;&quot;</span>
+
+    <span class="n">unit</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="mi">86400</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;(float): unit in days&quot;&quot;&quot;</span>
+
+    <span class="n">epoch_val</span> <span class="o">=</span> <span class="s1">&#39;2001-01-01 00:01:04.184&#39;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;(str): The epoch in Terrestrial Time&quot;&quot;&quot;</span>
+
+    <span class="n">epoch_val2</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="n">epoch_scale</span> <span class="o">=</span> <span class="s1">&#39;tt&#39;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;(str): The scale of :attr:`epoch_val`&quot;&quot;&quot;</span>
+
+    <span class="n">epoch_format</span> <span class="o">=</span> <span class="s1">&#39;iso&#39;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;(str): Format of :attr:`epoch_val`&quot;&quot;&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="GiftsBurstNumber">
+<a class="viewcode-back" href="../../../../api/gdt.missions.gifts.time.GiftsBurstNumber.html#gdt.missions.gifts.time.GiftsBurstNumber">[docs]</a>
+<span class="k">class</span> <span class="nc">GiftsBurstNumber</span><span class="p">(</span><span class="n">GbmBurstNumber</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Represent date as GIFTS burst number.</span>
+
+<span class="sd">    For now, this reuses the Fermi-GBM burst number implementation.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;gifts_bn&#39;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;(str): The name of the time format&quot;&quot;&quot;</span></div>
+
+
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+
+
+<form action="../../../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright .<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 7.2.6. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

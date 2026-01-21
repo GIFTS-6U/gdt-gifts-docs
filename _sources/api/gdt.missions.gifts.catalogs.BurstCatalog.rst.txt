@@ -1,0 +1,49 @@
+BurstCatalog
+============
+
+.. currentmodule:: gdt.missions.gifts.catalogs
+
+.. autoclass:: BurstCatalog
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~BurstCatalog.catalog
+      ~BurstCatalog.catalog_type
+      ~BurstCatalog.columns
+      ~BurstCatalog.config
+      ~BurstCatalog.num_columns
+      ~BurstCatalog.num_rows
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~BurstCatalog.column_range
+      ~BurstCatalog.get_healpix
+      ~BurstCatalog.get_table
+      ~BurstCatalog.get_tcat
+      ~BurstCatalog.get_trigdat
+      ~BurstCatalog.get_tte
+      ~BurstCatalog.to_dataframe
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: catalog
+   .. autoattribute:: catalog_type
+   .. autoattribute:: columns
+   .. autoattribute:: config
+   .. autoattribute:: num_columns
+   .. autoattribute:: num_rows
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: column_range
+   .. automethod:: get_healpix
+   .. automethod:: get_table
+   .. automethod:: get_tcat
+   .. automethod:: get_trigdat
+   .. automethod:: get_tte
+   .. automethod:: to_dataframe

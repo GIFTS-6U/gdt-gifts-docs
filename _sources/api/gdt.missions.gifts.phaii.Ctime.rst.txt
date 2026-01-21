@@ -1,0 +1,81 @@
+Ctime
+=====
+
+.. currentmodule:: gdt.missions.gifts.phaii
+
+.. autoclass:: Ctime
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~Ctime.data
+      ~Ctime.detector
+      ~Ctime.ebounds
+      ~Ctime.energy_range
+      ~Ctime.filename
+      ~Ctime.gti
+      ~Ctime.hdulist
+      ~Ctime.headers
+      ~Ctime.num_chans
+      ~Ctime.num_hdus
+      ~Ctime.time_range
+      ~Ctime.trigtime
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~Ctime.close
+      ~Ctime.column
+      ~Ctime.columns_as_array
+      ~Ctime.from_data
+      ~Ctime.get_column_names
+      ~Ctime.get_exposure
+      ~Ctime.merge
+      ~Ctime.open
+      ~Ctime.rebin_energy
+      ~Ctime.rebin_time
+      ~Ctime.set_ebounds
+      ~Ctime.slice_energy
+      ~Ctime.slice_time
+      ~Ctime.to_lightcurve
+      ~Ctime.to_pha
+      ~Ctime.to_spectrum
+      ~Ctime.write
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: data
+   .. autoattribute:: detector
+   .. autoattribute:: ebounds
+   .. autoattribute:: energy_range
+   .. autoattribute:: filename
+   .. autoattribute:: gti
+   .. autoattribute:: hdulist
+   .. autoattribute:: headers
+   .. autoattribute:: num_chans
+   .. autoattribute:: num_hdus
+   .. autoattribute:: time_range
+   .. autoattribute:: trigtime
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: close
+   .. automethod:: column
+   .. automethod:: columns_as_array
+   .. automethod:: from_data
+   .. automethod:: get_column_names
+   .. automethod:: get_exposure
+   .. automethod:: merge
+   .. automethod:: open
+   .. automethod:: rebin_energy
+   .. automethod:: rebin_time
+   .. automethod:: set_ebounds
+   .. automethod:: slice_energy
+   .. automethod:: slice_time
+   .. automethod:: to_lightcurve
+   .. automethod:: to_pha
+   .. automethod:: to_spectrum
+   .. automethod:: write

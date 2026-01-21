@@ -1,0 +1,39 @@
+TteHeaders
+==========
+
+.. currentmodule:: gdt.missions.gifts.headers
+
+.. autoclass:: TteHeaders
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~TteHeaders.filetype
+      ~TteHeaders.num_headers
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~TteHeaders.copy
+      ~TteHeaders.creator
+      ~TteHeaders.from_file_headers
+      ~TteHeaders.from_headers
+      ~TteHeaders.keys
+      ~TteHeaders.update
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: filetype
+   .. autoattribute:: num_headers
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: copy
+   .. automethod:: creator
+   .. automethod:: from_file_headers
+   .. automethod:: from_headers
+   .. automethod:: keys
+   .. automethod:: update

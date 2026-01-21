@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gdt.missions.gifts.tte &#8212; GIFTS Gamma-ray Data Tools 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/bootstrap-astropy.css?v=cfc02a30" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=eafc0fe6" />
+    
+    <script src="../../../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
+    <link rel="icon" href="../../../../_static/gdt_favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../../../../index.html"><span id="logotext1">gdt</span><span id="logotext2">-gifts</span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../../../../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../../../../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../../../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li>
+	<a href="../../../../index.html">GIFTS Gamma-ray Data Tools 0.1.0 documentation</a>
+	 &#187;
+      </li>
+      <li><a href="../../../index.html" accesskey="U">Module code</a> &#187;</li>
+      
+       
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for gdt.missions.gifts.tte</h1><div class="highlight"><pre>
+<span></span><span class="c1">#</span>
+<span class="c1"># Copyright 2026 by University College Dublin. All rights reserved.</span>
+<span class="c1">#</span>
+<span class="c1"># Developed by: Derek O&#39;Callaghan</span>
+<span class="c1">#               University College Dublin</span>
+<span class="c1">#               https://www.ucd.ie/</span>
+<span class="c1">#</span>
+<span class="c1"># Builds on:</span>
+<span class="c1">#               Gamma-ray Data Tools - Core Components (https://github.com/USRA-STI/gdt-core)</span>
+<span class="c1">#               Gamma-ray Data Tools - Fermi mission components (https://github.com/USRA-STI/gdt-fermi/)</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except</span>
+<span class="c1"># in compliance with the License. You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#    http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software distributed under the License</span>
+<span class="c1"># is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or</span>
+<span class="c1"># implied. See the License for the specific language governing permissions and limitations under the</span>
+<span class="c1"># License.</span>
+<span class="c1">#</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">gdt.core.tte</span> <span class="kn">import</span> <span class="n">PhotonList</span>
+<span class="kn">from</span> <span class="nn">gdt.missions.fermi.gbm.tte</span> <span class="kn">import</span> <span class="n">GbmTte</span>
+<span class="kn">from</span> <span class="nn">.detectors</span> <span class="kn">import</span> <span class="n">GiftsDetectors</span>
+<span class="kn">from</span> <span class="nn">.headers</span> <span class="kn">import</span> <span class="n">TteHeaders</span><span class="p">,</span> <span class="n">TteTriggerHeaders</span><span class="p">,</span> <span class="n">PhaiiHeaders</span><span class="p">,</span> \
+                     <span class="n">PhaiiTriggerHeaders</span>
+<span class="kn">from</span> <span class="nn">.time</span> <span class="kn">import</span> <span class="n">Time</span>
+<span class="kn">from</span> <span class="nn">.phaii</span> <span class="kn">import</span> <span class="n">GiftsPhaii</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;GiftsTte&#39;</span><span class="p">]</span>
+
+
+<div class="viewcode-block" id="GiftsTte">
+<a class="viewcode-back" href="../../../../api/gdt.missions.gifts.tte.GiftsTte.html#gdt.missions.gifts.tte.GiftsTte">[docs]</a>
+<span class="k">class</span> <span class="nc">GiftsTte</span><span class="p">(</span><span class="n">GbmTte</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Class for Time-Tagged Event data.</span>
+<span class="sd">    &quot;&quot;&quot;</span> 
+    <span class="c1"># TODO: this is duplicated in multiple places e.g. GiftsPhaii</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">detector</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;(str): The detector name&quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">GiftsDetectors</span><span class="o">.</span><span class="n">from_full_name</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;DETNAM&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">name</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;DETNAM&#39;</span><span class="p">]</span>
+
+<div class="viewcode-block" id="GiftsTte.to_phaii">
+<a class="viewcode-back" href="../../../../api/gdt.missions.gifts.tte.GiftsTte.html#gdt.missions.gifts.tte.GiftsTte.to_phaii">[docs]</a>
+    <span class="k">def</span> <span class="nf">to_phaii</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">bin_method</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">time_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">energy_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                 <span class="n">channel_range</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Based on GbmTte.to_phaii()</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">headers_cls</span> <span class="o">=</span> <span class="n">PhaiiTriggerHeaders</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">trigtime</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">PhaiiHeaders</span>
+        <span class="n">headers</span> <span class="o">=</span> <span class="n">headers_cls</span><span class="o">.</span><span class="n">from_file_headers</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">GbmTte</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">to_phaii</span><span class="p">(</span><span class="n">bin_method</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">time_range</span><span class="o">=</span><span class="n">time_range</span><span class="p">,</span> 
+                                <span class="n">energy_range</span><span class="o">=</span><span class="n">energy_range</span><span class="p">,</span> 
+                                <span class="n">channel_range</span><span class="o">=</span><span class="n">channel_range</span><span class="p">,</span> 
+                                <span class="n">phaii_class</span><span class="o">=</span><span class="n">GiftsPhaii</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="GiftsTte.open">
+<a class="viewcode-back" href="../../../../api/gdt.missions.gifts.tte.GiftsTte.html#gdt.missions.gifts.tte.GiftsTte.open">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">open</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Open a TTE FITS file and return the TTE object</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            file_path (str): The file path of the FITS file</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:        </span>
+<span class="sd">            (:class:`GiftsTte`)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Currently impossible to access the FITS HDUs without opening twice, not ideal</span>
+        <span class="c1"># This could be avoided if the original HDUs were retained during opening, but</span>
+        <span class="c1"># they&#39;re rebuilt by each FITS subclass that uses its own headers</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">PhotonList</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">gbm_tte</span> <span class="o">=</span> <span class="n">GbmTte</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+        <span class="n">hdrs</span> <span class="o">=</span> <span class="p">[</span><span class="n">hdu</span><span class="o">.</span><span class="n">header</span> <span class="k">for</span> <span class="n">hdu</span> <span class="ow">in</span> <span class="n">obj</span><span class="o">.</span><span class="n">hdulist</span><span class="p">]</span>
+        <span class="c1"># This is the reason why GbmTte.open() can&#39;t solely be used, </span>
+        <span class="c1"># need to explicitly specify the header classes</span>
+        <span class="n">tte_headers</span> <span class="o">=</span> <span class="n">TteTriggerHeaders</span><span class="o">.</span><span class="n">from_headers</span><span class="p">(</span><span class="n">hdrs</span><span class="p">)</span> <span class="k">if</span> <span class="n">gbm_tte</span><span class="o">.</span><span class="n">trigtime</span> <span class="k">else</span> <span class="n">TteHeaders</span><span class="o">.</span><span class="n">from_headers</span><span class="p">(</span><span class="n">hdrs</span><span class="p">)</span>
+        <span class="n">obj</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+        <span class="n">gifts_tte</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">from_data</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">gbm_tte</span><span class="o">.</span><span class="n">data</span><span class="p">,</span>
+                                  <span class="n">gti</span><span class="o">=</span><span class="n">gbm_tte</span><span class="o">.</span><span class="n">gti</span><span class="p">,</span>
+                                  <span class="n">trigger_time</span><span class="o">=</span><span class="n">gbm_tte</span><span class="o">.</span><span class="n">trigtime</span><span class="p">,</span>
+                                  <span class="n">filename</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">file_path</span><span class="p">),</span>
+                                  <span class="n">headers</span><span class="o">=</span><span class="n">tte_headers</span><span class="p">,</span>
+                                  <span class="n">event_deadtime</span><span class="o">=</span><span class="n">gbm_tte</span><span class="o">.</span><span class="n">event_deadtime</span><span class="p">,</span>
+                                  <span class="n">overflow_deadtime</span><span class="o">=</span><span class="n">gbm_tte</span><span class="o">.</span><span class="n">overflow_deadtime</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">gifts_tte</span></div>
+</div>
+
+        
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+
+
+<form action="../../../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright .<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 7.2.6. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

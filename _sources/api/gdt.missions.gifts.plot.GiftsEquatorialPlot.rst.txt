@@ -1,0 +1,71 @@
+GiftsEquatorialPlot
+===================
+
+.. currentmodule:: gdt.missions.gifts.plot
+
+.. autoclass:: GiftsEquatorialPlot
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~GiftsEquatorialPlot.ax
+      ~GiftsEquatorialPlot.canvas
+      ~GiftsEquatorialPlot.detectors
+      ~GiftsEquatorialPlot.earth
+      ~GiftsEquatorialPlot.effective_area
+      ~GiftsEquatorialPlot.fig
+      ~GiftsEquatorialPlot.fontsize
+      ~GiftsEquatorialPlot.galactic_plane
+      ~GiftsEquatorialPlot.loc_contours
+      ~GiftsEquatorialPlot.loc_posterior
+      ~GiftsEquatorialPlot.sun
+      ~GiftsEquatorialPlot.text_color
+      ~GiftsEquatorialPlot.xlim
+      ~GiftsEquatorialPlot.xscale
+      ~GiftsEquatorialPlot.ylim
+      ~GiftsEquatorialPlot.yscale
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~GiftsEquatorialPlot.add_effective_area
+      ~GiftsEquatorialPlot.add_frame
+      ~GiftsEquatorialPlot.add_localization
+      ~GiftsEquatorialPlot.plot_detector
+      ~GiftsEquatorialPlot.plot_earth
+      ~GiftsEquatorialPlot.plot_galactic_plane
+      ~GiftsEquatorialPlot.plot_heatmap
+      ~GiftsEquatorialPlot.plot_sun
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: ax
+   .. autoattribute:: canvas
+   .. autoattribute:: detectors
+   .. autoattribute:: earth
+   .. autoattribute:: effective_area
+   .. autoattribute:: fig
+   .. autoattribute:: fontsize
+   .. autoattribute:: galactic_plane
+   .. autoattribute:: loc_contours
+   .. autoattribute:: loc_posterior
+   .. autoattribute:: sun
+   .. autoattribute:: text_color
+   .. autoattribute:: xlim
+   .. autoattribute:: xscale
+   .. autoattribute:: ylim
+   .. autoattribute:: yscale
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: add_effective_area
+   .. automethod:: add_frame
+   .. automethod:: add_localization
+   .. automethod:: plot_detector
+   .. automethod:: plot_earth
+   .. automethod:: plot_galactic_plane
+   .. automethod:: plot_heatmap
+   .. automethod:: plot_sun

@@ -1,0 +1,7 @@
+<map id="inheritance61f828887c" name="inheritance61f828887c">
+<area shape="rect" id="node1" title="The base class for coordinate frames." alt="" coords="356,4,496,26"/>
+<area shape="rect" id="node4" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.coords.SpacecraftFrame.html#gdt.core.coords.SpacecraftFrame" target="_top" title="Spacecraft frame. The frame is defined by spacecraft&#39;s quaternion that " alt="" coords="536,4,645,26"/>
+<area shape="rect" id="node2" title="Mixin class to provide shape&#45;changing methods." alt="" coords="190,4,316,26"/>
+<area shape="rect" id="node3" href="../../api/gdt.missions.gifts.frame.GiftsFrame.html#gdt.missions.gifts.frame.GiftsFrame" target="_top" title="The GIFTS spacecraft frame in azimuth and elevation. &#160;The frame is defined " alt="" coords="685,4,764,26"/>
+<area shape="rect" id="node5" title="Mixin class to provide shape&#45;changing methods." alt="" coords="4,4,150,26"/>
+</map>

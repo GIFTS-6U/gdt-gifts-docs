@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GIFTS Localizations (gdt.missions.gifts.localization) &#8212; GIFTS Gamma-ray Data Tools 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-astropy.css?v=cfc02a30" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+    
+    <script src="../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script type="text/javascript" src="../../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../../_static/copybutton.js"></script>
+    <link rel="icon" href="../../_static/gdt_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="GiftsHealPix" href="../../api/gdt.missions.gifts.localization.GiftsHealPix.html" />
+    <link rel="prev" title="GiftsTte" href="../../api/gdt.missions.gifts.tte.GiftsTte.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../../index.html"><span id="logotext1">gdt</span><span id="logotext2">-gifts</span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="../../api/gdt.missions.gifts.localization.GiftsHealPix.html" title="GiftsHealPix">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="../../api/gdt.missions.gifts.tte.GiftsTte.html" title="GiftsTte">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../../index.html">GIFTS Gamma-ray Data Tools 0.1.0 documentation</a>
+	 &#187;
+      </li>
+      
+      <li>GIFTS Localizations (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.localization</span></code>)</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="gifts-localization"></span><section id="gifts-localizations-gdt-missions-gifts-localization">
+<h1>GIFTS Localizations (<a class="reference internal" href="#module-gdt.missions.gifts.localization" title="gdt.missions.gifts.localization"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.localization</span></code></a>)<a class="headerlink" href="#gifts-localizations-gdt-missions-gifts-localization" title="Link to this heading">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The GIFTS localization data implementation and this document are currently based on those provided by
+the <a class="reference external" href="https://astro-gdt.readthedocs.io/projects/astro-gdt-fermi/en/latest/index.html#gdt-fermi" title="(in The Gamma-ray Data Tools v2.2.2)"><span class="xref std std-ref">Fermi Gamma-ray Data Tools</span></a>, and will be revised in future versions.</p>
+</div>
+<p>As part of mission operations, GIFTS wil produce localizations for GRBs and
+disseminate these to the community. GCN notices will be sent to interested
+follow-up observers containing brief summary information, and HEALPix FITS
+files containing the localization will be created and hosted in the <a class="reference internal" href="catalogs.html#gifts-catalogs"><span class="std std-ref">GIFTS catalog</span></a>.
+These localizations contain the best-modeled systematic
+uncertainty in the localization along with assorted metadata such as the
+individual detector pointings and the geocenter location as observed by GIFTS.</p>
+<p>We can read one of these HEALPix files using the <a class="reference internal" href="../../api/gdt.missions.gifts.localization.GiftsHealPix.html#gdt.missions.gifts.localization.GiftsHealPix" title="gdt.missions.gifts.localization.GiftsHealPix"><code class="xref py py-class docutils literal notranslate"><span class="pre">GiftsHealPix</span></code></a> class:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gdt.missions.gifts.localization</span> <span class="kn">import</span> <span class="n">GiftsHealPix</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span> <span class="o">=</span> <span class="n">GiftsHealPix</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;gifts/gifts_healpix_all_bn201105230_v00.fit&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span>
+<span class="go">&lt;GiftsHealPix: gifts_healpix_all_bn201105230_v00.fit</span>
+<span class="go"> NSIDE=256; trigtime=626247072.937016;</span>
+<span class="go"> centroid=(247.49999999999997, 22.508004555237047)&gt;</span>
+</pre></div>
+</div>
+<p>Alternatively, the HEALPix can be retrieved from the <a class="reference internal" href="catalogs.html#gifts-catalogs-retrieve"><span class="std std-ref">current GIFTS burst catalog</span></a>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gdt.missions.gifts.catalogs</span> <span class="kn">import</span> <span class="n">BurstCatalog</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">burstcat</span> <span class="o">=</span> <span class="n">BurstCatalog</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span> <span class="o">=</span> <span class="n">burstcat</span><span class="o">.</span><span class="n">get_healpix</span><span class="p">(</span><span class="n">trigger_name</span><span class="o">=</span><span class="s2">&quot;bn201105230&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Some of the HEALPix-specific info can be accessed (see also
+<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/core/healpix.html#core-healpix" title="(in The Gamma-ray Data Tools v2.2.2)"><span class="xref std std-ref">The HealPix Module</span></a> for more details):</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span><span class="o">.</span><span class="n">nside</span>
+<span class="go">256</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span><span class="o">.</span><span class="n">npix</span>
+<span class="go">786432</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span><span class="o">.</span><span class="n">pixel_area</span> <span class="c1"># (in sq. deg.)</span>
+<span class="go">0.05245585282569793</span>
+</pre></div>
+</div>
+<p>Regarding the localization information, we can retrieve the sky position with the
+highest probability (centroid):</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span><span class="o">.</span><span class="n">centroid</span>
+<span class="go">(247.49999999999997, 22.508004555237047)(48.8671875, 4.181528273111476)</span>
+</pre></div>
+</div>
+<p>Or we can determine the probability of the localization at a particular point
+in the sky:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span><span class="o">.</span><span class="n">probability</span><span class="p">(</span><span class="mf">247.0</span><span class="p">,</span> <span class="mf">23.0</span><span class="p">)</span>
+<span class="go">0.024385005500087997</span>
+</pre></div>
+</div>
+<p>And if we want to determine the confidence level a particular point on the sky
+is relative to the localization:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span><span class="o">.</span><span class="n">confidence</span><span class="p">(</span><span class="mf">230.0</span><span class="p">,</span> <span class="mf">23.0</span><span class="p">)</span>
+<span class="go">0.9999999949639384</span>
+</pre></div>
+</div>
+<p>Often for follow-up observations, it’s useful to know how much sky area the
+localization covers at a some confidence level:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span><span class="o">.</span><span class="n">area</span><span class="p">(</span><span class="mf">0.9</span><span class="p">)</span> <span class="c1"># 90% confidence in units of sq. degrees</span>
+<span class="go">90.38143441867753</span>
+</pre></div>
+</div>
+<p>And for plotting or other purposes, we can retrieve the RA and Dec “paths” for
+a given confidence region.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A confidence region may have many disjoint pieces, so this will be a list of
+arrays</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span><span class="o">.</span><span class="n">confidence_region_path</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="go">[array([[245.68245125,  20.45539571],</span>
+<span class="go">        [245.20779422,  20.61452514],</span>
+<span class="go">        [244.67966574,  20.88901974],</span>
+<span class="go">        [243.90942941,  21.62011173],</span>
+<span class="go">        [243.94919411,  22.62569832],</span>
+<span class="go">        [244.60420875,  23.63128492],</span>
+<span class="go">        [244.67966574,  23.69125127],</span>
+<span class="go">        [245.68245125,  24.32560223],</span>
+<span class="go">        [246.13379762,  24.63687151],</span>
+<span class="go">        [246.68523677,  25.02383647],</span>
+<span class="go">        [247.68802228,  25.45102532],</span>
+<span class="go">        [248.6908078 ,  25.57630047],</span>
+<span class="go">        [249.69359331,  25.24052791],</span>
+<span class="go">        [250.2658784 ,  24.63687151],</span>
+<span class="go">        [250.69637883,  23.7160506 ],</span>
+<span class="go">        [250.74105101,  23.63128492],</span>
+<span class="go">        [250.9913901 ,  22.62569832],</span>
+<span class="go">        [250.69637883,  21.71064994],</span>
+<span class="go">        [250.66464267,  21.62011173],</span>
+<span class="go">        [249.69359331,  20.73834771],</span>
+<span class="go">        [249.42224312,  20.61452514],</span>
+<span class="go">        [248.6908078 ,  20.37904239],</span>
+<span class="go">        [247.68802228,  20.22336904],</span>
+<span class="go">        [246.68523677,  20.29140477],</span>
+<span class="go">        [245.68245125,  20.45539571]])]</span>
+</pre></div>
+</div>
+</div>
+<p>The probability that a point source at a given location
+is associated with the sky map can also be determined (as opposed to the null hypothesis of two
+spatially-unrelated sources):</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span><span class="o">.</span><span class="n">source_probability</span><span class="p">(</span><span class="mf">240.0</span><span class="p">,</span> <span class="mf">25.0</span><span class="p">)</span>
+<span class="go">0.8925370855751724</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span><span class="o">.</span><span class="n">source_probability</span><span class="p">(</span><span class="mf">226.0</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">)</span>
+<span class="go">5.432670266459458e-09</span>
+</pre></div>
+</div>
+<p>For extended sky regions, the <a class="reference internal" href="../../api/gdt.missions.gifts.localization.GiftsHealPix.html#gdt.missions.gifts.localization.GiftsHealPix.region_probability" title="gdt.missions.gifts.localization.GiftsHealPix.region_probability"><code class="xref py py-meth docutils literal notranslate"><span class="pre">region_probability()</span></code></a> method should be used with
+another HEALPix object to return the probability that the two maps are spatially
+associated.</p>
+<p>Other attributes include:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># sun location</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span><span class="o">.</span><span class="n">sun_location</span><span class="o">.</span><span class="n">ra</span><span class="p">,</span> <span class="n">loc</span><span class="o">.</span><span class="n">sun_location</span><span class="o">.</span><span class="n">dec</span>
+<span class="go">(&lt;Longitude 220.52095042 deg&gt;, &lt;Latitude -15.72994648 deg&gt;)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># geocenter location</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span><span class="o">.</span><span class="n">geo_location</span><span class="o">.</span><span class="n">ra</span><span class="p">,</span> <span class="n">loc</span><span class="o">.</span><span class="n">geo_location</span><span class="o">.</span><span class="n">dec</span>
+<span class="go">(&lt;Longitude 170.35542326 deg&gt;, &lt;Latitude -20.29396383 deg&gt;)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># geocenter radius</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span><span class="o">.</span><span class="n">geo_radius</span>
+<span class="go">&lt;Quantity 67.48742939228258 deg&gt;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># detector G0 pointing</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span><span class="o">.</span><span class="n">G0_pointing</span><span class="o">.</span><span class="n">ra</span><span class="p">,</span> <span class="n">loc</span><span class="o">.</span><span class="n">G0_pointing</span><span class="o">.</span><span class="n">dec</span>
+<span class="go">(&lt;Longitude 90.11046324 deg&gt;, &lt;Latitude 41.83312377 deg&gt;)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Fraction of localization on Earth</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loc</span><span class="o">.</span><span class="n">geo_probability</span>
+<span class="go">2.0329307e-13</span>
+</pre></div>
+</div>
+<p>A sky map can be generated from the HEALPix file:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gdt.missions.gifts.plot</span> <span class="kn">import</span> <span class="n">GiftsEquatorialPlot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># initialize</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">skyplot</span> <span class="o">=</span> <span class="n">EquatorialPlot</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># add our HEALPix localization</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">skyplot</span><span class="o">.</span><span class="n">add_localization</span><span class="p">(</span><span class="n">loc</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../_images/locfig1.png" src="../../_images/locfig1.png" />
+<p>By default, the plot shows the localization (purple gradient and black contours),
+the Earth occultation region (blue), the detector pointings (grey circles),
+Galactic Plane (gray/black line), and sun (yellow smiley-face).</p>
+<p>This uses the default plotting options, but customization is also possible
+(see <a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/core/plot/sky.html#plot-sky" title="(in The Gamma-ray Data Tools v2.2.2)"><span class="xref std std-ref">Plotting Sky Maps, Localizations, and
+Wide-field Effective Area</span></a> for more details).</p>
+<section id="reference-api">
+<h2>Reference/API<a class="headerlink" href="#reference-api" title="Link to this heading">¶</a></h2>
+<section id="module-gdt.missions.gifts.localization">
+<span id="gdt-missions-gifts-localization-module"></span><h3>gdt.missions.gifts.localization Module<a class="headerlink" href="#module-gdt.missions.gifts.localization" title="Link to this heading">¶</a></h3>
+<section id="classes">
+<h4>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h4>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../api/gdt.missions.gifts.localization.GiftsHealPix.html#gdt.missions.gifts.localization.GiftsHealPix" title="gdt.missions.gifts.localization.GiftsHealPix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GiftsHealPix</span></code></a>()</p></td>
+<td><p>Class for GIFTS HEALPix localization files.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="class-inheritance-diagram">
+<h4>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Link to this heading">¶</a></h4>
+<div class="graphviz"><img src="../../_images/inheritance-a08a6567bb4d9b098131d6d5c1c71b0be4c19e03.png" alt="Inheritance diagram of gdt.missions.gifts.localization.GiftsHealPix" usemap="#inheritance06ad5211ee" class="inheritance graphviz" /></div>
+<map id="inheritance06ad5211ee" name="inheritance06ad5211ee">
+<area shape="rect" id="node3" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.file.FitsFileContextManager.html#gdt.core.file.FitsFileContextManager" target="_top" title="A context manager for FITS files. &#160;Includes some convenience functions." alt="" coords="327,5,488,28"/>
+<area shape="rect" id="node4" href="https://astro-gdt.readthedocs.io/projects/astro-gdt-fermi/en/latest/api/gdt.missions.fermi.gbm.localization.GbmHealPix.html#gdt.missions.fermi.gbm.localization.GbmHealPix" target="_top" title="Class for GBM HEALPix localization files." alt="" coords="532,28,625,51"/>
+<area shape="rect" id="node6" href="../../api/gdt.missions.gifts.localization.GiftsHealPix.html#gdt.missions.gifts.localization.GiftsHealPix" target="_top" title="Class for GIFTS HEALPix localization files." alt="" coords="669,28,763,51"/>
+<area shape="rect" id="node5" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.healpix.HealPixLocalization.html#gdt.core.healpix.HealPixLocalization" target="_top" title="Class for localization HEALPix files" alt="" coords="338,50,476,73"/>
+<area shape="rect" id="node7" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.healpix.HealPix.html#gdt.core.healpix.HealPix" target="_top" title="Base class for HEALPix files" alt="" coords="166,50,232,73"/>
+</map></section>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">GIFTS Localizations (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.localization</span></code>)</a><ul>
+<li><a class="reference internal" href="#reference-api">Reference/API</a><ul>
+<li><a class="reference internal" href="#module-gdt.missions.gifts.localization">gdt.missions.gifts.localization Module</a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#class-inheritance-diagram">Class Inheritance Diagram</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../../api/gdt.missions.gifts.tte.GiftsTte.html"
+                          title="previous chapter">GiftsTte</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../../api/gdt.missions.gifts.localization.GiftsHealPix.html"
+                          title="next chapter">GiftsHealPix</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/missions/gifts/localization.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<form action="../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="../../_sources/missions/gifts/localization.rst.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright .<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 7.2.6. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

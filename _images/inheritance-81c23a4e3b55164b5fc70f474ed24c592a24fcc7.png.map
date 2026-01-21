@@ -1,0 +1,9 @@
+<map id="inheritancec7a24b6d0a" name="inheritancec7a24b6d0a">
+<area shape="rect" id="node1" title="Helper class that provides a standard way to create an ABC using" alt="" coords="21,225,93,251"/>
+<area shape="rect" id="node2" title="An abstract base class for context managers." alt="" coords="156,225,340,251"/>
+<area shape="rect" id="node4" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.file.FitsFileContextManager.html#gdt.core.file.FitsFileContextManager" target="_top" title="A context manager for FITS files. &#160;Includes some convenience functions." alt="" coords="388,225,564,251"/>
+<area shape="rect" id="node3" href="../../api/gdt.missions.gifts.trigdat.BackRates.html#gdt.missions.gifts.trigdat.BackRates" target="_top" title="GIFTS background rates data in Trigdat." alt="" coords="11,176,102,201"/>
+<area shape="rect" id="node7" href="../../api/gdt.missions.gifts.trigdat.Trigdat.html#gdt.missions.gifts.trigdat.Trigdat" target="_top" title="Class for the GIFTS Trigger Data" alt="" coords="612,225,684,251"/>
+<area shape="rect" id="node5" href="../../api/gdt.missions.gifts.trigdat.FswLocation.html#gdt.missions.gifts.trigdat.FswLocation" target="_top" title="Class for the Flight Software localization information." alt="" coords="5,103,108,128"/>
+<area shape="rect" id="node6" href="../../api/gdt.missions.gifts.trigdat.MaxRates.html#gdt.missions.gifts.trigdat.MaxRates" target="_top" title="GIFTS MAXRATES and TRIGRATE data in Trigdat." alt="" coords="13,29,100,55"/>
+</map>

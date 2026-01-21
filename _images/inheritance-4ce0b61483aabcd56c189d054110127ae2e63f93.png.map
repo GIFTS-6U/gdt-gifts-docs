@@ -1,0 +1,10 @@
+<map id="inheritancef4dfd5ce88" name="inheritancef4dfd5ce88">
+<area shape="rect" id="node1" title="Helper class that provides a standard way to create an ABC using" alt="" coords="4,23,57,41"/>
+<area shape="rect" id="node2" title="An abstract base class for context managers." alt="" coords="92,23,228,41"/>
+<area shape="rect" id="node6" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.file.FitsFileContextManager.html#gdt.core.file.FitsFileContextManager" target="_top" title="A context manager for FITS files. &#160;Includes some convenience functions." alt="" coords="263,23,392,41"/>
+<area shape="rect" id="node3" href="../../api/gdt.missions.gifts.phaii.Cspec.html#gdt.missions.gifts.phaii.Cspec" target="_top" title="Class for GIFTS CSPEC data." alt="" coords="711,4,764,23"/>
+<area shape="rect" id="node4" href="../../api/gdt.missions.gifts.phaii.GiftsPhaii.html#gdt.missions.gifts.phaii.GiftsPhaii" target="_top" title="PHAII class for GIFTS time history spectra." alt="" coords="614,23,676,41"/>
+<area shape="rect" id="node5" href="../../api/gdt.missions.gifts.phaii.Ctime.html#gdt.missions.gifts.phaii.Ctime" target="_top" title="Class for GIFTS CTIME data." alt="" coords="711,40,764,59"/>
+<area shape="rect" id="node8" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.phaii.Phaii.html#gdt.core.phaii.Phaii" target="_top" title="PHAII class for time series of spectra." alt="" coords="428,23,481,41"/>
+<area shape="rect" id="node7" href="https://astro-gdt.readthedocs.io/projects/astro-gdt-fermi/en/latest/api/gdt.missions.fermi.gbm.phaii.GbmPhaii.html#gdt.missions.fermi.gbm.phaii.GbmPhaii" target="_top" title="PHAII class for GBM time history spectra." alt="" coords="516,23,579,41"/>
+</map>

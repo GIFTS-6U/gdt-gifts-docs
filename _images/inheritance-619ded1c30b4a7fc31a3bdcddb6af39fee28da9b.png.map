@@ -1,0 +1,8 @@
+<map id="inheritance34578ccc22" name="inheritance34578ccc22">
+<area shape="rect" id="node1" title="Helper class that provides a standard way to create an ABC using" alt="" coords="4,4,64,26"/>
+<area shape="rect" id="node2" title="An abstract base class for context managers." alt="" coords="104,4,258,26"/>
+<area shape="rect" id="node3" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.file.FitsFileContextManager.html#gdt.core.file.FitsFileContextManager" target="_top" title="A context manager for FITS files. &#160;Includes some convenience functions." alt="" coords="298,4,445,26"/>
+<area shape="rect" id="node5" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.tte.PhotonList.html#gdt.core.tte.PhotonList" target="_top" title="Class for Photon Lists or Time&#45;Tagged Event data" alt="" coords="485,4,560,26"/>
+<area shape="rect" id="node4" href="https://astro-gdt.readthedocs.io/projects/astro-gdt-fermi/en/latest/api/gdt.missions.fermi.gbm.tte.GbmTte.html#gdt.missions.fermi.gbm.tte.GbmTte" target="_top" title="Class for Time&#45;Tagged Event data." alt="" coords="600,4,662,26"/>
+<area shape="rect" id="node6" href="../../api/gdt.missions.gifts.tte.GiftsTte.html#gdt.missions.gifts.tte.GiftsTte" target="_top" title="Class for Time&#45;Tagged Event data." alt="" coords="702,4,764,26"/>
+</map>

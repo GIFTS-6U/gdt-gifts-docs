@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GIFTS Gamma-ray Data Tools Documentation &#8212; GIFTS Gamma-ray Data Tools 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/bootstrap-astropy.css?v=cfc02a30" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
+    
+    <script src="_static/documentation_options.js?v=01f34227"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/sidebar.js"></script>
+    <script type="text/javascript" src="_static/copybutton.js"></script>
+    <link rel="icon" href="_static/gdt_favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation" href="install.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="#"><span id="logotext1">gdt</span><span id="logotext2">-gifts</span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="genindex.html">Index</a></li>
+    <li><a title="Module Index" href="py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="install.html" title="Installation">
+	  next &raquo;
+	</a>
+      </li>
+      <li>
+	<a href="#">GIFTS Gamma-ray Data Tools 0.1.0 documentation</a>
+	 &#187;
+      </li>
+      
+       
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="gifts-gamma-ray-data-tools-documentation">
+<span id="gdt-gifts"></span><h1>GIFTS Gamma-ray Data Tools Documentation<a class="headerlink" href="#gifts-gamma-ray-data-tools-documentation" title="Link to this heading">¶</a></h1>
+<figure class="align-default">
+<img alt="_images/gdt-gifts_logo.png" src="_images/gdt-gifts_logo.png" />
+</figure>
+<p>The <a class="reference external" href="https://github.com/GIFTS-6U/gdt-gifts">GIFTS Gamma-ray Data Tools (GDT)</a> is a toolkit for GIFTS data products, which is built on the
+<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/index.html#gdt-core" title="(in The Gamma-ray Data Tools v2.2.2)"><span class="xref std std-ref">GDT Core Package</span></a> and <a class="reference external" href="https://astro-gdt.readthedocs.io/projects/astro-gdt-fermi/en/latest/index.html#gdt-fermi" title="(in The Gamma-ray Data Tools v2.2.2)"><span class="xref std std-ref">Fermi Gamma-ray Data Tools</span></a>.</p>
+<p>Gamma-ray Investigation of the Full Transient Sky (GIFTS) is a 6U CubeSat under development, whose mission aim
+is the detection and localization of gamma-ray bursts (GRBs) from low Earth orbit in the multi-messenger
+era. The GIFTS instrument comprises six cerium bromide (<span class="math notranslate nohighlight">\(\mathrm{CeBr}_3\)</span>) scintillator detectors with different
+orientations, which are arranged into two three-detector clusters within the CubeSat housing,
+and will have the capability to detect gamma rays in an energy range of approximately 30 keV to 2 MeV.
+The current toolkit is a prototype that services an <a class="reference external" href="https://zenodo.org/records/17295200">exemplar GIFTS catalog containing simulated GIFTS data products</a>
+generated during
+payload processing pipeline development. This exemplar catalog illustrates the expected contents of the
+the public data catalog that will be provided following the GIFTS mission launch, which will also be accompanied
+by corresponding future versions of the toolkit.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The current version of the toolkit is intended to be illustrative of the expected post-launch version,
+with the implementation and documentation intentionally inspired by and similar to that of the <a class="reference external" href="https://astro-gdt.readthedocs.io/projects/astro-gdt-fermi/en/latest/index.html#gdt-fermi" title="(in The Gamma-ray Data Tools v2.2.2)"><span class="xref std std-ref">Fermi Gamma-ray Data Tools</span></a>.
+It is envisaged that the toolkit and documentation will be significantly revised in future releases.</p>
+<p>All <a class="reference internal" href="#gifts-data-types"><span class="std std-ref">GIFTS data product types</span></a> are described using products contained in the
+<a class="reference internal" href="missions/gifts/catalogs.html#gifts-catalogs"><span class="std std-ref">current exemplar GIFTS burst catalog</span></a>, which were created using the approach described in
+<a class="reference external" href="http://2026_GIFTS_paper">O’Callaghan et al., CubeSat Payload Processing Pipeline Development For Gamma-Ray Burst Detection (2026) (will be updated following publication)</a>.</p>
+</div>
+<p class="rubric">Citing</p>
+<p>If you use the GIFTS Gamma-ray Data Tools in your research and publications,
+please acknowledgment and cite this work (the entry for the journal paper will updated following publication) using the following BibTex entries:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@article</span><span class="p">{</span><span class="n">OCallaghanCubesatPayloadProcessingGrb2026</span><span class="p">,</span>
+         <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Derek</span> <span class="n">O</span><span class="s1">&#39;Callaghan and Alexey Uliyanov and Cathal McCabe and Pádraig McDermott and Cuán de Barra and Sheila McBreen},</span>
+         <span class="n">title</span> <span class="o">=</span> <span class="p">{{</span><span class="n">CubeSat</span> <span class="n">Payload</span> <span class="n">Processing</span> <span class="n">Pipeline</span> <span class="n">Development</span> <span class="n">For</span> <span class="n">Gamma</span><span class="o">-</span><span class="n">Ray</span> <span class="n">Burst</span> <span class="n">Detection</span><span class="p">}},</span>
+         <span class="n">volume</span> <span class="o">=</span> <span class="p">{</span><span class="n">TODO</span><span class="p">},</span>
+         <span class="n">journal</span> <span class="o">=</span> <span class="p">{</span><span class="n">TODO</span><span class="p">},</span>
+         <span class="n">number</span> <span class="o">=</span> <span class="p">{</span><span class="n">TODO</span><span class="p">},</span>
+         <span class="n">publisher</span> <span class="o">=</span> <span class="p">{</span><span class="n">TODO</span><span class="p">},</span>
+         <span class="n">pages</span> <span class="o">=</span> <span class="p">{</span><span class="n">TODO</span><span class="p">},</span>
+         <span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2026</span><span class="p">},</span>
+         <span class="n">doi</span> <span class="o">=</span> <span class="p">{</span><span class="n">TODO_doi</span><span class="p">},</span>
+         <span class="n">URL</span> <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">TODO_doi</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@misc</span><span class="p">{</span><span class="n">GDT</span><span class="o">-</span><span class="n">GIFTS</span><span class="p">,</span>
+      <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Derek</span> <span class="n">O</span><span class="s1">&#39;Callaghan},</span>
+      <span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">GIFTS</span> <span class="n">Gamma</span><span class="o">-</span><span class="n">ray</span> <span class="n">Data</span> <span class="n">Tools</span><span class="p">:</span> <span class="n">v0</span><span class="mf">.1.0</span><span class="p">},</span>
+      <span class="n">year</span> <span class="o">=</span> <span class="mi">2026</span><span class="p">,</span>
+      <span class="n">url</span> <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">GIFTS</span><span class="o">-</span><span class="mi">6</span><span class="n">U</span><span class="o">/</span><span class="n">gdt</span><span class="o">-</span><span class="n">gifts</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@dataset</span><span class="p">{</span><span class="n">OCallaghanGiftsExemplarCatalog2026</span><span class="p">,</span>
+ <span class="n">author</span>       <span class="o">=</span> <span class="p">{</span><span class="n">Derek</span> <span class="n">O</span><span class="s1">&#39;Callaghan},</span>
+ <span class="n">title</span>        <span class="o">=</span> <span class="p">{</span><span class="n">GIFTS</span> <span class="n">Exemplar</span> <span class="n">Gamma</span><span class="o">-</span><span class="n">ray</span> <span class="n">Bursts</span> <span class="p">(</span><span class="n">GRBs</span><span class="p">)</span> <span class="n">Catalog</span> <span class="p">[</span><span class="n">Data</span> <span class="nb">set</span><span class="p">]},</span>
+ <span class="n">month</span>        <span class="o">=</span> <span class="n">jan</span><span class="p">,</span>
+ <span class="n">year</span>         <span class="o">=</span> <span class="mi">2026</span><span class="p">,</span>
+ <span class="n">publisher</span>    <span class="o">=</span> <span class="p">{</span><span class="n">Zenodo</span><span class="p">},</span>
+ <span class="n">version</span>      <span class="o">=</span> <span class="p">{</span><span class="mf">0.1.0</span><span class="p">},</span>
+ <span class="n">doi</span>          <span class="o">=</span> <span class="p">{</span><span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.17295200</span><span class="p">},</span>
+ <span class="n">url</span>          <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.17295200</span><span class="p">},</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p class="rubric">Acknowledgments</p>
+<p>This publication has emanated from research funded by Taighde Éireann - Research Ireland under Grant numbers 21/FFP-A/9043, 17/CDA/4723, 19/FFP/6777, and GOIPG/2023/3741 and also supported by the Disruptive Technologies Innovation Fund (Call 4), managed by the Department of Enterprise, Trade and Employment and administered by Enterprise Ireland. NSSPI: National Space Subsystems and Payloads Initiative, Contract Ref: DT 2021 0353.</p>
+</section>
+<section id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installation</a></li>
+</ul>
+</div>
+</section>
+<section id="user-documentation">
+<h1>User Documentation<a class="headerlink" href="#user-documentation" title="Link to this heading">¶</a></h1>
+<section id="gifts-definitions">
+<h2>GIFTS Definitions<a class="headerlink" href="#gifts-definitions" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="missions/gifts/time.html">GIFTS Mission Epoch  (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.time</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missions/gifts/frame.html">GIFTS Spacecraft Frame (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.frame</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missions/gifts/plot.html">GIFTS-specific Plot Classes (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.plot</span></code>)</a></li>
+</ul>
+</div>
+</section>
+<section id="gifts">
+<h2>GIFTS<a class="headerlink" href="#gifts" title="Link to this heading">¶</a></h2>
+<section id="instrument-definitions">
+<h3>Instrument Definitions<a class="headerlink" href="#instrument-definitions" title="Link to this heading">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="missions/gifts/detectors.html">GIFTS Detector Definitions (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.detectors</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missions/gifts/region.html">GIFTS High Particle Flux Region Boundary Definitions (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.region</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missions/gifts/headers.html">GIFTS FITS Headers (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.headers</span></code>)</a></li>
+</ul>
+</div>
+</section>
+<section id="data-types">
+<span id="gifts-data-types"></span><h3>Data Types<a class="headerlink" href="#data-types" title="Link to this heading">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="missions/gifts/tcat.html">GIFTS Trigger Catalog Data (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.tcat</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missions/gifts/trigdat.html">GIFTS Trigger Data (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.trigdat</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missions/gifts/tte.html">GIFTS TTE Data (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.tte</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missions/gifts/localization.html">GIFTS Localizations (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.localization</span></code>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="missions/gifts/phaii.html">GIFTS PHAII Data (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.phaii</span></code>)</a></li>
+</ul>
+</div>
+</section>
+<section id="data-catalogs">
+<h3>Data Catalogs<a class="headerlink" href="#data-catalogs" title="Link to this heading">¶</a></h3>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="missions/gifts/catalogs.html">GIFTS Catalogs (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.catalogs</span></code>)</a></li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="license">
+<h1>License<a class="headerlink" href="#license" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="license.html">Apache License</a></li>
+</ul>
+</div>
+<section id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">GIFTS Gamma-ray Data Tools Documentation</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li><a class="reference internal" href="#user-documentation">User Documentation</a><ul>
+<li><a class="reference internal" href="#gifts-definitions">GIFTS Definitions</a></li>
+<li><a class="reference internal" href="#gifts">GIFTS</a><ul>
+<li><a class="reference internal" href="#instrument-definitions">Instrument Definitions</a></li>
+<li><a class="reference internal" href="#data-types">Data Types</a></li>
+<li><a class="reference internal" href="#data-catalogs">Data Catalogs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#license">License</a><ul>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+</ul>
+
+
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="install.html"
+                          title="next chapter">Installation</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<form action="search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="_sources/index.rst.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright .<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 7.2.6. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

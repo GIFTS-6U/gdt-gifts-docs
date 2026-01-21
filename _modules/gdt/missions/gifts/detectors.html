@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gdt.missions.gifts.detectors &#8212; GIFTS Gamma-ray Data Tools 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/bootstrap-astropy.css?v=cfc02a30" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=eafc0fe6" />
+    
+    <script src="../../../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
+    <link rel="icon" href="../../../../_static/gdt_favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../../../../index.html"><span id="logotext1">gdt</span><span id="logotext2">-gifts</span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../../../../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../../../../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../../../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li>
+	<a href="../../../../index.html">GIFTS Gamma-ray Data Tools 0.1.0 documentation</a>
+	 &#187;
+      </li>
+      <li><a href="../../../index.html" accesskey="U">Module code</a> &#187;</li>
+      
+       
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for gdt.missions.gifts.detectors</h1><div class="highlight"><pre>
+<span></span><span class="c1">#</span>
+<span class="c1"># Copyright 2026 by University College Dublin. All rights reserved.</span>
+<span class="c1">#</span>
+<span class="c1"># Developed by: Derek O&#39;Callaghan</span>
+<span class="c1">#               University College Dublin</span>
+<span class="c1">#               https://www.ucd.ie/</span>
+<span class="c1">#</span>
+<span class="c1"># Builds on:</span>
+<span class="c1">#               Gamma-ray Data Tools - Core Components (https://github.com/USRA-STI/gdt-core)</span>
+<span class="c1">#               Gamma-ray Data Tools - Fermi mission components (https://github.com/USRA-STI/gdt-fermi/)</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except</span>
+<span class="c1"># in compliance with the License. You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#    http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software distributed under the License</span>
+<span class="c1"># is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or</span>
+<span class="c1"># implied. See the License for the specific language governing permissions and limitations under the</span>
+<span class="c1"># License.</span>
+<span class="c1">#</span>
+
+<span class="kn">import</span> <span class="nn">astropy.units</span> <span class="k">as</span> <span class="nn">u</span>
+
+<span class="kn">from</span> <span class="nn">gdt.core.detector</span> <span class="kn">import</span> <span class="n">Detectors</span>
+<span class="kn">from</span> <span class="nn">gdt.missions.fermi.gbm.detectors</span> <span class="kn">import</span> <span class="n">GbmDetectors</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;GiftsDetectors&quot;</span><span class="p">,</span> <span class="s2">&quot;GiftsGbmDetectors&quot;</span><span class="p">]</span>
+
+<span class="c1"># unfortunately Sphinx has a major bug that prevents the autodoc of Enums,</span>
+<span class="c1"># so we have to define all of this in the docstring...</span>
+
+
+<div class="viewcode-block" id="GiftsDetectors">
+<a class="viewcode-back" href="../../../../api/gdt.missions.gifts.detectors.GiftsDetectors.html#gdt.missions.gifts.detectors.GiftsDetectors">[docs]</a>
+<span class="k">class</span> <span class="nc">GiftsDetectors</span><span class="p">(</span><span class="n">Detectors</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The GIFTS Detector name and orientation definitions.</span>
+
+<span class="sd">    .. rubric:: Attributes Summary</span>
+<span class="sd">    .. autosummary::</span>
+
+<span class="sd">      azimuth</span>
+<span class="sd">      elevation</span>
+<span class="sd">      full_name</span>
+<span class="sd">      number</span>
+<span class="sd">      zenith</span>
+
+<span class="sd">    .. rubric:: Methods Summary</span>
+
+<span class="sd">    .. autosummary::</span>
+
+<span class="sd">      from_full_name</span>
+<span class="sd">      from_num</span>
+<span class="sd">      from_str</span>
+<span class="sd">      pointing</span>
+<span class="sd">      skycoord</span>
+
+<span class="sd">    .. rubric:: Attributes Documentation</span>
+
+<span class="sd">    .. autoattribute:: azimuth</span>
+<span class="sd">    .. autoattribute:: elevation</span>
+<span class="sd">    .. autoattribute:: full_name</span>
+<span class="sd">    .. autoattribute:: number</span>
+<span class="sd">    .. autoattribute:: zenith</span>
+
+<span class="sd">    .. rubric:: Methods Documentation</span>
+
+<span class="sd">    .. automethod:: from_full_name</span>
+<span class="sd">    .. automethod:: from_num</span>
+<span class="sd">    .. automethod:: from_str</span>
+<span class="sd">    .. automethod:: pointing</span>
+<span class="sd">    .. automethod:: skycoord</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">G0</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;G0&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">247.824</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="mf">43.958</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
+    <span class="n">G1</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;G1&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">180</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
+    <span class="n">G2</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;G2&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">112.176</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="mf">43.958</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
+    <span class="n">G3</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;G3&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">67.824</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="mf">43.958</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
+    <span class="n">G4</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;G4&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span>
+    <span class="n">G5</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;G5&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">292.176</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">,</span> <span class="mf">43.958</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">deg</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="GiftsGbmDetectors">
+<a class="viewcode-back" href="../../../../api/gdt.missions.gifts.detectors.GiftsGbmDetectors.html#gdt.missions.gifts.detectors.GiftsGbmDetectors">[docs]</a>
+<span class="k">class</span> <span class="nc">GiftsGbmDetectors</span><span class="p">(</span><span class="n">Detectors</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;The GIFTS and GBM Detector name and orientation definitions.</span>
+<span class="sd">       This is used for analysis that combines both detectors</span>
+<span class="sd">       e.g. localization plots.</span>
+
+<span class="sd">    .. rubric:: Attributes Summary</span>
+<span class="sd">    .. autosummary::</span>
+
+<span class="sd">      azimuth</span>
+<span class="sd">      elevation</span>
+<span class="sd">      full_name</span>
+<span class="sd">      number</span>
+<span class="sd">      zenith</span>
+
+<span class="sd">    .. rubric:: Methods Summary</span>
+
+<span class="sd">    .. autosummary::</span>
+
+<span class="sd">      from_full_name</span>
+<span class="sd">      from_num</span>
+<span class="sd">      from_str</span>
+<span class="sd">      pointing</span>
+<span class="sd">      skycoord</span>
+
+<span class="sd">    .. rubric:: Attributes Documentation</span>
+
+<span class="sd">    .. autoattribute:: azimuth</span>
+<span class="sd">    .. autoattribute:: elevation</span>
+<span class="sd">    .. autoattribute:: full_name</span>
+<span class="sd">    .. autoattribute:: number</span>
+<span class="sd">    .. autoattribute:: zenith</span>
+
+<span class="sd">    .. rubric:: Methods Documentation</span>
+
+<span class="sd">    .. automethod:: from_full_name</span>
+<span class="sd">    .. automethod:: from_num</span>
+<span class="sd">    .. automethod:: from_str</span>
+<span class="sd">    .. automethod:: pointing</span>
+<span class="sd">    .. automethod:: skycoord</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">G0</span> <span class="o">=</span> <span class="n">GiftsDetectors</span><span class="o">.</span><span class="n">G0</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">G1</span> <span class="o">=</span> <span class="n">GiftsDetectors</span><span class="o">.</span><span class="n">G1</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">G2</span> <span class="o">=</span> <span class="n">GiftsDetectors</span><span class="o">.</span><span class="n">G2</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">G3</span> <span class="o">=</span> <span class="n">GiftsDetectors</span><span class="o">.</span><span class="n">G3</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">G4</span> <span class="o">=</span> <span class="n">GiftsDetectors</span><span class="o">.</span><span class="n">G4</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">G5</span> <span class="o">=</span> <span class="n">GiftsDetectors</span><span class="o">.</span><span class="n">G5</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">n0</span> <span class="o">=</span> <span class="n">GbmDetectors</span><span class="o">.</span><span class="n">n0</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">n1</span> <span class="o">=</span> <span class="n">GbmDetectors</span><span class="o">.</span><span class="n">n1</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">n2</span> <span class="o">=</span> <span class="n">GbmDetectors</span><span class="o">.</span><span class="n">n2</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">n3</span> <span class="o">=</span> <span class="n">GbmDetectors</span><span class="o">.</span><span class="n">n3</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">n4</span> <span class="o">=</span> <span class="n">GbmDetectors</span><span class="o">.</span><span class="n">n4</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">n5</span> <span class="o">=</span> <span class="n">GbmDetectors</span><span class="o">.</span><span class="n">n5</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">n6</span> <span class="o">=</span> <span class="n">GbmDetectors</span><span class="o">.</span><span class="n">n6</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">n7</span> <span class="o">=</span> <span class="n">GbmDetectors</span><span class="o">.</span><span class="n">n7</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">n8</span> <span class="o">=</span> <span class="n">GbmDetectors</span><span class="o">.</span><span class="n">n8</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">n9</span> <span class="o">=</span> <span class="n">GbmDetectors</span><span class="o">.</span><span class="n">n9</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">na</span> <span class="o">=</span> <span class="n">GbmDetectors</span><span class="o">.</span><span class="n">na</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">nb</span> <span class="o">=</span> <span class="n">GbmDetectors</span><span class="o">.</span><span class="n">nb</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">b0</span> <span class="o">=</span> <span class="n">GbmDetectors</span><span class="o">.</span><span class="n">b0</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">b1</span> <span class="o">=</span> <span class="n">GbmDetectors</span><span class="o">.</span><span class="n">b1</span><span class="o">.</span><span class="n">value</span></div>
+
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+
+
+<form action="../../../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright .<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 7.2.6. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

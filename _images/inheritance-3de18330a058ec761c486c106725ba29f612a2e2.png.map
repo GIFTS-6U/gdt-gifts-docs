@@ -1,0 +1,8 @@
+<map id="inheritancef97489596d" name="inheritancef97489596d">
+<area shape="rect" id="node1" href="../../api/gdt.missions.gifts.region.GiftsNorthRegion300.html#gdt.missions.gifts.region.GiftsNorthRegion300" target="_top" title="GiftsNorthRegion300(region: str = &#39;north&#39;, altitude: int = 300)" alt="" coords="442,5,599,31"/>
+<area shape="rect" id="node2" href="../../api/gdt.missions.gifts.region.HighParticleFluxRegion.html#gdt.missions.gifts.region.HighParticleFluxRegion" target="_top" title="A base class for a high particle flux region boundary in Earth " alt="" coords="220,80,393,105"/>
+<area shape="rect" id="node3" href="../../api/gdt.missions.gifts.region.GiftsNorthRegion500.html#gdt.missions.gifts.region.GiftsNorthRegion500" target="_top" title="GiftsNorthRegion500(region: str = &#39;north&#39;, altitude: int = 500)" alt="" coords="442,55,599,80"/>
+<area shape="rect" id="node4" href="../../api/gdt.missions.gifts.region.GiftsSouthRegion300.html#gdt.missions.gifts.region.GiftsSouthRegion300" target="_top" title="GiftsSouthRegion300(region: str = &#39;south&#39;, altitude: int = 300)" alt="" coords="441,104,600,129"/>
+<area shape="rect" id="node5" href="../../api/gdt.missions.gifts.region.GiftsSouthRegion500.html#gdt.missions.gifts.region.GiftsSouthRegion500" target="_top" title="GiftsSouthRegion500(region: str = &#39;south&#39;, altitude: int = 500)" alt="" coords="441,153,600,179"/>
+<area shape="rect" id="node6" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.geomagnetic.SouthAtlanticAnomaly.html#gdt.core.geomagnetic.SouthAtlanticAnomaly" target="_top" title="A base class for a South Atlantic Anomaly (SAA) boundary in Earth " alt="" coords="5,80,172,105"/>
+</map>

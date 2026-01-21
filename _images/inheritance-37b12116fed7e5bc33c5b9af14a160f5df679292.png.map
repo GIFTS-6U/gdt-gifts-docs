@@ -1,0 +1,6 @@
+<map id="inheritance2affa56b26" name="inheritance2affa56b26">
+<area shape="rect" id="node1" title="Helper class that provides a standard way to create an ABC using" alt="" coords="5,29,77,55"/>
+<area shape="rect" id="node2" title="An abstract base class for context managers." alt="" coords="125,29,309,55"/>
+<area shape="rect" id="node3" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.file.FitsFileContextManager.html#gdt.core.file.FitsFileContextManager" target="_top" title="A context manager for FITS files. &#160;Includes some convenience functions." alt="" coords="357,29,533,55"/>
+<area shape="rect" id="node4" href="../../api/gdt.missions.gifts.tcat.Tcat.html#gdt.missions.gifts.tcat.Tcat" target="_top" title="TCAT (Trigger CATalog) file class." alt="" coords="581,29,653,55"/>
+</map>

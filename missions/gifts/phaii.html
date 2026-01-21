@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GIFTS PHAII Data (gdt.missions.gifts.phaii) &#8212; GIFTS Gamma-ray Data Tools 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-astropy.css?v=cfc02a30" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+    
+    <script src="../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script type="text/javascript" src="../../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../../_static/copybutton.js"></script>
+    <link rel="icon" href="../../_static/gdt_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="GiftsPhaii" href="../../api/gdt.missions.gifts.phaii.GiftsPhaii.html" />
+    <link rel="prev" title="GiftsHealPix" href="../../api/gdt.missions.gifts.localization.GiftsHealPix.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../../index.html"><span id="logotext1">gdt</span><span id="logotext2">-gifts</span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="../../api/gdt.missions.gifts.phaii.GiftsPhaii.html" title="GiftsPhaii">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="../../api/gdt.missions.gifts.localization.GiftsHealPix.html" title="GiftsHealPix">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../../index.html">GIFTS Gamma-ray Data Tools 0.1.0 documentation</a>
+	 &#187;
+      </li>
+      
+      <li>GIFTS PHAII Data (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.phaii</span></code>)</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="gifts-phaii"></span><section id="gifts-phaii-data-gdt-missions-gifts-phaii">
+<h1>GIFTS PHAII Data (<a class="reference internal" href="#module-gdt.missions.gifts.phaii" title="gdt.missions.gifts.phaii"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.phaii</span></code></a>)<a class="headerlink" href="#gifts-phaii-data-gdt-missions-gifts-phaii" title="Link to this heading">¶</a></h1>
+<p>The primary science data produced by GIFTS post-launch will be summarized as a time history of
+spectra, which will be provided as temporally pre-binned (CTIME and CSPEC) or
+temporally unbinned (TTE). These data types will be continuously produced for
+each GIFTS trigger.
+The generated FITS data files will be read by the <a class="reference internal" href="../../api/gdt.missions.gifts.phaii.GiftsPhaii.html#gdt.missions.gifts.phaii.GiftsPhaii" title="gdt.missions.gifts.phaii.GiftsPhaii"><code class="xref py py-class docutils literal notranslate"><span class="pre">GiftsPhaii</span></code></a> class.</p>
+<p>For more details about working with PHAII data, see
+<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/core/temporal/duration.html#core-phaii" title="(in The Gamma-ray Data Tools v2.2.2)"><span class="xref std std-ref">PHAII Files</span></a>.</p>
+<section id="reference-api">
+<h2>Reference/API<a class="headerlink" href="#reference-api" title="Link to this heading">¶</a></h2>
+<section id="module-gdt.missions.gifts.phaii">
+<span id="gdt-missions-gifts-phaii-module"></span><h3>gdt.missions.gifts.phaii Module<a class="headerlink" href="#module-gdt.missions.gifts.phaii" title="Link to this heading">¶</a></h3>
+<section id="classes">
+<h4>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h4>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../api/gdt.missions.gifts.phaii.GiftsPhaii.html#gdt.missions.gifts.phaii.GiftsPhaii" title="gdt.missions.gifts.phaii.GiftsPhaii"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GiftsPhaii</span></code></a>()</p></td>
+<td><p>PHAII class for GIFTS time history spectra.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../api/gdt.missions.gifts.phaii.Ctime.html#gdt.missions.gifts.phaii.Ctime" title="gdt.missions.gifts.phaii.Ctime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ctime</span></code></a>()</p></td>
+<td><p>Class for GIFTS CTIME data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../api/gdt.missions.gifts.phaii.Cspec.html#gdt.missions.gifts.phaii.Cspec" title="gdt.missions.gifts.phaii.Cspec"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Cspec</span></code></a>()</p></td>
+<td><p>Class for GIFTS CSPEC data.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="class-inheritance-diagram">
+<h4>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Link to this heading">¶</a></h4>
+<div class="graphviz"><img src="../../_images/inheritance-4ce0b61483aabcd56c189d054110127ae2e63f93.png" alt="Inheritance diagram of gdt.missions.gifts.phaii.GiftsPhaii, gdt.missions.gifts.phaii.Ctime, gdt.missions.gifts.phaii.Cspec" usemap="#inheritancef4dfd5ce88" class="inheritance graphviz" /></div>
+<map id="inheritancef4dfd5ce88" name="inheritancef4dfd5ce88">
+<area shape="rect" id="node6" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.file.FitsFileContextManager.html#gdt.core.file.FitsFileContextManager" target="_top" title="A context manager for FITS files. &#160;Includes some convenience functions." alt="" coords="263,23,392,41"/>
+<area shape="rect" id="node3" href="../../api/gdt.missions.gifts.phaii.Cspec.html#gdt.missions.gifts.phaii.Cspec" target="_top" title="Class for GIFTS CSPEC data." alt="" coords="711,4,764,23"/>
+<area shape="rect" id="node4" href="../../api/gdt.missions.gifts.phaii.GiftsPhaii.html#gdt.missions.gifts.phaii.GiftsPhaii" target="_top" title="PHAII class for GIFTS time history spectra." alt="" coords="614,23,676,41"/>
+<area shape="rect" id="node5" href="../../api/gdt.missions.gifts.phaii.Ctime.html#gdt.missions.gifts.phaii.Ctime" target="_top" title="Class for GIFTS CTIME data." alt="" coords="711,40,764,59"/>
+<area shape="rect" id="node8" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.phaii.Phaii.html#gdt.core.phaii.Phaii" target="_top" title="PHAII class for time series of spectra." alt="" coords="428,23,481,41"/>
+<area shape="rect" id="node7" href="https://astro-gdt.readthedocs.io/projects/astro-gdt-fermi/en/latest/api/gdt.missions.fermi.gbm.phaii.GbmPhaii.html#gdt.missions.fermi.gbm.phaii.GbmPhaii" target="_top" title="PHAII class for GBM time history spectra." alt="" coords="516,23,579,41"/>
+</map></section>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">GIFTS PHAII Data (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.phaii</span></code>)</a><ul>
+<li><a class="reference internal" href="#reference-api">Reference/API</a><ul>
+<li><a class="reference internal" href="#module-gdt.missions.gifts.phaii">gdt.missions.gifts.phaii Module</a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#class-inheritance-diagram">Class Inheritance Diagram</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../../api/gdt.missions.gifts.localization.GiftsHealPix.html"
+                          title="previous chapter">GiftsHealPix</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../../api/gdt.missions.gifts.phaii.GiftsPhaii.html"
+                          title="next chapter">GiftsPhaii</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/missions/gifts/phaii.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<form action="../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="../../_sources/missions/gifts/phaii.rst.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright .<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 7.2.6. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+GiftsFrame
+==========
+
+.. currentmodule:: gdt.missions.gifts.frame
+
+.. autoclass:: GiftsFrame
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~GiftsFrame.T
+      ~GiftsFrame.cache
+      ~GiftsFrame.cartesian
+      ~GiftsFrame.cylindrical
+      ~GiftsFrame.data
+      ~GiftsFrame.default_differential
+      ~GiftsFrame.default_representation
+      ~GiftsFrame.detectors
+      ~GiftsFrame.differential_type
+      ~GiftsFrame.earth_angular_radius
+      ~GiftsFrame.earth_location
+      ~GiftsFrame.frame_attributes
+      ~GiftsFrame.frame_specific_representation_info
+      ~GiftsFrame.geocenter
+      ~GiftsFrame.has_data
+      ~GiftsFrame.isscalar
+      ~GiftsFrame.name
+      ~GiftsFrame.ndim
+      ~GiftsFrame.obsgeoloc
+      ~GiftsFrame.obsgeovel
+      ~GiftsFrame.obstime
+      ~GiftsFrame.proper_motion
+      ~GiftsFrame.quaternion
+      ~GiftsFrame.radial_velocity
+      ~GiftsFrame.representation_component_names
+      ~GiftsFrame.representation_component_units
+      ~GiftsFrame.representation_info
+      ~GiftsFrame.representation_type
+      ~GiftsFrame.sc_gcrs
+      ~GiftsFrame.sc_itrs
+      ~GiftsFrame.shape
+      ~GiftsFrame.size
+      ~GiftsFrame.spherical
+      ~GiftsFrame.sphericalcoslat
+      ~GiftsFrame.sun_visible
+      ~GiftsFrame.velocity
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~GiftsFrame.at
+      ~GiftsFrame.copy
+      ~GiftsFrame.detector_angle
+      ~GiftsFrame.diagonal
+      ~GiftsFrame.estimate_velocity
+      ~GiftsFrame.flatten
+      ~GiftsFrame.get_frame_attr_defaults
+      ~GiftsFrame.get_frame_attr_names
+      ~GiftsFrame.get_representation_cls
+      ~GiftsFrame.get_representation_component_names
+      ~GiftsFrame.get_representation_component_units
+      ~GiftsFrame.init_interpolation
+      ~GiftsFrame.is_equivalent_frame
+      ~GiftsFrame.is_frame_attr_default
+      ~GiftsFrame.is_transformable_to
+      ~GiftsFrame.location_visible
+      ~GiftsFrame.ravel
+      ~GiftsFrame.realize_frame
+      ~GiftsFrame.replicate
+      ~GiftsFrame.replicate_without_data
+      ~GiftsFrame.represent_as
+      ~GiftsFrame.reshape
+      ~GiftsFrame.separation
+      ~GiftsFrame.separation_3d
+      ~GiftsFrame.set_representation_cls
+      ~GiftsFrame.squeeze
+      ~GiftsFrame.swapaxes
+      ~GiftsFrame.take
+      ~GiftsFrame.transform_to
+      ~GiftsFrame.transpose
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: T
+   .. autoattribute:: cache
+   .. autoattribute:: cartesian
+   .. autoattribute:: cylindrical
+   .. autoattribute:: data
+   .. autoattribute:: default_differential
+   .. autoattribute:: default_representation
+   .. autoattribute:: detectors
+   .. autoattribute:: differential_type
+   .. autoattribute:: earth_angular_radius
+   .. autoattribute:: earth_location
+   .. autoattribute:: frame_attributes
+   .. autoattribute:: frame_specific_representation_info
+   .. autoattribute:: geocenter
+   .. autoattribute:: has_data
+   .. autoattribute:: isscalar
+   .. autoattribute:: name
+   .. autoattribute:: ndim
+   .. autoattribute:: obsgeoloc
+   .. autoattribute:: obsgeovel
+   .. autoattribute:: obstime
+   .. autoattribute:: proper_motion
+   .. autoattribute:: quaternion
+   .. autoattribute:: radial_velocity
+   .. autoattribute:: representation_component_names
+   .. autoattribute:: representation_component_units
+   .. autoattribute:: representation_info
+   .. autoattribute:: representation_type
+   .. autoattribute:: sc_gcrs
+   .. autoattribute:: sc_itrs
+   .. autoattribute:: shape
+   .. autoattribute:: size
+   .. autoattribute:: spherical
+   .. autoattribute:: sphericalcoslat
+   .. autoattribute:: sun_visible
+   .. autoattribute:: velocity
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: at
+   .. automethod:: copy
+   .. automethod:: detector_angle
+   .. automethod:: diagonal
+   .. automethod:: estimate_velocity
+   .. automethod:: flatten
+   .. automethod:: get_frame_attr_defaults
+   .. automethod:: get_frame_attr_names
+   .. automethod:: get_representation_cls
+   .. automethod:: get_representation_component_names
+   .. automethod:: get_representation_component_units
+   .. automethod:: init_interpolation
+   .. automethod:: is_equivalent_frame
+   .. automethod:: is_frame_attr_default
+   .. automethod:: is_transformable_to
+   .. automethod:: location_visible
+   .. automethod:: ravel
+   .. automethod:: realize_frame
+   .. automethod:: replicate
+   .. automethod:: replicate_without_data
+   .. automethod:: represent_as
+   .. automethod:: reshape
+   .. automethod:: separation
+   .. automethod:: separation_3d
+   .. automethod:: set_representation_cls
+   .. automethod:: squeeze
+   .. automethod:: swapaxes
+   .. automethod:: take
+   .. automethod:: transform_to
+   .. automethod:: transpose

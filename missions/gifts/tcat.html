@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GIFTS Trigger Catalog Data (gdt.missions.gifts.tcat) &#8212; GIFTS Gamma-ray Data Tools 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-astropy.css?v=cfc02a30" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+    
+    <script src="../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script type="text/javascript" src="../../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../../_static/copybutton.js"></script>
+    <link rel="icon" href="../../_static/gdt_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tcat" href="../../api/gdt.missions.gifts.tcat.Tcat.html" />
+    <link rel="prev" title="TteTriggerHeaders" href="../../api/gdt.missions.gifts.headers.TteTriggerHeaders.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../../index.html"><span id="logotext1">gdt</span><span id="logotext2">-gifts</span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="../../api/gdt.missions.gifts.tcat.Tcat.html" title="Tcat">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="../../api/gdt.missions.gifts.headers.TteTriggerHeaders.html" title="TteTriggerHeaders">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../../index.html">GIFTS Gamma-ray Data Tools 0.1.0 documentation</a>
+	 &#187;
+      </li>
+      
+      <li>GIFTS Trigger Catalog Data (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.tcat</span></code>)</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="gifts-tcat"></span><section id="gifts-trigger-catalog-data-gdt-missions-gifts-tcat">
+<h1>GIFTS Trigger Catalog Data (<a class="reference internal" href="#module-gdt.missions.gifts.tcat" title="gdt.missions.gifts.tcat"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.tcat</span></code></a>)<a class="headerlink" href="#gifts-trigger-catalog-data-gdt-missions-gifts-tcat" title="Link to this heading">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The GIFTS trigger catalog data implementation and this document are currently based on those provided by
+the <a class="reference external" href="https://astro-gdt.readthedocs.io/projects/astro-gdt-fermi/en/latest/index.html#gdt-fermi" title="(in The Gamma-ray Data Tools v2.2.2)"><span class="xref std std-ref">Fermi Gamma-ray Data Tools</span></a>, and will be revised in future versions.</p>
+</div>
+<p>The GIFTS Trigger CATalog (TCAT) file is a FITS file containing high-level
+information about an on-board GIFTS trigger and
+includes basic information in the trigger catalog.  The TCAT is purely metadata,
+having only a single FITS header, but the <a class="reference internal" href="../../api/gdt.missions.gifts.tcat.Tcat.html#gdt.missions.gifts.tcat.Tcat" title="gdt.missions.gifts.tcat.Tcat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Tcat</span></code></a> class contains some convenience
+functions for accessing and converting the metadata into GDT objects.
+It builds on the the <a class="reference external" href="https://astro-gdt.readthedocs.io/projects/astro-gdt-fermi/en/stable/missions/fermi/gbm/tcat.html">Fermi Trigger CATalog (TCAT) file</a>.</p>
+<p>We can open a TCAT file:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gdt.missions.gifts.tcat</span> <span class="kn">import</span> <span class="n">Tcat</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tcat</span> <span class="o">=</span> <span class="n">Tcat</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;gifts/gifts_tcat_all_bn220624124_v01.fit&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tcat</span>
+<span class="go">&lt;Tcat: GRB220624124&gt;</span>
+</pre></div>
+</div>
+<p>Alternatively, the TCAT can be retrieved from the <a class="reference internal" href="catalogs.html#gifts-catalogs-retrieve"><span class="std std-ref">current GIFTS burst catalog</span></a>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gdt.missions.gifts.catalogs</span> <span class="kn">import</span> <span class="n">BurstCatalog</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">burstcat</span> <span class="o">=</span> <span class="n">BurstCatalog</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tcat</span> <span class="o">=</span> <span class="n">burstcat</span><span class="o">.</span><span class="n">get_tcat</span><span class="p">(</span><span class="n">trigger_name</span><span class="o">=</span><span class="s2">&quot;bn220624124&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We can retrieve some basic properties:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tcat</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;GRB220624124&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tcat</span><span class="o">.</span><span class="n">trigtime</span>
+<span class="go">677732319.512006</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tcat</span><span class="o">.</span><span class="n">time_range</span>
+<span class="go">&lt;TimeRange: (677732188.572006, 677732794.792622)&gt;</span>
+</pre></div>
+</div>
+<p>We can also retrieve the instrument that localized this trigger and what that
+localization is:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tcat</span><span class="o">.</span><span class="n">localizing_instrument</span>
+<span class="go">&#39;GIFTS&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tcat</span><span class="o">.</span><span class="n">location</span>
+<span class="go">&lt;SkyCoord (ICRS): (ra, dec) in deg</span>
+<span class="go">    (180.7, 20.58)&gt;</span>
+</pre></div>
+</div>
+<p>We can also retrieve the position of GIFTS in orbit at the time of the detection:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tcat</span><span class="o">.</span><span class="n">gifts_location</span>
+<span class="go">(&lt;Longitude 303.2833 deg&gt;, &lt;Latitude 17.5167 deg&gt;)</span>
+</pre></div>
+</div>
+<p>The full set of metadata is available in the header:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tcat</span><span class="o">.</span><span class="n">headers</span>
+<span class="go">&lt;TcatHeaders: 1 headers&gt;</span>
+</pre></div>
+</div>
+<section id="reference-api">
+<h2>Reference/API<a class="headerlink" href="#reference-api" title="Link to this heading">¶</a></h2>
+<section id="module-gdt.missions.gifts.tcat">
+<span id="gdt-missions-gifts-tcat-module"></span><h3>gdt.missions.gifts.tcat Module<a class="headerlink" href="#module-gdt.missions.gifts.tcat" title="Link to this heading">¶</a></h3>
+<section id="classes">
+<h4>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h4>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../api/gdt.missions.gifts.tcat.Tcat.html#gdt.missions.gifts.tcat.Tcat" title="gdt.missions.gifts.tcat.Tcat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Tcat</span></code></a>()</p></td>
+<td><p>TCAT (Trigger CATalog) file class.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="class-inheritance-diagram">
+<h4>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Link to this heading">¶</a></h4>
+<div class="graphviz"><img src="../../_images/inheritance-37b12116fed7e5bc33c5b9af14a160f5df679292.png" alt="Inheritance diagram of gdt.missions.gifts.tcat.Tcat" usemap="#inheritance2affa56b26" class="inheritance graphviz" /></div>
+<map id="inheritance2affa56b26" name="inheritance2affa56b26">
+<area shape="rect" id="node3" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.file.FitsFileContextManager.html#gdt.core.file.FitsFileContextManager" target="_top" title="A context manager for FITS files. &#160;Includes some convenience functions." alt="" coords="357,29,533,55"/>
+<area shape="rect" id="node4" href="../../api/gdt.missions.gifts.tcat.Tcat.html#gdt.missions.gifts.tcat.Tcat" target="_top" title="TCAT (Trigger CATalog) file class." alt="" coords="581,29,653,55"/>
+</map></section>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">GIFTS Trigger Catalog Data (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.tcat</span></code>)</a><ul>
+<li><a class="reference internal" href="#reference-api">Reference/API</a><ul>
+<li><a class="reference internal" href="#module-gdt.missions.gifts.tcat">gdt.missions.gifts.tcat Module</a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#class-inheritance-diagram">Class Inheritance Diagram</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../../api/gdt.missions.gifts.headers.TteTriggerHeaders.html"
+                          title="previous chapter">TteTriggerHeaders</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../../api/gdt.missions.gifts.tcat.Tcat.html"
+                          title="next chapter">Tcat</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/missions/gifts/tcat.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<form action="../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="../../_sources/missions/gifts/tcat.rst.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright .<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 7.2.6. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

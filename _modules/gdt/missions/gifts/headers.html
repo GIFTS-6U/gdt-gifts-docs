@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>gdt.missions.gifts.headers &#8212; GIFTS Gamma-ray Data Tools 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/bootstrap-astropy.css?v=cfc02a30" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=eafc0fe6" />
+    
+    <script src="../../../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script type="text/javascript" src="../../../../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../../../../_static/copybutton.js"></script>
+    <link rel="icon" href="../../../../_static/gdt_favicon.ico"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../../../../index.html"><span id="logotext1">gdt</span><span id="logotext2">-gifts</span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../../../../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../../../../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../../../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li>
+	<a href="../../../../index.html">GIFTS Gamma-ray Data Tools 0.1.0 documentation</a>
+	 &#187;
+      </li>
+      <li><a href="../../../index.html" accesskey="U">Module code</a> &#187;</li>
+      
+       
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for gdt.missions.gifts.headers</h1><div class="highlight"><pre>
+<span></span><span class="c1">#</span>
+<span class="c1"># Copyright 2026 by University College Dublin. All rights reserved.</span>
+<span class="c1">#</span>
+<span class="c1"># Developed by: Derek O&#39;Callaghan</span>
+<span class="c1">#               University College Dublin</span>
+<span class="c1">#               https://www.ucd.ie/</span>
+<span class="c1">#</span>
+<span class="c1"># Builds on:</span>
+<span class="c1">#               Gamma-ray Data Tools - Core Components (https://github.com/USRA-STI/gdt-core)</span>
+<span class="c1">#               Gamma-ray Data Tools - Fermi mission components (https://github.com/USRA-STI/gdt-fermi/)</span>
+<span class="c1">#</span>
+<span class="c1"># Licensed under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except</span>
+<span class="c1"># in compliance with the License. You may obtain a copy of the License at</span>
+<span class="c1">#</span>
+<span class="c1">#    http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="c1">#</span>
+<span class="c1"># Unless required by applicable law or agreed to in writing, software distributed under the License</span>
+<span class="c1"># is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or</span>
+<span class="c1"># implied. See the License for the specific language governing permissions and limitations under the</span>
+<span class="c1"># License.</span>
+<span class="c1">#</span>
+<span class="kn">import</span> <span class="nn">copy</span>
+<span class="kn">import</span> <span class="nn">operator</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Type</span>
+
+<span class="kn">from</span> <span class="nn">gdt.core.headers</span> <span class="kn">import</span> <span class="n">Header</span><span class="p">,</span> <span class="n">FileHeaders</span>
+<span class="kn">from</span> <span class="nn">.time</span> <span class="kn">import</span> <span class="n">Time</span>
+<span class="kn">from</span> <span class="nn">.detectors</span> <span class="kn">import</span> <span class="n">GiftsDetectors</span>
+
+<span class="kn">from</span> <span class="nn">gdt.missions.fermi.gbm.detectors</span> <span class="kn">import</span> <span class="n">GbmDetectors</span>
+<span class="kn">from</span> <span class="nn">gdt.missions.fermi.gbm.headers</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">_telescope</span> <span class="k">as</span> <span class="n">_gbm_telescope</span><span class="p">,</span>
+    <span class="n">_instrument</span> <span class="k">as</span> <span class="n">_gbm_instrument</span><span class="p">,</span>
+    <span class="n">_observer</span> <span class="k">as</span> <span class="n">_gbm_observer</span><span class="p">,</span>
+    <span class="n">_origin</span> <span class="k">as</span> <span class="n">_gbm_origin</span><span class="p">,</span>
+    <span class="n">_datatype_card</span> <span class="k">as</span> <span class="n">_gbm_datatype_card</span><span class="p">,</span>
+    <span class="n">_instrument_card</span> <span class="k">as</span> <span class="n">_gbm_instrument_card</span><span class="p">,</span>
+    <span class="n">_err_rad_card</span> <span class="k">as</span> <span class="n">_gbm_err_rad_card</span><span class="p">,</span>
+    <span class="n">_filetype_card</span> <span class="k">as</span> <span class="n">_gbm_filetype_card</span><span class="p">,</span>
+    <span class="n">_filever_card</span> <span class="k">as</span> <span class="n">_gbm_filever_card</span><span class="p">,</span>
+    <span class="n">_mjdrefi_card</span> <span class="k">as</span> <span class="n">_gbm_mjdrefi_card</span><span class="p">,</span>
+    <span class="n">_mjdreff_card</span> <span class="k">as</span> <span class="n">_gbm_mjdreff_card</span><span class="p">,</span>
+    <span class="n">_observer_card</span> <span class="k">as</span> <span class="n">_gbm_observer_card</span><span class="p">,</span>
+    <span class="n">_origin_card</span> <span class="k">as</span> <span class="n">_gbm_origin_card</span><span class="p">,</span>
+    <span class="n">_telescope_card</span> <span class="k">as</span> <span class="n">_gbm_telescope_card</span><span class="p">,</span>
+    <span class="n">_tstart_card</span> <span class="k">as</span> <span class="n">_gbm_tstart_card</span><span class="p">,</span>
+    <span class="n">_tstop_card</span> <span class="k">as</span> <span class="n">_gbm_tstop_card</span><span class="p">,</span>
+    <span class="n">GbmHeader</span><span class="p">,</span>
+    <span class="n">DataPrimaryHeader</span> <span class="k">as</span> <span class="n">GbmDataPrimaryHeader</span><span class="p">,</span>
+    <span class="n">DataTriggerPrimaryHeader</span> <span class="k">as</span> <span class="n">GbmDataTriggerPrimaryHeader</span><span class="p">,</span>
+    <span class="n">EboundsHeader</span> <span class="k">as</span> <span class="n">GbmEboundsHeader</span><span class="p">,</span>
+    <span class="n">EboundsTriggerHeader</span> <span class="k">as</span> <span class="n">GbmEboundsTriggerHeader</span><span class="p">,</span>
+    <span class="n">EventsHeader</span> <span class="k">as</span> <span class="n">GbmEventsHeader</span><span class="p">,</span>
+    <span class="n">EventsTriggerHeader</span> <span class="k">as</span> <span class="n">GbmEventsTriggerHeader</span><span class="p">,</span>
+    <span class="n">HealpixPrimaryHeader</span> <span class="k">as</span> <span class="n">GbmHealpixPrimaryHeader</span><span class="p">,</span>
+    <span class="n">HealpixImageHeader</span> <span class="k">as</span> <span class="n">GbmHealpixImageHeader</span><span class="p">,</span>
+    <span class="n">GtiHeader</span> <span class="k">as</span> <span class="n">GbmGtiHeader</span><span class="p">,</span>
+    <span class="n">GtiTriggerHeader</span> <span class="k">as</span> <span class="n">GbmGtiTriggerHeader</span><span class="p">,</span>
+    <span class="n">PosHistPrimaryHeader</span> <span class="k">as</span> <span class="n">GbmPosHistPrimaryHeader</span><span class="p">,</span>
+    <span class="n">PosHistDataHeader</span> <span class="k">as</span> <span class="n">GbmPosHistDataHeader</span><span class="p">,</span>
+    <span class="n">SpectrumHeader</span> <span class="k">as</span> <span class="n">GbmSpectrumHeader</span><span class="p">,</span>
+    <span class="n">SpectrumTriggerHeader</span> <span class="k">as</span> <span class="n">GbmSpectrumTriggerHeader</span><span class="p">,</span>
+    <span class="n">TcatHeader</span> <span class="k">as</span> <span class="n">GbmTcatHeader</span><span class="p">,</span>
+    <span class="n">TrigdatPrimaryHeader</span> <span class="k">as</span> <span class="n">GbmTrigdatPrimaryHeader</span><span class="p">,</span>
+    <span class="n">TrigdatSecondaryHeader</span> <span class="k">as</span> <span class="n">GbmTrigdatSecondaryHeader</span><span class="p">,</span>
+    <span class="n">TrigdatTrigrateHeader</span> <span class="k">as</span> <span class="n">GbmTrigdatTrigrateHeader</span><span class="p">,</span>
+    <span class="n">TrigdatBackratesHeader</span> <span class="k">as</span> <span class="n">GbmTrigdatBackratesHeader</span><span class="p">,</span>
+    <span class="n">TrigdatObCalcHeader</span> <span class="k">as</span> <span class="n">GbmTrigdatObCalcHeader</span><span class="p">,</span>
+    <span class="n">TrigdatMaxratesHeader</span> <span class="k">as</span> <span class="n">GbmTrigdatMaxratesHeader</span><span class="p">,</span>
+    <span class="n">TrigdatEventrateHeader</span> <span class="k">as</span> <span class="n">GbmTrigdatEventrateHeader</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;HealpixHeaders&quot;</span><span class="p">,</span> <span class="s2">&quot;PhaiiHeaders&quot;</span><span class="p">,</span> <span class="s2">&quot;PhaiiTriggerHeaders&quot;</span><span class="p">,</span> <span class="s2">&quot;PosHistHeaders&quot;</span><span class="p">,</span> <span class="s2">&quot;TcatHeaders&quot;</span><span class="p">,</span> <span class="s2">&quot;TrigdatHeaders&quot;</span><span class="p">,</span> <span class="s2">&quot;TteHeaders&quot;</span><span class="p">,</span> <span class="s2">&quot;TteTriggerHeaders&quot;</span><span class="p">]</span>
+
+<span class="c1"># GIFTS common keyword cards</span>
+<span class="n">_gifts_telescope</span> <span class="o">=</span> <span class="s2">&quot;GIFTS (P.I.: McBreen)&quot;</span>
+<span class="n">_gifts_instrument</span> <span class="o">=</span> <span class="s2">&quot;GIFTS&quot;</span>
+<span class="n">_gifts_observer</span> <span class="o">=</span> <span class="s2">&quot;O&#39;Callaghan&quot;</span>
+<span class="n">_gifts_origin</span> <span class="o">=</span> <span class="s2">&quot;GIFTS Team&quot;</span>
+<span class="n">_gifts_filever</span> <span class="o">=</span> <span class="s2">&quot;0.1.0&quot;</span> <span class="c1"># TODO: configurable using gdt-gifts version</span>
+
+
+<span class="n">HeaderCard</span> <span class="o">=</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="o">|</span><span class="nb">int</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">_gbm_to_gifts_card</span><span class="p">(</span><span class="n">gbm_card</span><span class="p">:</span> <span class="n">HeaderCard</span><span class="p">,</span> <span class="n">gbm_update</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">gifts_update</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">update_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HeaderCard</span><span class="p">:</span>
+    <span class="n">gifts_card</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">gbm_card</span><span class="p">)</span>
+    <span class="n">gifts_card</span><span class="p">[</span><span class="n">update_index</span><span class="p">]</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">gbm_update</span><span class="p">,</span> <span class="n">gifts_update</span><span class="p">,</span> <span class="n">gifts_card</span><span class="p">[</span><span class="n">update_index</span><span class="p">])</span> <span class="k">if</span> <span class="n">gbm_update</span> <span class="k">else</span> <span class="n">gifts_update</span>
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">gifts_card</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_find_header_card</span><span class="p">(</span><span class="n">keywords</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">HeaderCard</span><span class="p">],</span> <span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">HeaderCard</span><span class="p">:</span>
+    <span class="n">card</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">keywords</span> <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">keyword</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">card</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">card</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">card</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">None</span>
+
+<span class="n">_gbm_tcat_loc_src_card</span> <span class="o">=</span> <span class="n">_find_header_card</span><span class="p">(</span><span class="n">GbmTcatHeader</span><span class="o">.</span><span class="n">keywords</span><span class="p">,</span> <span class="s2">&quot;LOC_SRC&quot;</span><span class="p">)</span>
+<span class="n">_gbm_tcat_det_mask_card</span> <span class="o">=</span> <span class="n">_find_header_card</span><span class="p">(</span><span class="n">GbmTcatHeader</span><span class="o">.</span><span class="n">keywords</span><span class="p">,</span> <span class="s2">&quot;DET_MASK&quot;</span><span class="p">)</span>
+<span class="c1"># Used for both Tcat and Trigdat</span>
+<span class="c1"># TODO: might want to add this to other headers</span>
+<span class="n">_gbm_infile01_card</span> <span class="o">=</span> <span class="n">_find_header_card</span><span class="p">(</span><span class="n">GbmTcatHeader</span><span class="o">.</span><span class="n">keywords</span><span class="p">,</span> <span class="s2">&quot;INFILE01&quot;</span><span class="p">)</span>
+<span class="n">_gifts_infile01_card</span> <span class="o">=</span> <span class="n">_gbm_to_gifts_card</span><span class="p">(</span><span class="n">_gbm_infile01_card</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;Level [0-9]&quot;</span><span class="p">,</span> <span class="s2">&quot;GBM catalog&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">GiftsHeader</span><span class="p">(</span><span class="n">GbmHeader</span><span class="p">):</span>
+
+    <span class="c1"># Will override corresponding GBM header keywords</span>
+    <span class="c1"># Common to multiple GIFTS headers</span>
+    <span class="n">_common_gbm_gifts_keywords</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">HeaderCard</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="p">(</span><span class="n">_gbm_instrument_card</span><span class="p">,</span> <span class="n">_gbm_to_gifts_card</span><span class="p">(</span><span class="n">_gbm_instrument_card</span><span class="p">,</span> <span class="n">_gbm_instrument</span><span class="p">,</span> <span class="n">_gifts_instrument</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+                <span class="p">(</span><span class="n">_gbm_mjdrefi_card</span><span class="p">,</span> <span class="n">_gbm_to_gifts_card</span><span class="p">(</span><span class="n">_gbm_mjdrefi_card</span><span class="p">,</span> <span class="n">_gbm_telescope</span><span class="p">,</span> <span class="n">_gifts_instrument</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+                <span class="p">(</span><span class="n">_gbm_mjdreff_card</span><span class="p">,</span> <span class="n">_gbm_to_gifts_card</span><span class="p">(</span><span class="n">_gbm_mjdreff_card</span><span class="p">,</span> <span class="n">_gbm_telescope</span><span class="p">,</span> <span class="n">_gifts_instrument</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+                <span class="p">(</span><span class="n">_gbm_observer_card</span><span class="p">,</span> <span class="n">_gbm_to_gifts_card</span><span class="p">(</span><span class="n">_gbm_to_gifts_card</span><span class="p">(</span><span class="n">_gbm_observer_card</span><span class="p">,</span> <span class="n">_gbm_observer</span><span class="p">,</span> <span class="n">_gifts_observer</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="kc">None</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">_gifts_instrument</span><span class="si">}</span><span class="s2"> Pipeline Development&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+                <span class="p">(</span><span class="n">_gbm_origin_card</span><span class="p">,</span> <span class="n">_gbm_to_gifts_card</span><span class="p">(</span><span class="n">_gbm_origin_card</span><span class="p">,</span> <span class="n">_gbm_origin</span><span class="p">,</span> <span class="n">_gifts_origin</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+                <span class="p">(</span><span class="n">_gbm_telescope_card</span><span class="p">,</span> <span class="n">_gbm_to_gifts_card</span><span class="p">(</span><span class="n">_gbm_telescope_card</span><span class="p">,</span> <span class="n">_gbm_telescope</span><span class="p">,</span> <span class="n">_gifts_telescope</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+                <span class="p">(</span><span class="n">_gbm_tstart_card</span><span class="p">,</span> <span class="n">_gbm_to_gifts_card</span><span class="p">(</span><span class="n">_gbm_tstart_card</span><span class="p">,</span> <span class="n">_gbm_telescope</span><span class="p">,</span> <span class="n">_gifts_instrument</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+                <span class="p">(</span><span class="n">_gbm_tstop_card</span><span class="p">,</span> <span class="n">_gbm_to_gifts_card</span><span class="p">(</span><span class="n">_gbm_tstop_card</span><span class="p">,</span> <span class="n">_gbm_telescope</span><span class="p">,</span> <span class="n">_gifts_instrument</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+                <span class="p">(</span><span class="n">_gbm_tcat_loc_src_card</span><span class="p">,</span> <span class="n">_gbm_to_gifts_card</span><span class="p">(</span><span class="n">_gbm_tcat_loc_src_card</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">_gifts_instrument</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+                <span class="p">(</span><span class="n">_gbm_tcat_det_mask_card</span><span class="p">,</span> <span class="n">_gbm_to_gifts_card</span><span class="p">(</span><span class="n">_gbm_tcat_det_mask_card</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">GbmDetectors</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">GiftsDetectors</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+                <span class="p">(</span><span class="n">_gbm_infile01_card</span><span class="p">,</span> <span class="n">_gifts_infile01_card</span><span class="p">),</span>
+                <span class="p">(</span><span class="n">_gbm_filever_card</span><span class="p">,</span> <span class="n">_gbm_to_gifts_card</span><span class="p">(</span><span class="n">_gbm_filever_card</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">_gifts_filever</span><span class="p">,</span> <span class="mi">1</span><span class="p">)),</span>
+                <span class="p">(</span><span class="n">_gbm_datatype_card</span><span class="p">,</span> <span class="n">_gbm_to_gifts_card</span><span class="p">(</span><span class="n">_gbm_datatype_card</span><span class="p">,</span> <span class="n">_gbm_instrument</span><span class="p">,</span> <span class="n">_gifts_instrument</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+<span class="c1">#                (_gbm_err_rad_card, _gbm_to_gifts_card(_gbm_to_gifts_card(_gbm_err_rad_card, None, &quot;LOC_ERR&quot;, 0), &quot; Radius&quot;, &quot;&quot;, 2)),</span>
+    <span class="p">]</span>
+
+    <span class="c1"># Will be set by subclass for specific headers</span>
+    <span class="n">_update_gbm_gifts_keywords</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">HeaderCard</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># GBM keyword cards to be updated for GIFTS</span>
+    <span class="n">_add_gifts_keywords</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">HeaderCard</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># GBM keyword cards to be added for GIFTS</span>
+    <span class="n">_remove_gbm_keywords</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># GBM keyword cards to be removed</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># Replace any GBM headers with GIFTS equivalents,</span>
+        <span class="c1"># prior to initialisation</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">keywords</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">keywords</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+        <span class="n">all_gbm_gifts_keywords</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_update_gbm_gifts_keywords</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_update_gbm_gifts_keywords</span> <span class="k">else</span> <span class="p">[]</span>
+        <span class="n">all_gbm_gifts_keywords</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_common_gbm_gifts_keywords</span>
+        <span class="k">for</span> <span class="n">gbm_keyword</span><span class="p">,</span> <span class="n">gifts_keyword</span> <span class="ow">in</span> <span class="n">all_gbm_gifts_keywords</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">keywords</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">gbm_keyword</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">keywords</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">gifts_keyword</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+        <span class="c1"># Add any keywords specified by the subclass</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_gifts_keywords</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">gifts_keyword</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_add_gifts_keywords</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">keywords</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">gifts_keyword</span><span class="p">)</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">keywords</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gifts_keyword</span><span class="p">)</span>
+
+        <span class="c1"># Remove any keywords as specified by the subclass</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_remove_gbm_keywords</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">gbm_keyword</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_remove_gbm_keywords</span><span class="p">:</span>
+                <span class="n">gbm_keyword_card</span> <span class="o">=</span> <span class="n">_find_header_card</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">keywords</span><span class="p">,</span> <span class="n">gbm_keyword</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">gbm_keyword_card</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">keywords</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">gbm_keyword_card</span><span class="p">)</span>
+            
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+        <span class="c1"># Only GIFTS-specific logic here is the time format,</span>
+        <span class="c1"># currently unable to specify it to the parent GbmHeader</span>
+        <span class="c1"># so have to duplicate the logic here</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">key</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;TSTART&#39;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;DATE-OBS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;gifts&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">iso</span>
+            <span class="k">elif</span> <span class="n">key</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;TSTOP&#39;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="p">[</span><span class="s1">&#39;DATE-END&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">Time</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;gifts&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">iso</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">pass</span>
+
+<span class="c1">#            if &#39;INFILE&#39; in key.upper():</span>
+<span class="c1">#                super(Header, self).__setitem__(key, val)</span>
+<span class="c1">#                return</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__setitem__</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">DataPrimaryHeader</span><span class="p">(</span><span class="n">GiftsHeader</span><span class="p">,</span> <span class="n">GbmDataPrimaryHeader</span><span class="p">):</span> <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">DataTriggerPrimaryHeader</span><span class="p">(</span><span class="n">GiftsHeader</span><span class="p">,</span> <span class="n">GbmDataTriggerPrimaryHeader</span><span class="p">):</span> <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">EboundsHeader</span><span class="p">(</span><span class="n">GiftsHeader</span><span class="p">,</span> <span class="n">GbmEboundsHeader</span><span class="p">):</span> <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">EboundsTriggerHeader</span><span class="p">(</span><span class="n">GiftsHeader</span><span class="p">,</span> <span class="n">GbmEboundsTriggerHeader</span><span class="p">):</span> <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">SpectrumHeader</span><span class="p">(</span><span class="n">GiftsHeader</span><span class="p">,</span> <span class="n">GbmSpectrumHeader</span><span class="p">):</span> <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">SpectrumTriggerHeader</span><span class="p">(</span><span class="n">GiftsHeader</span><span class="p">,</span> <span class="n">GbmSpectrumTriggerHeader</span><span class="p">):</span> <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">EventsHeader</span><span class="p">(</span><span class="n">GiftsHeader</span><span class="p">,</span> <span class="n">GbmEventsHeader</span><span class="p">):</span>
+    <span class="c1"># TODO Deadtime comment, no duplication</span>
+    <span class="c1">#            (&#39;EVT_DEAD&#39;, 2.6e-6, &#39;[s] Deadtime per event&#39;), # TODO KEEP</span>
+    <span class="c1">#            (&#39;EVTDEDHI&#39;, 1.0417e-5, &#39;[s] Deadtime per overflow channel event&#39;), # TODO KEEP</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">EventsTriggerHeader</span><span class="p">(</span><span class="n">GiftsHeader</span><span class="p">,</span> <span class="n">GbmEventsTriggerHeader</span><span class="p">):</span>
+    <span class="c1"># TODO Deadtime comment, no duplication</span>
+    <span class="c1">#            (&#39;EVT_DEAD&#39;, 2.6e-6, &#39;Deadtime per event (s)&#39;),</span>
+    <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">GtiHeader</span><span class="p">(</span><span class="n">GiftsHeader</span><span class="p">,</span> <span class="n">GbmGtiHeader</span><span class="p">):</span> <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">GtiTriggerHeader</span><span class="p">(</span><span class="n">GiftsHeader</span><span class="p">,</span> <span class="n">GbmGtiTriggerHeader</span><span class="p">):</span> <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">HealpixPrimaryHeader</span><span class="p">(</span><span class="n">GiftsHeader</span><span class="p">,</span> <span class="n">GbmHealpixPrimaryHeader</span><span class="p">):</span>
+    <span class="c1"># If the card name is renamed, it can&#39;t be read during open() in a parent class</span>
+    <span class="c1"># For now, only update the description and retain ERR_RAD consistent with GBM</span>
+    <span class="n">_update_gbm_gifts_keywords</span> <span class="o">=</span> <span class="p">[(</span><span class="n">_gbm_err_rad_card</span><span class="p">,</span> <span class="n">_gbm_to_gifts_card</span><span class="p">(</span><span class="n">_gbm_err_rad_card</span><span class="p">,</span> <span class="s2">&quot; Radius&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">))]</span>
+    
+
+<span class="c1"># TODO: this should be accessible</span>
+<span class="n">CLOSEST_DETECTORS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;G0&quot;</span><span class="p">:</span> <span class="s2">&quot;n7&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;G1&quot;</span><span class="p">:</span> <span class="s2">&quot;n6&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;G2&quot;</span><span class="p">:</span> <span class="s2">&quot;n9&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;G3&quot;</span><span class="p">:</span> <span class="s2">&quot;n1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;G4&quot;</span><span class="p">:</span> <span class="s2">&quot;n0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;G5&quot;</span><span class="p">:</span> <span class="s2">&quot;n3&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">HealpixImageHeader</span><span class="p">(</span><span class="n">GiftsHeader</span><span class="p">,</span> <span class="n">GbmHealpixImageHeader</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># TODO: get the list of GBM detectors not in CLOSEST</span>
+        <span class="n">remove_detectors</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;N</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">]]</span> <span class="o">+</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;B</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_remove_gbm_keywords</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">_RA&quot;</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">remove_detectors</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_remove_gbm_keywords</span> <span class="o">+=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">d</span><span class="si">}</span><span class="s2">_DEC&quot;</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">remove_detectors</span><span class="p">]</span>
+            
+        <span class="bp">self</span><span class="o">.</span><span class="n">_add_gifts_keywords</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="k">for</span> <span class="n">gifts_detector</span><span class="p">,</span> <span class="n">gbm_detector</span> <span class="ow">in</span> <span class="n">CLOSEST_DETECTORS</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;RA&quot;</span><span class="p">,</span> <span class="s2">&quot;DEC&quot;</span><span class="p">]:</span>
+                <span class="n">gbm_keyword_card</span> <span class="o">=</span> <span class="n">_find_header_card</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">keywords</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">gbm_detector</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">gbm_keyword_card</span><span class="p">:</span>
+                    <span class="n">gifts_keyword_card</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">_gbm_to_gifts_card</span><span class="p">(</span><span class="n">gbm_keyword_card</span><span class="p">,</span> <span class="n">gbm_detector</span><span class="p">,</span> <span class="n">gifts_detector</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+                    <span class="n">gifts_keyword_card</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">gifts_detector</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">&quot;</span>
+                    <span class="c1"># TODO: this results in the GIFTS detector headers being added </span>
+                    <span class="c1"># in order of closest GBM detectors</span>
+                    <span class="c1"># self._update_gbm_gifts_keywords.append((gbm_keyword_card, tuple(gifts_keyword_card)))</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_add_gifts_keywords</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">gifts_keyword_card</span><span class="p">))</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_remove_gbm_keywords</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gbm_keyword_card</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_update_gbm_gifts_keywords</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;RA&quot;</span><span class="p">,</span> <span class="s2">&quot;DEC&quot;</span><span class="p">]:</span>
+            <span class="n">gbm_keyword_card</span> <span class="o">=</span> <span class="n">_find_header_card</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">keywords</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;GEO_</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">gbm_keyword_card</span><span class="p">:</span>
+                <span class="c1"># &#39;Fermi&#39; is hardcoded in GBM headers, nothing to import atm</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_update_gbm_gifts_keywords</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">gbm_keyword_card</span><span class="p">,</span>
+                                                        <span class="n">_gbm_to_gifts_card</span><span class="p">(</span><span class="n">gbm_keyword_card</span><span class="p">,</span> <span class="s2">&quot;Fermi&quot;</span><span class="p">,</span> <span class="n">_gifts_instrument</span><span class="p">,</span> <span class="mi">2</span><span class="p">)))</span>
+
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">TcatHeader</span><span class="p">(</span><span class="n">GiftsHeader</span><span class="p">,</span> <span class="n">GbmTcatHeader</span><span class="p">):</span> <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">TrigdatCommonHeader</span><span class="p">(</span><span class="n">GiftsHeader</span><span class="p">):</span>
+    <span class="n">_remove_gbm_keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;DETTYPE&quot;</span><span class="p">,</span> <span class="s2">&quot;DATATYPE&quot;</span><span class="p">]</span>
+
+
+<span class="k">class</span> <span class="nc">TrigdatPrimaryHeader</span><span class="p">(</span><span class="n">TrigdatCommonHeader</span><span class="p">,</span> <span class="n">GbmTrigdatPrimaryHeader</span><span class="p">):</span> <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">TrigdatSecondaryHeader</span><span class="p">(</span><span class="n">TrigdatCommonHeader</span><span class="p">,</span> <span class="n">GbmTrigdatSecondaryHeader</span><span class="p">):</span> <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">TrigdatTrigrateHeader</span><span class="p">(</span><span class="n">TrigdatCommonHeader</span><span class="p">,</span> <span class="n">GbmTrigdatTrigrateHeader</span><span class="p">):</span> <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">TrigdatBackratesHeader</span><span class="p">(</span><span class="n">TrigdatCommonHeader</span><span class="p">,</span> <span class="n">GbmTrigdatBackratesHeader</span><span class="p">):</span> <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">TrigdatObCalcHeader</span><span class="p">(</span><span class="n">TrigdatCommonHeader</span><span class="p">,</span> <span class="n">GbmTrigdatObCalcHeader</span><span class="p">):</span> <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">TrigdatMaxratesHeader</span><span class="p">(</span><span class="n">TrigdatCommonHeader</span><span class="p">,</span> <span class="n">GbmTrigdatMaxratesHeader</span><span class="p">):</span> <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">TrigdatEventrateHeader</span><span class="p">(</span><span class="n">TrigdatCommonHeader</span><span class="p">,</span> <span class="n">GbmTrigdatEventrateHeader</span><span class="p">):</span> <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">PosHistPrimaryHeader</span><span class="p">(</span><span class="n">GiftsHeader</span><span class="p">,</span> <span class="n">GbmPosHistPrimaryHeader</span><span class="p">):</span> <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">PosHistDataHeader</span><span class="p">(</span><span class="n">GiftsHeader</span><span class="p">,</span> <span class="n">GbmPosHistDataHeader</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">GbmPosHistDataHeader</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">_gbm_telescope</span><span class="p">,</span> <span class="n">_gifts_instrument</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">GiftsFiletypePrimaryHeader</span><span class="p">(</span><span class="n">GiftsHeader</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Enable file types to be specified&quot;&quot;&quot;</span>
+    <span class="n">_add_gifts_keywords</span> <span class="o">=</span> <span class="p">[</span><span class="n">_gifts_infile01_card</span><span class="p">]</span>
+
+
+<span class="k">class</span> <span class="nc">GiftsDataPrimaryHeader</span><span class="p">(</span><span class="n">GiftsFiletypePrimaryHeader</span><span class="p">,</span> <span class="n">DataPrimaryHeader</span><span class="p">):</span> <span class="k">pass</span>
+
+
+<span class="k">class</span> <span class="nc">GiftsDataTriggerPrimaryHeader</span><span class="p">(</span><span class="n">GiftsFiletypePrimaryHeader</span><span class="p">,</span> <span class="n">DataTriggerPrimaryHeader</span><span class="p">):</span> <span class="k">pass</span>
+
+<span class="c1">#-------------------------------------</span>
+
+<span class="k">class</span> <span class="nc">GiftsFileHeaders</span><span class="p">(</span><span class="n">FileHeaders</span><span class="p">):</span>
+
+    <span class="c1"># Associated FITS file type</span>
+    <span class="n">filetype</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="c1"># Define keywords to be excluded when copying from source headers</span>
+    <span class="n">_exclude_file_keywords</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([])</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">from_file_headers</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">input_headers</span><span class="p">:</span> <span class="n">FileHeaders</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">FileHeaders</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialises a GIFTS headers set using a corresponding set of file (GBM/GIFTS) headers    </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">gifts_keywords</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;CREATOR&quot;</span><span class="p">,</span> <span class="s2">&quot;TELESCOP&quot;</span><span class="p">,</span> <span class="s2">&quot;INSTRUME&quot;</span><span class="p">,</span> <span class="s1">&#39;OBSERVER&#39;</span><span class="p">,</span> <span class="s2">&quot;ORIGIN&quot;</span><span class="p">,</span> <span class="s2">&quot;LOC_SRC&quot;</span><span class="p">,</span> <span class="s2">&quot;DET_MASK&quot;</span><span class="p">,</span> <span class="s2">&quot;FILETYPE&quot;</span><span class="p">,</span> <span class="s2">&quot;FILE-VER&quot;</span><span class="p">])</span>
+        <span class="n">commentary_keywords</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;COMMENT&quot;</span><span class="p">,</span> <span class="s2">&quot;HISTORY&quot;</span><span class="p">])</span>
+
+        <span class="n">output_headers</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">()</span>
+
+        <span class="c1">#for header_name in input_headers.keys():</span>
+        <span class="c1"># Using index enables headers with different names to be copied to each other</span>
+        <span class="c1"># E.g. TTE headers -&gt; PHAII headers</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">input_headers</span><span class="o">.</span><span class="n">num_headers</span><span class="p">):</span>
+            <span class="c1">#input_header = input_headers[header_name]</span>
+            <span class="c1">#output_header = output_headers[header_name]</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">input_header</span> <span class="o">=</span> <span class="n">input_headers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">output_header</span> <span class="o">=</span> <span class="n">output_headers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">continue</span>
+                <span class="c1"># TODO: log warning</span>
+
+            <span class="k">for</span> <span class="n">commentary_keyword</span> <span class="ow">in</span> <span class="n">commentary_keywords</span><span class="p">:</span>
+                <span class="n">commentary_indices</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">output_header</span><span class="o">.</span><span class="n">_cards</span><span class="p">)</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">keyword</span> <span class="o">==</span> <span class="n">commentary_keyword</span><span class="p">]</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">commentary_indices</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="c1"># Have to delete directly from the cards</span>
+                    <span class="c1"># Assumes they&#39;ll be co-located</span>
+                    <span class="k">del</span> <span class="n">output_header</span><span class="o">.</span><span class="n">_cards</span><span class="p">[</span><span class="n">commentary_indices</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="n">commentary_indices</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="p">[(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">input_header</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="n">gifts_keywords</span> <span class="o">|</span> <span class="n">commentary_keywords</span> <span class="o">|</span> <span class="nb">set</span><span class="p">(</span><span class="n">output_headers</span><span class="o">.</span><span class="n">_exclude_file_keywords</span><span class="p">))]:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">output_header</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+                <span class="k">except</span><span class="p">:</span>
+                    <span class="c1"># Header key is present in input header but not in output</span>
+                    <span class="k">pass</span>
+            <span class="k">for</span> <span class="n">commentary_keyword</span> <span class="ow">in</span> <span class="n">commentary_keywords</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">input_header</span><span class="o">.</span><span class="n">_cards</span> <span class="k">if</span> <span class="n">c</span><span class="o">.</span><span class="n">keyword</span> <span class="o">==</span> <span class="n">commentary_keyword</span><span class="p">]:</span>
+                    <span class="c1"># Have to add directly to the cards, as astropy.io.fits.header.Header.keys() checks _cards.</span>
+                    <span class="c1"># These will have previously been deleted above.</span>
+                    <span class="c1"># Can&#39;t use add_comment() or add_history() as at least one of these is required initially.</span>
+                    <span class="n">output_header</span><span class="o">.</span><span class="n">_cards</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">output_headers</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Update the &#39;FILETYPE&#39; keywords to the instance type.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">filetype</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_update_headers</span><span class="p">(</span><span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_headers</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="n">keyword</span><span class="o">=</span><span class="s2">&quot;FILETYPE&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">filetype</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">_update_headers</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">keyword</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">hdr</span> <span class="ow">in</span> <span class="n">headers</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">hdr</span><span class="p">[</span><span class="n">keyword</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="k">pass</span>
+            
+
+
+<span class="k">class</span> <span class="nc">PhaiiCommonHeaders</span><span class="p">(</span><span class="n">GiftsFileHeaders</span><span class="p">):</span>
+    <span class="n">filetype</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">_gifts_instrument</span><span class="si">}</span><span class="s2"> PHAII&quot;</span>
+    
+    <span class="n">_exclude_file_keywords</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;CREATOR&#39;</span><span class="p">,</span> <span class="s1">&#39;DATATYPE&#39;</span><span class="p">,</span> <span class="s1">&#39;EXTNAME&#39;</span><span class="p">,</span> <span class="s1">&#39;FILENAME&#39;</span><span class="p">,</span> <span class="s1">&#39;FILETYPE&#39;</span><span class="p">,</span> <span class="s1">&#39;HDUCLAS1&#39;</span><span class="p">,</span> <span class="s2">&quot;INFILE01&quot;</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Update the &#39;DATATYPE&#39; keyword to the instance type.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">filetype</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_update_headers</span><span class="p">(</span><span class="n">headers</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_headers</span><span class="p">[</span><span class="s2">&quot;PRIMARY&quot;</span><span class="p">]],</span> <span class="n">keyword</span><span class="o">=</span><span class="s2">&quot;DATATYPE&quot;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">filetype</span><span class="p">)</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+
+
+<div class="viewcode-block" id="PhaiiHeaders">
+<a class="viewcode-back" href="../../../../api/gdt.missions.gifts.headers.PhaiiHeaders.html#gdt.missions.gifts.headers.PhaiiHeaders">[docs]</a>
+<span class="k">class</span> <span class="nc">PhaiiHeaders</span><span class="p">(</span><span class="n">PhaiiCommonHeaders</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;FITS headers for continuous TODO CTIME and CSPEC files&quot;&quot;&quot;</span>
+    <span class="n">_header_templates</span> <span class="o">=</span> <span class="p">[</span><span class="n">DataPrimaryHeader</span><span class="p">(),</span> <span class="n">EboundsHeader</span><span class="p">(),</span> <span class="n">SpectrumHeader</span><span class="p">(),</span> 
+                         <span class="n">GtiHeader</span><span class="p">()]</span></div>
+
+
+<div class="viewcode-block" id="PhaiiTriggerHeaders">
+<a class="viewcode-back" href="../../../../api/gdt.missions.gifts.headers.PhaiiTriggerHeaders.html#gdt.missions.gifts.headers.PhaiiTriggerHeaders">[docs]</a>
+<span class="k">class</span> <span class="nc">PhaiiTriggerHeaders</span><span class="p">(</span><span class="n">PhaiiCommonHeaders</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;FITS headers for trigger TODO CTIME and CSPEC files&quot;&quot;&quot;</span>
+    <span class="n">_header_templates</span> <span class="o">=</span> <span class="p">[</span><span class="n">DataTriggerPrimaryHeader</span><span class="p">(),</span> <span class="n">EboundsTriggerHeader</span><span class="p">(),</span> 
+                         <span class="n">SpectrumTriggerHeader</span><span class="p">(),</span> <span class="n">GtiTriggerHeader</span><span class="p">()]</span></div>
+
+
+
+<span class="k">class</span> <span class="nc">TteCommonHeaders</span><span class="p">(</span><span class="n">GiftsFileHeaders</span><span class="p">):</span>
+    <span class="n">filetype</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">_gifts_instrument</span><span class="si">}</span><span class="s2"> PHOTON LIST&quot;</span>
+
+
+<div class="viewcode-block" id="TteHeaders">
+<a class="viewcode-back" href="../../../../api/gdt.missions.gifts.headers.TteHeaders.html#gdt.missions.gifts.headers.TteHeaders">[docs]</a>
+<span class="k">class</span> <span class="nc">TteHeaders</span><span class="p">(</span><span class="n">TteCommonHeaders</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;FITS headers for continuous TTE files&quot;&quot;&quot;</span>
+    <span class="n">_header_templates</span> <span class="o">=</span> <span class="p">[</span><span class="n">GiftsDataPrimaryHeader</span><span class="p">(),</span> <span class="n">EboundsHeader</span><span class="p">(),</span> <span class="n">EventsHeader</span><span class="p">(),</span> 
+                         <span class="n">GtiHeader</span><span class="p">()]</span></div>
+
+
+
+<div class="viewcode-block" id="TteTriggerHeaders">
+<a class="viewcode-back" href="../../../../api/gdt.missions.gifts.headers.TteTriggerHeaders.html#gdt.missions.gifts.headers.TteTriggerHeaders">[docs]</a>
+<span class="k">class</span> <span class="nc">TteTriggerHeaders</span><span class="p">(</span><span class="n">TteCommonHeaders</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;FITS headers for trigger TTE files&quot;&quot;&quot;</span>
+    <span class="n">_header_templates</span> <span class="o">=</span> <span class="p">[</span><span class="n">GiftsDataTriggerPrimaryHeader</span><span class="p">(),</span> <span class="n">EboundsTriggerHeader</span><span class="p">(),</span> 
+                         <span class="n">EventsTriggerHeader</span><span class="p">(),</span> <span class="n">GtiTriggerHeader</span><span class="p">()]</span></div>
+
+
+
+<div class="viewcode-block" id="HealpixHeaders">
+<a class="viewcode-back" href="../../../../api/gdt.missions.gifts.headers.HealpixHeaders.html#gdt.missions.gifts.headers.HealpixHeaders">[docs]</a>
+<span class="k">class</span> <span class="nc">HealpixHeaders</span><span class="p">(</span><span class="n">GiftsFileHeaders</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;FITS headers for localization HEALPix files&quot;&quot;&quot;</span>
+    <span class="n">_header_templates</span> <span class="o">=</span> <span class="p">[</span><span class="n">HealpixPrimaryHeader</span><span class="p">(),</span> <span class="n">HealpixImageHeader</span><span class="p">()]</span></div>
+
+
+
+<div class="viewcode-block" id="TcatHeaders">
+<a class="viewcode-back" href="../../../../api/gdt.missions.gifts.headers.TcatHeaders.html#gdt.missions.gifts.headers.TcatHeaders">[docs]</a>
+<span class="k">class</span> <span class="nc">TcatHeaders</span><span class="p">(</span><span class="n">GiftsFileHeaders</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;FITS headers for trigger catalog files&quot;&quot;&quot;</span>
+    <span class="n">filetype</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">_gifts_instrument</span><span class="si">}</span><span class="s2"> TRIGGER ENTRY&quot;</span>
+
+    <span class="n">_header_templates</span> <span class="o">=</span> <span class="p">[</span><span class="n">TcatHeader</span><span class="p">()]</span></div>
+
+
+
+<div class="viewcode-block" id="TrigdatHeaders">
+<a class="viewcode-back" href="../../../../api/gdt.missions.gifts.headers.TrigdatHeaders.html#gdt.missions.gifts.headers.TrigdatHeaders">[docs]</a>
+<span class="k">class</span> <span class="nc">TrigdatHeaders</span><span class="p">(</span><span class="n">GiftsFileHeaders</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;FITS headers for TRIGDAT files&quot;&quot;&quot;</span>
+    <span class="n">filetype</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">_gifts_instrument</span><span class="si">}</span><span class="s2"> TRIGDAT&quot;</span>
+
+    <span class="n">_header_templates</span> <span class="o">=</span> <span class="p">[</span><span class="n">TrigdatPrimaryHeader</span><span class="p">(),</span> <span class="n">TrigdatTrigrateHeader</span><span class="p">(),</span>
+                         <span class="n">TrigdatBackratesHeader</span><span class="p">(),</span> <span class="n">TrigdatObCalcHeader</span><span class="p">(),</span>
+                         <span class="n">TrigdatMaxratesHeader</span><span class="p">(),</span> <span class="n">TrigdatEventrateHeader</span><span class="p">()]</span></div>
+
+
+
+<div class="viewcode-block" id="PosHistHeaders">
+<a class="viewcode-back" href="../../../../api/gdt.missions.gifts.headers.PosHistHeaders.html#gdt.missions.gifts.headers.PosHistHeaders">[docs]</a>
+<span class="k">class</span> <span class="nc">PosHistHeaders</span><span class="p">(</span><span class="n">FileHeaders</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;FITS headers for position history files&quot;&quot;&quot;</span>
+    <span class="n">_header_templates</span> <span class="o">=</span> <span class="p">[</span><span class="n">PosHistPrimaryHeader</span><span class="p">(),</span> <span class="n">PosHistDataHeader</span><span class="p">()]</span></div>
+
+        
+    
+</pre></div>
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+
+
+<form action="../../../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right"> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright .<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 7.2.6. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

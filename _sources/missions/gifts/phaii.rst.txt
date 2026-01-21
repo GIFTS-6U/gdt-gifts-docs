@@ -1,0 +1,24 @@
+.. _gifts-phaii:
+.. |GiftsPhaii| replace:: :class:`~gdt.missions.gifts.phaii.GiftsPhaii`
+.. |Phaii| replace:: :class:`~gdt.core.phaii.Phaii`
+
+**********************************************************
+GIFTS PHAII Data (:mod:`gdt.missions.gifts.phaii`)
+**********************************************************
+The primary science data produced by GIFTS post-launch will be summarized as a time history of 
+spectra, which will be provided as temporally pre-binned (CTIME and CSPEC) or 
+temporally unbinned (TTE). These data types will be continuously produced for 
+each GIFTS trigger. 
+The generated FITS data files will be read by the |GiftsPhaii| class.
+
+For more details about working with PHAII data, see 
+:external:ref:`PHAII Files<core-phaii>`.
+ 
+Reference/API
+=============
+
+.. automodapi:: gdt.missions.gifts.phaii
+   :inherited-members:
+
+
+

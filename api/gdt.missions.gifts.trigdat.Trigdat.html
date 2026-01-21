@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Trigdat &#8212; GIFTS Gamma-ray Data Tools 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-astropy.css?v=cfc02a30" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="icon" href="../_static/gdt_favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MaxRates" href="gdt.missions.gifts.trigdat.MaxRates.html" />
+    <link rel="prev" title="GIFTS Trigger Data (gdt.missions.gifts.trigdat)" href="../missions/gifts/trigdat.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../index.html"><span id="logotext1">gdt</span><span id="logotext2">-gifts</span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="gdt.missions.gifts.trigdat.MaxRates.html" title="MaxRates">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="../missions/gifts/trigdat.html" title="GIFTS Trigger Data (gdt.missions.gifts.trigdat)">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../index.html">GIFTS Gamma-ray Data Tools 0.1.0 documentation</a>
+	 &#187;
+      </li>
+      <li><a href="../missions/gifts/trigdat.html" accesskey="U">GIFTS Trigger Data (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.trigdat</span></code>)</a> &#187;</li>
+      
+      <li>Trigdat</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="trigdat">
+<h1>Trigdat<a class="headerlink" href="#trigdat" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gdt.missions.gifts.trigdat.</span></span><span class="sig-name descname"><span class="pre">Trigdat</span></span><a class="reference internal" href="../_modules/gdt/missions/gifts/trigdat.html#Trigdat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://astro-gdt.readthedocs.io/projects/astro-gdt-fermi/en/latest/api/gdt.missions.fermi.gbm.trigdat.Trigdat.html#gdt.missions.fermi.gbm.trigdat.Trigdat" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trigdat</span></code></a></p>
+<p>Class for the GIFTS Trigger Data</p>
+<p class="rubric">Attributes Summary</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.backrates" title="gdt.missions.gifts.trigdat.Trigdat.backrates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">backrates</span></code></a></p></td>
+<td><p>A BackRates object containing the info from the on-board background estimate</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.filename" title="gdt.missions.gifts.trigdat.Trigdat.filename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filename</span></code></a></p></td>
+<td><p>The filename</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.fsw_locations" title="gdt.missions.gifts.trigdat.Trigdat.fsw_locations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fsw_locations</span></code></a></p></td>
+<td><p>A list of flight-software-determined locations for the trigger</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.gti" title="gdt.missions.gifts.trigdat.Trigdat.gti"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gti</span></code></a></p></td>
+<td><p>The Good Time Intervals</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.hdulist" title="gdt.missions.gifts.trigdat.Trigdat.hdulist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hdulist</span></code></a></p></td>
+<td><p>The list of Header Data Units</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.headers" title="gdt.missions.gifts.trigdat.Trigdat.headers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">headers</span></code></a></p></td>
+<td><p>The headers</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.maxrates" title="gdt.missions.gifts.trigdat.Trigdat.maxrates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">maxrates</span></code></a></p></td>
+<td><p>A list of MaxRates objects, each containing maxrates info</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.num_hdus" title="gdt.missions.gifts.trigdat.Trigdat.num_hdus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_hdus</span></code></a></p></td>
+<td><p>The number of HDUs</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.num_maxrates" title="gdt.missions.gifts.trigdat.Trigdat.num_maxrates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_maxrates</span></code></a></p></td>
+<td><p>The number of MaxRates issued by the flight software</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.poshist" title="gdt.missions.gifts.trigdat.Trigdat.poshist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">poshist</span></code></a></p></td>
+<td><p>The position/attitude history</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.time_range" title="gdt.missions.gifts.trigdat.Trigdat.time_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_range</span></code></a></p></td>
+<td><p>The time range of the data</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.triggered_detectors" title="gdt.missions.gifts.trigdat.Trigdat.triggered_detectors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">triggered_detectors</span></code></a></p></td>
+<td><p>The detectors that were triggered</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.trigrates" title="gdt.missions.gifts.trigdat.Trigdat.trigrates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trigrates</span></code></a></p></td>
+<td><p>The trigger information and rates</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.trigtime" title="gdt.missions.gifts.trigdat.Trigdat.trigtime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trigtime</span></code></a></p></td>
+<td><p>The trigger time</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Summary</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.close" title="gdt.missions.gifts.trigdat.Trigdat.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>()</p></td>
+<td><p>Close the file</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.column" title="gdt.missions.gifts.trigdat.Trigdat.column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">column</span></code></a>(hdu_num, col_name)</p></td>
+<td><p>Return a column from an HDU as an array.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.columns_as_array" title="gdt.missions.gifts.trigdat.Trigdat.columns_as_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">columns_as_array</span></code></a>(hdu_num, col_names[, dtype])</p></td>
+<td><p>Return a list of columns from an HDU as an array.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.from_data" title="gdt.missions.gifts.trigdat.Trigdat.from_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_data</span></code></a>(phaii_list, poshist, trigtime, ...)</p></td>
+<td><p>Create a Trigdat object from a list of GiftsPhaii objects and a SpacecraftFrame object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.get_column_names" title="gdt.missions.gifts.trigdat.Trigdat.get_column_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_column_names</span></code></a>(hdu_num)</p></td>
+<td><p>Get the column names in a HDU.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.open" title="gdt.missions.gifts.trigdat.Trigdat.open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open</span></code></a>(file_path, **kwargs)</p></td>
+<td><p>Open and read a Trigdat file</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.sum_detectors" title="gdt.missions.gifts.trigdat.Trigdat.sum_detectors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum_detectors</span></code></a>(detectors[, timescale])</p></td>
+<td><p>Sum the data from a list of detectors and convert to a GiftsPhaii object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.to_phaii" title="gdt.missions.gifts.trigdat.Trigdat.to_phaii"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_phaii</span></code></a>(detector[, timescale])</p></td>
+<td><p>Convert the data for a detector to a <a class="reference internal" href="gdt.missions.gifts.phaii.GiftsPhaii.html#gdt.missions.gifts.phaii.GiftsPhaii" title="gdt.missions.gifts.phaii.GiftsPhaii"><code class="xref py py-class docutils literal notranslate"><span class="pre">GiftsPhaii</span></code></a> object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.write" title="gdt.missions.gifts.trigdat.Trigdat.write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write</span></code></a>(directory[, filename])</p></td>
+<td><p>Write the file to disk.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes Documentation</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.backrates">
+<span class="sig-name descname"><span class="pre">backrates</span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.backrates" title="Link to this definition">¶</a></dt>
+<dd><p>A BackRates object containing the info from
+the on-board background estimate</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<a class="reference internal" href="gdt.missions.gifts.trigdat.BackRates.html#gdt.missions.gifts.trigdat.BackRates" title="gdt.missions.gifts.trigdat.BackRates"><code class="xref py py-class docutils literal notranslate"><span class="pre">BackRates</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.filename">
+<span class="sig-name descname"><span class="pre">filename</span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.filename" title="Link to this definition">¶</a></dt>
+<dd><p>The filename</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.fsw_locations">
+<span class="sig-name descname"><span class="pre">fsw_locations</span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.fsw_locations" title="Link to this definition">¶</a></dt>
+<dd><p>A list of flight-software-determined
+locations for the trigger</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(list of <a class="reference internal" href="gdt.missions.gifts.trigdat.FswLocation.html#gdt.missions.gifts.trigdat.FswLocation" title="gdt.missions.gifts.trigdat.FswLocation"><code class="xref py py-class docutils literal notranslate"><span class="pre">FswLocation</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.gti">
+<span class="sig-name descname"><span class="pre">gti</span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.gti" title="Link to this definition">¶</a></dt>
+<dd><p>The Good Time Intervals</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.data_primitives.Gti.html#gdt.core.data_primitives.Gti" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Gti</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.hdulist">
+<span class="sig-name descname"><span class="pre">hdulist</span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.hdulist" title="Link to this definition">¶</a></dt>
+<dd><p>The list of Header Data Units</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(astropy.io.fits.hdu.HDUList)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.headers">
+<span class="sig-name descname"><span class="pre">headers</span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.headers" title="Link to this definition">¶</a></dt>
+<dd><p>The headers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.headers.FileHeaders.html#gdt.core.headers.FileHeaders" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">FileHeaders</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.maxrates">
+<span class="sig-name descname"><span class="pre">maxrates</span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.maxrates" title="Link to this definition">¶</a></dt>
+<dd><p>A list of MaxRates objects, each
+containing maxrates info</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(list of <a class="reference internal" href="gdt.missions.gifts.trigdat.MaxRates.html#gdt.missions.gifts.trigdat.MaxRates" title="gdt.missions.gifts.trigdat.MaxRates"><code class="xref py py-class docutils literal notranslate"><span class="pre">MaxRates</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.num_hdus">
+<span class="sig-name descname"><span class="pre">num_hdus</span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.num_hdus" title="Link to this definition">¶</a></dt>
+<dd><p>The number of HDUs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.num_maxrates">
+<span class="sig-name descname"><span class="pre">num_maxrates</span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.num_maxrates" title="Link to this definition">¶</a></dt>
+<dd><p>The number of MaxRates issued by the flight software</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.poshist">
+<span class="sig-name descname"><span class="pre">poshist</span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.poshist" title="Link to this definition">¶</a></dt>
+<dd><p>The position/attitude history</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">GbmPosHist</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.time_range">
+<span class="sig-name descname"><span class="pre">time_range</span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.time_range" title="Link to this definition">¶</a></dt>
+<dd><p>The time range of
+the data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.data_primitives.TimeRange.html#gdt.core.data_primitives.TimeRange" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">TimeRange</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.triggered_detectors">
+<span class="sig-name descname"><span class="pre">triggered_detectors</span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.triggered_detectors" title="Link to this definition">¶</a></dt>
+<dd><p>The detectors that were triggered</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(list of str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.trigrates">
+<span class="sig-name descname"><span class="pre">trigrates</span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.trigrates" title="Link to this definition">¶</a></dt>
+<dd><p>The trigger information and rates</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<a class="reference internal" href="gdt.missions.gifts.trigdat.MaxRates.html#gdt.missions.gifts.trigdat.MaxRates" title="gdt.missions.gifts.trigdat.MaxRates"><code class="xref py py-class docutils literal notranslate"><span class="pre">MaxRates</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.trigtime">
+<span class="sig-name descname"><span class="pre">trigtime</span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.trigtime" title="Link to this definition">¶</a></dt>
+<dd><p>The trigger time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Methods Documentation</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.close" title="Link to this definition">¶</a></dt>
+<dd><p>Close the file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.column">
+<span class="sig-name descname"><span class="pre">column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">array</span></span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.column" title="Link to this definition">¶</a></dt>
+<dd><p>Return a column from an HDU as an array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdu_num</strong> (<em>int</em>) – The HDU number</p></li>
+<li><p><strong>col_name</strong> (<em>str</em>) – The name of the column</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(np.array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.columns_as_array">
+<span class="sig-name descname"><span class="pre">columns_as_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dtype</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">array</span></span></span><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.columns_as_array" title="Link to this definition">¶</a></dt>
+<dd><p>Return a list of columns from an HDU as an array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdu_num</strong> (<em>int</em>) – The HDU number</p></li>
+<li><p><strong>col_names</strong> (<em>list</em><em> of </em><em>str</em>) – The names of the columns</p></li>
+<li><p><strong>dtype</strong> (<em>np.dtype</em><em>, </em><em>optional</em>) – The custom dtype of the output array</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(np.array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.from_data">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phaii_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">poshist</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigtime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">det_mask</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigrate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxrates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">backrates</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fswlocations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gdt/missions/gifts/trigdat.html#Trigdat.from_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.from_data" title="Link to this definition">¶</a></dt>
+<dd><p>Create a Trigdat object from a list of GiftsPhaii objects and a
+SpacecraftFrame object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The list of PHAIIs does not need to include every detector, as
+missing detectors will be assumed to have zero rates.  However,
+do not include more than one file from the same detector in the
+list. The PHAII list can be in any order.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>phaii_list</strong> (list of <a class="reference internal" href="gdt.missions.gifts.phaii.GiftsPhaii.html#gdt.missions.gifts.phaii.GiftsPhaii" title="gdt.missions.gifts.phaii.GiftsPhaii"><code class="xref py py-class docutils literal notranslate"><span class="pre">GiftsPhaii</span></code></a>) – A list of GiftsPhaii
+objects</p></li>
+<li><p><strong>poshist</strong> (<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.coords.SpacecraftFrame.html#gdt.core.coords.SpacecraftFrame" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">SpacecraftFrame</span></code></a>) – The spacecraft frame</p></li>
+<li><p><strong>trigtime</strong> (<em>float</em>) – The trigger time</p></li>
+<li><p><strong>det_mask</strong> (<em>np.ndarray</em>) – Triggered detector mask</p></li>
+<li><p><strong>time_range</strong> (<em>tuple</em><em>, </em><em>optional</em>) – The time range of the Trigdat. If not
+specified, uses the time range of the
+GiftsPhaiis</p></li>
+<li><p><strong>trigrate</strong> (<a class="reference internal" href="gdt.missions.gifts.trigdat.MaxRates.html#gdt.missions.gifts.trigdat.MaxRates" title="gdt.missions.gifts.trigdat.MaxRates"><code class="xref py py-class docutils literal notranslate"><span class="pre">MaxRates</span></code></a>, optional) – The trigger rates object</p></li>
+<li><p><strong>maxrates</strong> (list of <a class="reference internal" href="gdt.missions.gifts.trigdat.MaxRates.html#gdt.missions.gifts.trigdat.MaxRates" title="gdt.missions.gifts.trigdat.MaxRates"><code class="xref py py-class docutils literal notranslate"><span class="pre">MaxRates</span></code></a>, optional) – The maxrates objects</p></li>
+<li><p><strong>backrates</strong> (<a class="reference internal" href="gdt.missions.gifts.trigdat.BackRates.html#gdt.missions.gifts.trigdat.BackRates" title="gdt.missions.gifts.trigdat.BackRates"><code class="xref py py-class docutils literal notranslate"><span class="pre">BackRates</span></code></a>, optional) – The background rates
+object</p></li>
+<li><p><strong>fswlocations</strong> (list of <a class="reference internal" href="gdt.missions.gifts.trigdat.FswLocation.html#gdt.missions.gifts.trigdat.FswLocation" title="gdt.missions.gifts.trigdat.FswLocation"><code class="xref py py-class docutils literal notranslate"><span class="pre">FswLocation</span></code></a>, optional) – The flight
+software location objects</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat" title="gdt.missions.gifts.trigdat.Trigdat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trigdat</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.get_column_names">
+<span class="sig-name descname"><span class="pre">get_column_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.get_column_names" title="Link to this definition">¶</a></dt>
+<dd><p>Get the column names in a HDU.  Returns empty if there is no data
+extension in the HDU.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hdu_num</strong> (<em>int</em>) – The HDU number</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(tuple)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.open">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gdt/missions/gifts/trigdat.html#Trigdat.open"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.open" title="Link to this definition">¶</a></dt>
+<dd><p>Open and read a Trigdat file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – The file path of the trigdat file</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat" title="gdt.missions.gifts.trigdat.Trigdat"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trigdat</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.sum_detectors">
+<span class="sig-name descname"><span class="pre">sum_detectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detectors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timescale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1024</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gdt/missions/gifts/trigdat.html#Trigdat.sum_detectors"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.sum_detectors" title="Link to this definition">¶</a></dt>
+<dd><p>Sum the data from a list of detectors and convert to a GiftsPhaii
+object. The exposures from different detectors are averaged.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>detectors</strong> (<em>list</em><em> of </em><em>str</em>) – The detectors to sum</p></li>
+<li><p><strong>timescale</strong> (<em>int</em><em>, </em><em>optional</em>) – The minimum timescale in ms of the data to return.  Available
+options are 1024, 256, and 64.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<a class="reference internal" href="gdt.missions.gifts.phaii.GiftsPhaii.html#gdt.missions.gifts.phaii.GiftsPhaii" title="gdt.missions.gifts.phaii.GiftsPhaii"><code class="xref py py-class docutils literal notranslate"><span class="pre">GiftsPhaii</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.to_phaii">
+<span class="sig-name descname"><span class="pre">to_phaii</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">detector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timescale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1024</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/gdt/missions/gifts/trigdat.html#Trigdat.to_phaii"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.to_phaii" title="Link to this definition">¶</a></dt>
+<dd><p>Convert the data for a detector to a <a class="reference internal" href="gdt.missions.gifts.phaii.GiftsPhaii.html#gdt.missions.gifts.phaii.GiftsPhaii" title="gdt.missions.gifts.phaii.GiftsPhaii"><code class="xref py py-class docutils literal notranslate"><span class="pre">GiftsPhaii</span></code></a>
+object.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A standard Trigdat will contain data on 8192, 1024, 256, and 62 ms
+timescales.  A non-standard Trigdat can be created from other
+data types (see <a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.from_data" title="gdt.missions.gifts.trigdat.Trigdat.from_data"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Trigdat.from_data()</span></code></a>) and therefore the
+timescales will likely be different and arbitrary. For that reason,
+the <code class="docutils literal notranslate"><span class="pre">timescale</span></code> keyword will be ignored for non-standard Trigdat.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>detector</strong> (<em>str</em>) – The detector to convert</p></li>
+<li><p><strong>timescale</strong> (<em>int</em><em>, </em><em>optional</em>) – The minimum timescale in ms of the data to return. Available
+options are 1024, 256, and 64. This is ignored if the trigdat
+has non-standard timescales.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<a class="reference internal" href="gdt.missions.gifts.phaii.GiftsPhaii.html#gdt.missions.gifts.phaii.GiftsPhaii" title="gdt.missions.gifts.phaii.GiftsPhaii"><code class="xref py py-class docutils literal notranslate"><span class="pre">GiftsPhaii</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.trigdat.Trigdat.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.trigdat.Trigdat.write" title="Link to this definition">¶</a></dt>
+<dd><p>Write the file to disk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>directory</strong> (<em>str</em>) – The directory to write the file.</p></li>
+<li><p><strong>filename</strong> (<em>str</em><em>, </em><em>optional</em>) – The filename.  If omitted, attempts to use
+the <code class="xref py py-attr docutils literal notranslate"><span class="pre">filename</span></code>
+if set.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">Trigdat</a><ul>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat"><code class="docutils literal notranslate"><span class="pre">Trigdat</span></code></a><ul>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.backrates"><code class="docutils literal notranslate"><span class="pre">Trigdat.backrates</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.filename"><code class="docutils literal notranslate"><span class="pre">Trigdat.filename</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.fsw_locations"><code class="docutils literal notranslate"><span class="pre">Trigdat.fsw_locations</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.gti"><code class="docutils literal notranslate"><span class="pre">Trigdat.gti</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.hdulist"><code class="docutils literal notranslate"><span class="pre">Trigdat.hdulist</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.headers"><code class="docutils literal notranslate"><span class="pre">Trigdat.headers</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.maxrates"><code class="docutils literal notranslate"><span class="pre">Trigdat.maxrates</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.num_hdus"><code class="docutils literal notranslate"><span class="pre">Trigdat.num_hdus</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.num_maxrates"><code class="docutils literal notranslate"><span class="pre">Trigdat.num_maxrates</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.poshist"><code class="docutils literal notranslate"><span class="pre">Trigdat.poshist</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.time_range"><code class="docutils literal notranslate"><span class="pre">Trigdat.time_range</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.triggered_detectors"><code class="docutils literal notranslate"><span class="pre">Trigdat.triggered_detectors</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.trigrates"><code class="docutils literal notranslate"><span class="pre">Trigdat.trigrates</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.trigtime"><code class="docutils literal notranslate"><span class="pre">Trigdat.trigtime</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.close"><code class="docutils literal notranslate"><span class="pre">Trigdat.close()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.column"><code class="docutils literal notranslate"><span class="pre">Trigdat.column()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.columns_as_array"><code class="docutils literal notranslate"><span class="pre">Trigdat.columns_as_array()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.from_data"><code class="docutils literal notranslate"><span class="pre">Trigdat.from_data()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.get_column_names"><code class="docutils literal notranslate"><span class="pre">Trigdat.get_column_names()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.open"><code class="docutils literal notranslate"><span class="pre">Trigdat.open()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.sum_detectors"><code class="docutils literal notranslate"><span class="pre">Trigdat.sum_detectors()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.to_phaii"><code class="docutils literal notranslate"><span class="pre">Trigdat.to_phaii()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.trigdat.Trigdat.write"><code class="docutils literal notranslate"><span class="pre">Trigdat.write()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../missions/gifts/trigdat.html"
+                          title="previous chapter">GIFTS Trigger Data (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.trigdat</span></code>)</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="gdt.missions.gifts.trigdat.MaxRates.html"
+                          title="next chapter">MaxRates</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/gdt.missions.gifts.trigdat.Trigdat.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="../_sources/api/gdt.missions.gifts.trigdat.Trigdat.rst.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright .<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 7.2.6. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+GiftsTte
+========
+
+.. currentmodule:: gdt.missions.gifts.tte
+
+.. autoclass:: GiftsTte
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~GiftsTte.data
+      ~GiftsTte.detector
+      ~GiftsTte.ebounds
+      ~GiftsTte.energy_range
+      ~GiftsTte.event_deadtime
+      ~GiftsTte.filename
+      ~GiftsTte.gti
+      ~GiftsTte.hdulist
+      ~GiftsTte.headers
+      ~GiftsTte.num_chans
+      ~GiftsTte.num_hdus
+      ~GiftsTte.overflow_deadtime
+      ~GiftsTte.time_range
+      ~GiftsTte.trigtime
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~GiftsTte.close
+      ~GiftsTte.column
+      ~GiftsTte.columns_as_array
+      ~GiftsTte.from_data
+      ~GiftsTte.get_column_names
+      ~GiftsTte.get_exposure
+      ~GiftsTte.merge
+      ~GiftsTte.open
+      ~GiftsTte.rebin_energy
+      ~GiftsTte.set_ebounds
+      ~GiftsTte.slice_energy
+      ~GiftsTte.slice_time
+      ~GiftsTte.to_pha
+      ~GiftsTte.to_phaii
+      ~GiftsTte.to_spectrum
+      ~GiftsTte.write
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: data
+   .. autoattribute:: detector
+   .. autoattribute:: ebounds
+   .. autoattribute:: energy_range
+   .. autoattribute:: event_deadtime
+   .. autoattribute:: filename
+   .. autoattribute:: gti
+   .. autoattribute:: hdulist
+   .. autoattribute:: headers
+   .. autoattribute:: num_chans
+   .. autoattribute:: num_hdus
+   .. autoattribute:: overflow_deadtime
+   .. autoattribute:: time_range
+   .. autoattribute:: trigtime
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: close
+   .. automethod:: column
+   .. automethod:: columns_as_array
+   .. automethod:: from_data
+   .. automethod:: get_column_names
+   .. automethod:: get_exposure
+   .. automethod:: merge
+   .. automethod:: open
+   .. automethod:: rebin_energy
+   .. automethod:: set_ebounds
+   .. automethod:: slice_energy
+   .. automethod:: slice_time
+   .. automethod:: to_pha
+   .. automethod:: to_phaii
+   .. automethod:: to_spectrum
+   .. automethod:: write

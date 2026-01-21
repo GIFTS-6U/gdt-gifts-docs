@@ -1,0 +1,39 @@
+HealpixHeaders
+==============
+
+.. currentmodule:: gdt.missions.gifts.headers
+
+.. autoclass:: HealpixHeaders
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~HealpixHeaders.filetype
+      ~HealpixHeaders.num_headers
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~HealpixHeaders.copy
+      ~HealpixHeaders.creator
+      ~HealpixHeaders.from_file_headers
+      ~HealpixHeaders.from_headers
+      ~HealpixHeaders.keys
+      ~HealpixHeaders.update
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: filetype
+   .. autoattribute:: num_headers
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: copy
+   .. automethod:: creator
+   .. automethod:: from_file_headers
+   .. automethod:: from_headers
+   .. automethod:: keys
+   .. automethod:: update

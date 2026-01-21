@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GIFTS TTE Data (gdt.missions.gifts.tte) &#8212; GIFTS Gamma-ray Data Tools 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-astropy.css?v=cfc02a30" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+    
+    <script src="../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script type="text/javascript" src="../../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../../_static/copybutton.js"></script>
+    <link rel="icon" href="../../_static/gdt_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="GiftsTte" href="../../api/gdt.missions.gifts.tte.GiftsTte.html" />
+    <link rel="prev" title="FswLocation" href="../../api/gdt.missions.gifts.trigdat.FswLocation.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../../index.html"><span id="logotext1">gdt</span><span id="logotext2">-gifts</span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="../../api/gdt.missions.gifts.tte.GiftsTte.html" title="GiftsTte">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="../../api/gdt.missions.gifts.trigdat.FswLocation.html" title="FswLocation">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../../index.html">GIFTS Gamma-ray Data Tools 0.1.0 documentation</a>
+	 &#187;
+      </li>
+      
+      <li>GIFTS TTE Data (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.tte</span></code>)</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="gifts-tte"></span><section id="gifts-tte-data-gdt-missions-gifts-tte">
+<h1>GIFTS TTE Data (<a class="reference internal" href="#module-gdt.missions.gifts.tte" title="gdt.missions.gifts.tte"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.tte</span></code></a>)<a class="headerlink" href="#gifts-tte-data-gdt-missions-gifts-tte" title="Link to this heading">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The GIFTS TTE data implementation and this document are currently based on those provided by
+the <a class="reference external" href="https://astro-gdt.readthedocs.io/projects/astro-gdt-fermi/en/latest/index.html#gdt-fermi" title="(in The Gamma-ray Data Tools v2.2.2)"><span class="xref std std-ref">Fermi Gamma-ray Data Tools</span></a>, and will be revised in future versions.</p>
+</div>
+<p>TTE (Time-Tagged Event) data is a temporally unbinned time-series of “counts” where each
+count is mapped to an energy channel. These energy channels are currently a subset of the
+128 energy channels provided by a Fermi-GBM <a class="reference external" href="https://astro-gdt.readthedocs.io/projects/astro-gdt-fermi/en/latest/api/gdt.missions.fermi.gbm.tte.GbmTte.html#gdt.missions.fermi.gbm.tte.GbmTte" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">GbmTte</span></code></a> instance, according to a GIFTS lower energy bound of 20 keV.
+We can read a TTE file with
+the <a class="reference internal" href="../../api/gdt.missions.gifts.tte.GiftsTte.html#gdt.missions.gifts.tte.GiftsTte" title="gdt.missions.gifts.tte.GiftsTte"><code class="xref py py-class docutils literal notranslate"><span class="pre">GiftsTte</span></code></a> class.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gdt.core</span> <span class="kn">import</span> <span class="n">data_path</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gdt.missions.gifts.tte</span> <span class="kn">import</span> <span class="n">GiftsTte</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tte</span> <span class="o">=</span> <span class="n">GiftsTte</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;gifts/gifts_tte_G3_bn220624124_v00.fit&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tte</span>
+<span class="go">&lt;GiftsTte: gifts_tte_G3_bn220624124_v00.fit;</span>
+<span class="go"> trigger time: 677732319.512006;</span>
+<span class="go"> time range (-131.5836260318756, 474.62935197353363);</span>
+<span class="go"> energy range (20.394683837890625, 2000.0)&gt;</span>
+</pre></div>
+</div>
+<p>Alternatively, the TTE can be retrieved from the <a class="reference internal" href="catalogs.html#gifts-catalogs-retrieve"><span class="std std-ref">current GIFTS burst catalog</span></a>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gdt.missions.gifts.catalogs</span> <span class="kn">import</span> <span class="n">BurstCatalog</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">burstcat</span> <span class="o">=</span> <span class="n">BurstCatalog</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tte</span> <span class="o">=</span> <span class="p">[</span><span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">burstcat</span><span class="o">.</span><span class="n">get_tte</span><span class="p">(</span><span class="n">trigger_name</span><span class="o">=</span><span class="s2">&quot;bn220624124&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">t</span><span class="o">.</span><span class="n">detector</span><span class="o">==</span><span class="s2">&quot;G3&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The TTE FITS files have multiple data extensions,
+each with metadata information in a header. There is also a primary header that
+contains metadata relevant to the overall file. You can access this metadata
+information:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tte</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+<span class="go">[&#39;PRIMARY&#39;, &#39;EBOUNDS&#39;, &#39;EVENTS&#39;, &#39;GTI&#39;]</span>
+</pre></div>
+</div>
+<p>Access is provided for certain important properties of the data:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># the good time intervals for the data</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tte</span><span class="o">.</span><span class="n">gti</span>
+<span class="go">&lt;Gti: 1 intervals; range (-131.5853500366211, 474.63367199897766)&gt;</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># the trigger time</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tte</span><span class="o">.</span><span class="n">trigtime</span>
+<span class="go">677732319.512006</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># the time range</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tte</span><span class="o">.</span><span class="n">time_range</span>
+<span class="go">(-131.5836260318756, 474.62935197353363)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># the energy range</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tte</span><span class="o">.</span><span class="n">energy_range</span>
+<span class="go">(20.394683837890625, 2000.0)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># number of energy channels</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tte</span><span class="o">.</span><span class="n">num_chans</span>
+<span class="go">128</span>
+</pre></div>
+</div>
+<p>We can retrieve the time-tagged events data contained within the file, which
+is an <a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.data_primitives.EventList.html#gdt.core.data_primitives.EventList" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">EventList</span></code></a> class (see
+<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/core/primitives.html#core-data-primitives-event" title="(in The Gamma-ray Data Tools v2.2.2)"><span class="xref std std-ref">Event Data</span></a> for more details).</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tte</span><span class="o">.</span><span class="n">data</span>
+<span class="go">&lt;EventList: 157347 events;</span>
+<span class="go"> time range (-131.5836260318756, 474.62935197353363);</span>
+<span class="go"> channel range (16, 127)&gt;</span>
+</pre></div>
+</div>
+<p>The <a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.tte.PhotonList.html#gdt.core.tte.PhotonList" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">PhotonList</span></code></a> base class provides a number of high-level functions,
+such as slicing the data in time:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">time_sliced_tte</span> <span class="o">=</span> <span class="n">tte</span><span class="o">.</span><span class="n">slice_time</span><span class="p">((</span><span class="o">-</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">time_sliced_tte</span>
+<span class="go">&lt;GiftsTte:</span>
+<span class="go"> trigger time: 677732319.512006;</span>
+<span class="go"> time range (-9.999047994613647, 9.999963998794556);</span>
+<span class="go"> energy range (20.394683837890625, 2000.0)&gt;</span>
+</pre></div>
+</div>
+<p>As TTE data is temporally unbinned, it must be initially binned in time prior
+to the generation of a lightcurve, where the
+<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/core/binning/unbinned.html#binning-unbinned" title="(in The Gamma-ray Data Tools v2.2.2)"><span class="xref std std-ref">Binning Algorithms for Unbinned Data</span></a> can be used. For
+this example, <a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.binning.unbinned.bin_by_time.html#gdt.core.binning.unbinned.bin_by_time" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">bin_by_time()</span></code></a> bins the TTE to the
+specified time resolution, converting the TTE to a PHAII object:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gdt.core.binning.unbinned</span> <span class="kn">import</span> <span class="n">bin_by_time</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">phaii</span> <span class="o">=</span> <span class="n">tte</span><span class="o">.</span><span class="n">to_phaii</span><span class="p">(</span><span class="n">bin_by_time</span><span class="p">,</span> <span class="mf">1.024</span><span class="p">,</span> <span class="n">time_ref</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">phaii</span>
+<span class="go">&lt;GiftsPhaii:</span>
+<span class="go"> trigger time: 677732319.512006;</span>
+<span class="go"> time range (-132.096, 475.136);</span>
+<span class="go"> energy range (4.062646865844727, 2000.0)&gt;</span>
+</pre></div>
+</div>
+<p>Here, we binned the data to 1.024 s resolution, where the reference point at which
+to start the binning (in both directions) was at T0=0 s.  The resulting
+<a class="reference internal" href="../../api/gdt.missions.gifts.phaii.GiftsPhaii.html#gdt.missions.gifts.phaii.GiftsPhaii" title="gdt.missions.gifts.phaii.GiftsPhaii"><code class="xref py py-class docutils literal notranslate"><span class="pre">GiftsPhaii</span></code></a> object can be used to generate a lightcurve using the
+<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.plot.lightcurve.Lightcurve.html#gdt.core.plot.lightcurve.Lightcurve" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Lightcurve</span></code></a> class:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gdt.core.plot.lightcurve</span> <span class="kn">import</span> <span class="n">Lightcurve</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">lcplot</span> <span class="o">=</span> <span class="n">Lightcurve</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">phaii</span><span class="o">.</span><span class="n">to_lightcurve</span><span class="p">())</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../_images/ttefig1.png" src="../../_images/ttefig1.png" />
+<p>To plot the spectrum, no additional binning is required as the
+TTE is already necessarily pre-binned in energy. A spectrum plot can be generated
+directly from the TTE object without any extra steps using the <a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.plot.spectrum.Spectrum.html#gdt.core.plot.spectrum.Spectrum" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Spectrum</span></code></a>
+class:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gdt.core.plot.spectrum</span> <span class="kn">import</span> <span class="n">Spectrum</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># integrate over time from 0 - 10 s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">spectrum</span> <span class="o">=</span> <span class="n">tte</span><span class="o">.</span><span class="n">to_spectrum</span><span class="p">(</span><span class="n">time_range</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">specplot</span> <span class="o">=</span> <span class="n">Spectrum</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">spectrum</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">specplot</span><span class="o">.</span><span class="n">xlim</span> <span class="o">=</span> <span class="n">tte</span><span class="o">.</span><span class="n">energy_range</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../_images/ttefig2.png" src="../../_images/ttefig2.png" />
+<p>If required, the count spectrum can be rebinned using one of the
+<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/core/binning/binned.html#binning-binned" title="(in The Gamma-ray Data Tools v2.2.2)"><span class="xref std std-ref">Binning Algorithms for Binned Data</span></a>. For example,
+<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.binning.binned.combine_by_factor.html#gdt.core.binning.binned.combine_by_factor" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">combine_by_factor()</span></code></a> combines bins together by an integer
+factor:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gdt.core.binning.binned</span> <span class="kn">import</span> <span class="n">combine_by_factor</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># rebin the count spectrum by a factor of 4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rebinned_energy</span> <span class="o">=</span> <span class="n">tte</span><span class="o">.</span><span class="n">rebin_energy</span><span class="p">(</span><span class="n">combine_by_factor</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rebinned_spectrum</span> <span class="o">=</span> <span class="n">rebinned_energy</span><span class="o">.</span><span class="n">to_spectrum</span><span class="p">(</span><span class="n">time_range</span><span class="o">=</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">specplot</span> <span class="o">=</span> <span class="n">Spectrum</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">rebinned_spectrum</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">specplot</span><span class="o">.</span><span class="n">xlim</span> <span class="o">=</span> <span class="n">tte</span><span class="o">.</span><span class="n">energy_range</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../_images/ttefig3.png" src="../../_images/ttefig3.png" />
+<p>See <a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/core/plot/lightcurve.html#plot-lightcurve" title="(in The Gamma-ray Data Tools v2.2.2)"><span class="xref std std-ref">Plotting Lightcurves</span></a> and
+<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/core/plot/spectrum.html#plot-spectrum" title="(in The Gamma-ray Data Tools v2.2.2)"><span class="xref std std-ref">Plotting Count Spectra</span></a> for more on how to modify
+these plots.</p>
+<p>Finally, we can write out a new fully-qualified GIFTS TTE FITS file after some
+reduction tasks.  For example, we can write out our time-sliced data object:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">time_sliced_tte</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;./&#39;</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;my_first_custom_tte.fit&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>For more details about working with TTE data, see
+<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/core/tte.html#core-tte" title="(in The Gamma-ray Data Tools v2.2.2)"><span class="xref std std-ref">Photon List and Time-Tagged Event Files</span></a>.</p>
+<section id="reference-api">
+<h2>Reference/API<a class="headerlink" href="#reference-api" title="Link to this heading">¶</a></h2>
+<section id="module-gdt.missions.gifts.tte">
+<span id="gdt-missions-gifts-tte-module"></span><h3>gdt.missions.gifts.tte Module<a class="headerlink" href="#module-gdt.missions.gifts.tte" title="Link to this heading">¶</a></h3>
+<section id="classes">
+<h4>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h4>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../api/gdt.missions.gifts.tte.GiftsTte.html#gdt.missions.gifts.tte.GiftsTte" title="gdt.missions.gifts.tte.GiftsTte"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GiftsTte</span></code></a>()</p></td>
+<td><p>Class for Time-Tagged Event data.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="class-inheritance-diagram">
+<h4>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Link to this heading">¶</a></h4>
+<div class="graphviz"><img src="../../_images/inheritance-619ded1c30b4a7fc31a3bdcddb6af39fee28da9b.png" alt="Inheritance diagram of gdt.missions.gifts.tte.GiftsTte" usemap="#inheritance34578ccc22" class="inheritance graphviz" /></div>
+<map id="inheritance34578ccc22" name="inheritance34578ccc22">
+<area shape="rect" id="node3" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.file.FitsFileContextManager.html#gdt.core.file.FitsFileContextManager" target="_top" title="A context manager for FITS files. &#160;Includes some convenience functions." alt="" coords="298,4,445,26"/>
+<area shape="rect" id="node5" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.tte.PhotonList.html#gdt.core.tte.PhotonList" target="_top" title="Class for Photon Lists or Time&#45;Tagged Event data" alt="" coords="485,4,560,26"/>
+<area shape="rect" id="node4" href="https://astro-gdt.readthedocs.io/projects/astro-gdt-fermi/en/latest/api/gdt.missions.fermi.gbm.tte.GbmTte.html#gdt.missions.fermi.gbm.tte.GbmTte" target="_top" title="Class for Time&#45;Tagged Event data." alt="" coords="600,4,662,26"/>
+<area shape="rect" id="node6" href="../../api/gdt.missions.gifts.tte.GiftsTte.html#gdt.missions.gifts.tte.GiftsTte" target="_top" title="Class for Time&#45;Tagged Event data." alt="" coords="702,4,764,26"/>
+</map></section>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">GIFTS TTE Data (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.tte</span></code>)</a><ul>
+<li><a class="reference internal" href="#reference-api">Reference/API</a><ul>
+<li><a class="reference internal" href="#module-gdt.missions.gifts.tte">gdt.missions.gifts.tte Module</a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#class-inheritance-diagram">Class Inheritance Diagram</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../../api/gdt.missions.gifts.trigdat.FswLocation.html"
+                          title="previous chapter">FswLocation</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../../api/gdt.missions.gifts.tte.GiftsTte.html"
+                          title="next chapter">GiftsTte</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/missions/gifts/tte.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<form action="../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="../../_sources/missions/gifts/tte.rst.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright .<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 7.2.6. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+GiftsHealPix
+============
+
+.. currentmodule:: gdt.missions.gifts.localization
+
+.. autoclass:: GiftsHealPix
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~GiftsHealPix.centroid
+      ~GiftsHealPix.filename
+      ~GiftsHealPix.frame
+      ~GiftsHealPix.geo_location
+      ~GiftsHealPix.geo_probability
+      ~GiftsHealPix.geo_radius
+      ~GiftsHealPix.hdulist
+      ~GiftsHealPix.headers
+      ~GiftsHealPix.npix
+      ~GiftsHealPix.nside
+      ~GiftsHealPix.num_hdus
+      ~GiftsHealPix.pixel_area
+      ~GiftsHealPix.prob
+      ~GiftsHealPix.quaternion
+      ~GiftsHealPix.scpos
+      ~GiftsHealPix.sig
+      ~GiftsHealPix.sun_location
+      ~GiftsHealPix.trigtime
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~GiftsHealPix.area
+      ~GiftsHealPix.close
+      ~GiftsHealPix.column
+      ~GiftsHealPix.columns_as_array
+      ~GiftsHealPix.confidence
+      ~GiftsHealPix.confidence_region_path
+      ~GiftsHealPix.convolve
+      ~GiftsHealPix.from_annulus
+      ~GiftsHealPix.from_chi2grid
+      ~GiftsHealPix.from_data
+      ~GiftsHealPix.from_gaussian
+      ~GiftsHealPix.from_vertices
+      ~GiftsHealPix.get_column_names
+      ~GiftsHealPix.multiply
+      ~GiftsHealPix.observable_fraction
+      ~GiftsHealPix.open
+      ~GiftsHealPix.prob_array
+      ~GiftsHealPix.probability
+      ~GiftsHealPix.region_probability
+      ~GiftsHealPix.remove_earth
+      ~GiftsHealPix.source_probability
+      ~GiftsHealPix.write
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: centroid
+   .. autoattribute:: filename
+   .. autoattribute:: frame
+   .. autoattribute:: geo_location
+   .. autoattribute:: geo_probability
+   .. autoattribute:: geo_radius
+   .. autoattribute:: hdulist
+   .. autoattribute:: headers
+   .. autoattribute:: npix
+   .. autoattribute:: nside
+   .. autoattribute:: num_hdus
+   .. autoattribute:: pixel_area
+   .. autoattribute:: prob
+   .. autoattribute:: quaternion
+   .. autoattribute:: scpos
+   .. autoattribute:: sig
+   .. autoattribute:: sun_location
+   .. autoattribute:: trigtime
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: area
+   .. automethod:: close
+   .. automethod:: column
+   .. automethod:: columns_as_array
+   .. automethod:: confidence
+   .. automethod:: confidence_region_path
+   .. automethod:: convolve
+   .. automethod:: from_annulus
+   .. automethod:: from_chi2grid
+   .. automethod:: from_data
+   .. automethod:: from_gaussian
+   .. automethod:: from_vertices
+   .. automethod:: get_column_names
+   .. automethod:: multiply
+   .. automethod:: observable_fraction
+   .. automethod:: open
+   .. automethod:: prob_array
+   .. automethod:: probability
+   .. automethod:: region_probability
+   .. automethod:: remove_earth
+   .. automethod:: source_probability
+   .. automethod:: write

@@ -1,0 +1,33 @@
+GiftsLightcurve
+===============
+
+.. currentmodule:: gdt.missions.gifts.plot
+
+.. autoclass:: GiftsLightcurve
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~GiftsLightcurve.energy_range
+      ~GiftsLightcurve.errorbars
+      ~GiftsLightcurve.steps
+      ~GiftsLightcurve.time_range
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~GiftsLightcurve.bin_method
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: energy_range
+   .. autoattribute:: errorbars
+   .. autoattribute:: steps
+   .. autoattribute:: time_range
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: bin_method

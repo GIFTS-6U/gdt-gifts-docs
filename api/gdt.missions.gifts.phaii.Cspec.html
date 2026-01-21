@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Cspec &#8212; GIFTS Gamma-ray Data Tools 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-astropy.css?v=cfc02a30" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+    
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <link rel="icon" href="../_static/gdt_favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="GIFTS Catalogs (gdt.missions.gifts.catalogs)" href="../missions/gifts/catalogs.html" />
+    <link rel="prev" title="Ctime" href="gdt.missions.gifts.phaii.Ctime.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../index.html"><span id="logotext1">gdt</span><span id="logotext2">-gifts</span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="../missions/gifts/catalogs.html" title="GIFTS Catalogs (gdt.missions.gifts.catalogs)">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="gdt.missions.gifts.phaii.Ctime.html" title="Ctime">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../index.html">GIFTS Gamma-ray Data Tools 0.1.0 documentation</a>
+	 &#187;
+      </li>
+      <li><a href="../missions/gifts/phaii.html" accesskey="U">GIFTS PHAII Data (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.phaii</span></code>)</a> &#187;</li>
+      
+      <li>Cspec</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="cspec">
+<h1>Cspec<a class="headerlink" href="#cspec" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gdt.missions.gifts.phaii.</span></span><span class="sig-name descname"><span class="pre">Cspec</span></span><a class="reference internal" href="../_modules/gdt/missions/gifts/phaii.html#Cspec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="gdt.missions.gifts.phaii.GiftsPhaii.html#gdt.missions.gifts.phaii.GiftsPhaii" title="gdt.missions.gifts.phaii.GiftsPhaii"><code class="xref py py-class docutils literal notranslate"><span class="pre">GiftsPhaii</span></code></a></p>
+<p>Class for GIFTS CSPEC data.</p>
+<p class="rubric">Attributes Summary</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.data" title="gdt.missions.gifts.phaii.Cspec.data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data</span></code></a></p></td>
+<td><p>The PHAII data</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.detector" title="gdt.missions.gifts.phaii.Cspec.detector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">detector</span></code></a></p></td>
+<td><p>The detector name</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.ebounds" title="gdt.missions.gifts.phaii.Cspec.ebounds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ebounds</span></code></a></p></td>
+<td><p>The energy-channel mapping.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.energy_range" title="gdt.missions.gifts.phaii.Cspec.energy_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">energy_range</span></code></a></p></td>
+<td><p>The energy range of the data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.filename" title="gdt.missions.gifts.phaii.Cspec.filename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">filename</span></code></a></p></td>
+<td><p>The filename</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.gti" title="gdt.missions.gifts.phaii.Cspec.gti"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gti</span></code></a></p></td>
+<td><p>The good time intervals</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.hdulist" title="gdt.missions.gifts.phaii.Cspec.hdulist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hdulist</span></code></a></p></td>
+<td><p>The list of Header Data Units</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.headers" title="gdt.missions.gifts.phaii.Cspec.headers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">headers</span></code></a></p></td>
+<td><p>The headers</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.num_chans" title="gdt.missions.gifts.phaii.Cspec.num_chans"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_chans</span></code></a></p></td>
+<td><p>The number of energy channels</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.num_hdus" title="gdt.missions.gifts.phaii.Cspec.num_hdus"><code class="xref py py-obj docutils literal notranslate"><span class="pre">num_hdus</span></code></a></p></td>
+<td><p>The number of HDUs</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.time_range" title="gdt.missions.gifts.phaii.Cspec.time_range"><code class="xref py py-obj docutils literal notranslate"><span class="pre">time_range</span></code></a></p></td>
+<td><p>The time range of the data</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.trigtime" title="gdt.missions.gifts.phaii.Cspec.trigtime"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trigtime</span></code></a></p></td>
+<td><p>The trigger time of the data, if available.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Methods Summary</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.close" title="gdt.missions.gifts.phaii.Cspec.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a>()</p></td>
+<td><p>Close the file</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.column" title="gdt.missions.gifts.phaii.Cspec.column"><code class="xref py py-obj docutils literal notranslate"><span class="pre">column</span></code></a>(hdu_num, col_name)</p></td>
+<td><p>Return a column from an HDU as an array.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.columns_as_array" title="gdt.missions.gifts.phaii.Cspec.columns_as_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">columns_as_array</span></code></a>(hdu_num, col_names[, dtype])</p></td>
+<td><p>Return a list of columns from an HDU as an array.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.from_data" title="gdt.missions.gifts.phaii.Cspec.from_data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_data</span></code></a>(data[, gti, trigger_time, ...])</p></td>
+<td><p>Create a PHAII object from a <code class="xref py py-class docutils literal notranslate"><span class="pre">TimeEnergyBins</span></code> data object.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.get_column_names" title="gdt.missions.gifts.phaii.Cspec.get_column_names"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_column_names</span></code></a>(hdu_num)</p></td>
+<td><p>Get the column names in a HDU.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.get_exposure" title="gdt.missions.gifts.phaii.Cspec.get_exposure"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_exposure</span></code></a>([time_ranges])</p></td>
+<td><p>Calculate the total exposure of a time range or time ranges of data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.merge" title="gdt.missions.gifts.phaii.Cspec.merge"><code class="xref py py-obj docutils literal notranslate"><span class="pre">merge</span></code></a>(phaii_list)</p></td>
+<td><p>Merge a list of Phaii objects into a new Phaii object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.open" title="gdt.missions.gifts.phaii.Cspec.open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open</span></code></a>(file_path, **kwargs)</p></td>
+<td><p>Open a GIFTS PHAII FITS file and return the GiftsPhaii object</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.rebin_energy" title="gdt.missions.gifts.phaii.Cspec.rebin_energy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rebin_energy</span></code></a>(method, *args[, energy_range])</p></td>
+<td><p>Rebin the PHAII in energy given a rebinning method.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.rebin_time" title="gdt.missions.gifts.phaii.Cspec.rebin_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rebin_time</span></code></a>(method, *args[, time_range])</p></td>
+<td><p>Rebin the PHAII in time given a rebinning method.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.set_ebounds" title="gdt.missions.gifts.phaii.Cspec.set_ebounds"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_ebounds</span></code></a>(ebounds)</p></td>
+<td><p>Set the energy calibration (ebounds) of the data.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.slice_energy" title="gdt.missions.gifts.phaii.Cspec.slice_energy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice_energy</span></code></a>(energy_ranges, **kwargs)</p></td>
+<td><p>Slice the PHAII by one or more energy range.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.slice_time" title="gdt.missions.gifts.phaii.Cspec.slice_time"><code class="xref py py-obj docutils literal notranslate"><span class="pre">slice_time</span></code></a>(time_ranges, **kwargs)</p></td>
+<td><p>Slice the PHAII by one or more time range.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.to_lightcurve" title="gdt.missions.gifts.phaii.Cspec.to_lightcurve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_lightcurve</span></code></a>([time_range, energy_range, ...])</p></td>
+<td><p>Integrate the PHAII data over energy to produce a lightcurve.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.to_pha" title="gdt.missions.gifts.phaii.Cspec.to_pha"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_pha</span></code></a>([time_ranges, energy_range, ...])</p></td>
+<td><p>Integrate the PHAII data over time to produce a PHA object.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.to_spectrum" title="gdt.missions.gifts.phaii.Cspec.to_spectrum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_spectrum</span></code></a>([time_range, energy_range, ...])</p></td>
+<td><p>Integrate the PHAII data over time to produce a count spectrum</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.write" title="gdt.missions.gifts.phaii.Cspec.write"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write</span></code></a>(directory[, filename])</p></td>
+<td><p>Write the file to disk.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes Documentation</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.data">
+<span class="sig-name descname"><span class="pre">data</span></span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.data" title="Link to this definition">¶</a></dt>
+<dd><p>The PHAII data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">TimeEnergyBins</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.detector">
+<span class="sig-name descname"><span class="pre">detector</span></span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.detector" title="Link to this definition">¶</a></dt>
+<dd><p>The detector name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.ebounds">
+<span class="sig-name descname"><span class="pre">ebounds</span></span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.ebounds" title="Link to this definition">¶</a></dt>
+<dd><p>The energy-channel mapping.
+If data does not have an ebounds, returns None.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">Ebounds</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.energy_range">
+<span class="sig-name descname"><span class="pre">energy_range</span></span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.energy_range" title="Link to this definition">¶</a></dt>
+<dd><p>The energy range of the data.  If data does not have
+an ebounds, returns None.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(float, float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.filename">
+<span class="sig-name descname"><span class="pre">filename</span></span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.filename" title="Link to this definition">¶</a></dt>
+<dd><p>The filename</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(str)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.gti">
+<span class="sig-name descname"><span class="pre">gti</span></span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.gti" title="Link to this definition">¶</a></dt>
+<dd><p>The good time intervals</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">Gti</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.hdulist">
+<span class="sig-name descname"><span class="pre">hdulist</span></span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.hdulist" title="Link to this definition">¶</a></dt>
+<dd><p>The list of Header Data Units</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(astropy.io.fits.hdu.HDUList)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.headers">
+<span class="sig-name descname"><span class="pre">headers</span></span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.headers" title="Link to this definition">¶</a></dt>
+<dd><p>The headers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(<a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.headers.FileHeaders.html#gdt.core.headers.FileHeaders" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">FileHeaders</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.num_chans">
+<span class="sig-name descname"><span class="pre">num_chans</span></span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.num_chans" title="Link to this definition">¶</a></dt>
+<dd><p>The number of energy channels</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.num_hdus">
+<span class="sig-name descname"><span class="pre">num_hdus</span></span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.num_hdus" title="Link to this definition">¶</a></dt>
+<dd><p>The number of HDUs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.time_range">
+<span class="sig-name descname"><span class="pre">time_range</span></span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.time_range" title="Link to this definition">¶</a></dt>
+<dd><p>The time range of the data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(float, float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.trigtime">
+<span class="sig-name descname"><span class="pre">trigtime</span></span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.trigtime" title="Link to this definition">¶</a></dt>
+<dd><p>The trigger time of the data, if available.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">Methods Documentation</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.close" title="Link to this definition">¶</a></dt>
+<dd><p>Close the file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.column">
+<span class="sig-name descname"><span class="pre">column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">array</span></span></span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.column" title="Link to this definition">¶</a></dt>
+<dd><p>Return a column from an HDU as an array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdu_num</strong> (<em>int</em>) – The HDU number</p></li>
+<li><p><strong>col_name</strong> (<em>str</em>) – The name of the column</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(np.array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.columns_as_array">
+<span class="sig-name descname"><span class="pre">columns_as_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">col_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dtype</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">array</span></span></span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.columns_as_array" title="Link to this definition">¶</a></dt>
+<dd><p>Return a list of columns from an HDU as an array.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hdu_num</strong> (<em>int</em>) – The HDU number</p></li>
+<li><p><strong>col_names</strong> (<em>list</em><em> of </em><em>str</em>) – The names of the columns</p></li>
+<li><p><strong>dtype</strong> (<em>np.dtype</em><em>, </em><em>optional</em>) – The custom dtype of the output array</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(np.array)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.from_data">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gti</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigger_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">headers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.from_data" title="Link to this definition">¶</a></dt>
+<dd><p>Create a PHAII object from a
+<code class="xref py py-class docutils literal notranslate"><span class="pre">TimeEnergyBins</span></code> data object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">TimeEnergyBins</span></code>) – The PHAII data</p></li>
+<li><p><strong>gti</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Gti</span></code>, optional) – The Good Time Intervals object. If omitted, the GTI spans
+(tstart, tstop)</p></li>
+<li><p><strong>trigger_time</strong> (<em>float</em><em>, </em><em>optional</em>) – The trigger time, if applicable. If provided, the data times
+will be shifted relative to the trigger time.</p></li>
+<li><p><strong>filename</strong> (<em>str</em><em>, </em><em>optional</em>) – The name of the file</p></li>
+<li><p><strong>headers</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">FileHeaders</span></code>) – The file headers</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">Phaii</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.get_column_names">
+<span class="sig-name descname"><span class="pre">get_column_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hdu_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.get_column_names" title="Link to this definition">¶</a></dt>
+<dd><p>Get the column names in a HDU.  Returns empty if there is no data
+extension in the HDU.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>hdu_num</strong> (<em>int</em>) – The HDU number</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(tuple)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.get_exposure">
+<span class="sig-name descname"><span class="pre">get_exposure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_ranges</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.get_exposure" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate the total exposure of a time range or time ranges of data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>time_ranges</strong> (<em>[</em><em>(</em><em>float</em><em>, </em><em>float</em><em>)</em><em>, </em><em>...</em><em>]</em><em>, </em><em>optional</em>) – The time range or time ranges over which to calculate the
+exposure. If omitted, calculates the total exposure of the data.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.merge">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">merge</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phaii_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.merge" title="Link to this definition">¶</a></dt>
+<dd><p>Merge a list of Phaii objects into a new Phaii object.  The header
+from the first Phaii in the list is used in the new Phaii and
+appropriately updated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>phaii_list</strong> (<em>list</em>) – The list of Phaii objects to merge</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">Phaii</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.open">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.open" title="Link to this definition">¶</a></dt>
+<dd><p>Open a GIFTS PHAII FITS file and return the GiftsPhaii object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – The file path of the FITS file</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<a class="reference internal" href="gdt.missions.gifts.phaii.GiftsPhaii.html#gdt.missions.gifts.phaii.GiftsPhaii" title="gdt.missions.gifts.phaii.GiftsPhaii"><code class="xref py py-class docutils literal notranslate"><span class="pre">GiftsPhaii</span></code></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.rebin_energy">
+<span class="sig-name descname"><span class="pre">rebin_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(None,</span> <span class="pre">None)</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.rebin_energy" title="Link to this definition">¶</a></dt>
+<dd><p>Rebin the PHAII in energy given a rebinning method. Produces a new
+PHAII object.</p>
+<dl class="simple">
+<dt>Note::</dt><dd><p>If the data does not have an energy calibration (ebounds), then this
+function will bin by energy channels, and therefore the
+<code class="docutils literal notranslate"><span class="pre">energy_range</span></code> argument should be a range of energy channels
+instead of energies.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>method</strong> (<em>&lt;function&gt;</em>) – The rebinning function</p></li>
+<li><p><strong>*args</strong> – Arguments to be passed to the rebinning function</p></li>
+<li><p><strong>energy_range</strong> (<em>(</em><em>float</em><em>, </em><em>float</em><em>)</em><em>, </em><em>optional</em>) – The starting and ending energy (or channel) to rebin.  If
+omitted, uses the full range of data.  Setting start or end to
+<code class="docutils literal notranslate"><span class="pre">None</span></code> will use the data from the beginning or end of the data, respectively.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Returns</dt><dd><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">Phaii</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.rebin_time">
+<span class="sig-name descname"><span class="pre">rebin_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(None,</span> <span class="pre">None)</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.rebin_time" title="Link to this definition">¶</a></dt>
+<dd><p>Rebin the PHAII in time given a rebinning method.
+Produces a new PHAII object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>method</strong> (<em>&lt;function&gt;</em>) – The rebinning function</p></li>
+<li><p><strong>*args</strong> – Arguments to be passed to the rebinning function</p></li>
+<li><p><strong>time_range</strong> (<em>(</em><em>float</em><em>, </em><em>float</em><em>)</em><em>, </em><em>optional</em>) – The starting and ending time to rebin.  If omitted, uses the
+full range of data.  Setting start or end to <code class="docutils literal notranslate"><span class="pre">None</span></code> will use
+the data from the beginning or end of the data, respectively.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Returns</dt><dd><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">Phaii</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.set_ebounds">
+<span class="sig-name descname"><span class="pre">set_ebounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ebounds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.set_ebounds" title="Link to this definition">¶</a></dt>
+<dd><p>Set the energy calibration (ebounds) of the data. If the data are
+not yet energy calibrated, this will convert the data object from
+<code class="xref py py-class docutils literal notranslate"><span class="pre">TimeChannelBins</span></code> to
+<code class="xref py py-class docutils literal notranslate"><span class="pre">TimeEnergyBins`</span></code>.  If the data already has an
+energy calibration, this method will update the calibration to with the
+new ebounds. The number of channels in <code class="docutils literal notranslate"><span class="pre">ebounds</span></code> must equal the number
+of channels of the data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ebounds</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Ebounds</span></code>) – The ebounds</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.slice_energy">
+<span class="sig-name descname"><span class="pre">slice_energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">energy_ranges</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.slice_energy" title="Link to this definition">¶</a></dt>
+<dd><p>Slice the PHAII by one or more energy range. Produces a new PHAII
+object.</p>
+<dl class="simple">
+<dt>Note::</dt><dd><p>If the data does not have an energy calibration (ebounds), then this
+function will slice by energy channels, and therefore the
+<code class="docutils literal notranslate"><span class="pre">energy_ranges</span></code> argument should be a range(s) of energy channels
+instead of energies.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>energy_ranges</strong> (<em>[</em><em>(</em><em>float</em><em>, </em><em>float</em><em>)</em><em>, </em><em>...</em><em>]</em>) – The energy ranges to slice the data to.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">Phaii</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.slice_time">
+<span class="sig-name descname"><span class="pre">slice_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_ranges</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.slice_time" title="Link to this definition">¶</a></dt>
+<dd><p>Slice the PHAII by one or more time range. Produces a new
+PHAII object. The GTI will be automatically update to match the new
+time range(s).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>time_ranges</strong> (<em>[</em><em>(</em><em>float</em><em>, </em><em>float</em><em>)</em><em>, </em><em>...</em><em>]</em>) – The time ranges to slice the data to.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">Phaii</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.to_lightcurve">
+<span class="sig-name descname"><span class="pre">to_lightcurve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.to_lightcurve" title="Link to this definition">¶</a></dt>
+<dd><p>Integrate the PHAII data over energy to produce a lightcurve.</p>
+<dl class="simple">
+<dt>Note::</dt><dd><p>If the data has not energy calibration, then <code class="docutils literal notranslate"><span class="pre">energy_range</span></code> is
+ignored, and only <code class="docutils literal notranslate"><span class="pre">channel_range</span></code> is used.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_range</strong> (<em>(</em><em>float</em><em>, </em><em>float</em><em>)</em><em>, </em><em>optional</em>) – The time range of the lightcurve. If omitted, uses the entire
+time range of the data.</p></li>
+<li><p><strong>energy_range</strong> (<em>(</em><em>float</em><em>, </em><em>float</em><em>)</em><em>, </em><em>optional</em>) – The energy range of the lightcurve. If omitted, uses the entire
+energy range of the data.</p></li>
+<li><p><strong>channel_range</strong> (<em>(</em><em>int</em><em>, </em><em>int</em><em>)</em><em>, </em><em>optional</em>) – The channel range of the lightcurve. If omitted, uses the entire
+energy range of the data.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">TimeBins</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.to_pha">
+<span class="sig-name descname"><span class="pre">to_pha</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_ranges</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.to_pha" title="Link to this definition">¶</a></dt>
+<dd><p>Integrate the PHAII data over time to produce a PHA object.</p>
+<dl class="simple">
+<dt>Note::</dt><dd><p>If the data does not have an energy calibration (ebounds), then a
+PHA object cannot be created and calling this method will raise an
+exception.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_ranges</strong> (<em>[</em><em>(</em><em>float</em><em>, </em><em>float</em><em>)</em><em>, </em><em>...</em><em>]</em><em>, </em><em>optional</em>) – The time range of the spectrum. If omitted, uses the entire
+time range of the data.</p></li>
+<li><p><strong>energy_range</strong> (<em>(</em><em>float</em><em>, </em><em>float</em><em>)</em><em>, </em><em>optional</em>) – The energy range of the spectrum. If omitted, uses the entire
+energy range of the data.</p></li>
+<li><p><strong>channel_range</strong> (<em>(</em><em>int</em><em>, </em><em>int</em><em>)</em><em>, </em><em>optional</em>) – The channel range of the spectrum. If omitted, uses the entire
+energy range of the data.</p></li>
+<li><p><strong>**kwargs</strong> – Options passed to <code class="xref py py-meth docutils literal notranslate"><span class="pre">pha.Pha.from_data()</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">Pha</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.to_spectrum">
+<span class="sig-name descname"><span class="pre">to_spectrum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">time_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">energy_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel_range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.to_spectrum" title="Link to this definition">¶</a></dt>
+<dd><p>Integrate the PHAII data over time to produce a count spectrum</p>
+<dl class="simple">
+<dt>Note::</dt><dd><p>If the data has not energy calibration, then <code class="docutils literal notranslate"><span class="pre">energy_range</span></code> is
+ignored, and only <code class="docutils literal notranslate"><span class="pre">channel_range</span></code> is used.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>time_range</strong> (<em>(</em><em>float</em><em>, </em><em>float</em><em>)</em><em>, </em><em>optional</em>) – The time range of the spectrum. If omitted, uses the entire
+time range of the data.</p></li>
+<li><p><strong>energy_range</strong> (<em>(</em><em>float</em><em>, </em><em>float</em><em>)</em><em>, </em><em>optional</em>) – The energy range of the spectrum. If omitted, uses the entire
+energy range of the data.</p></li>
+<li><p><strong>channel_range</strong> (<em>(</em><em>int</em><em>, </em><em>int</em><em>)</em><em>, </em><em>optional</em>) – The channel range of the spectrum. If omitted, uses the entire
+energy range of the data.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<code class="xref py py-class docutils literal notranslate"><span class="pre">EnergyBins</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gdt.missions.gifts.phaii.Cspec.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gdt.missions.gifts.phaii.Cspec.write" title="Link to this definition">¶</a></dt>
+<dd><p>Write the file to disk.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>directory</strong> (<em>str</em>) – The directory to write the file.</p></li>
+<li><p><strong>filename</strong> (<em>str</em><em>, </em><em>optional</em>) – The filename.  If omitted, attempts to use
+the <code class="xref py py-attr docutils literal notranslate"><span class="pre">filename</span></code>
+if set.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">Cspec</a><ul>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec"><code class="docutils literal notranslate"><span class="pre">Cspec</span></code></a><ul>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.data"><code class="docutils literal notranslate"><span class="pre">Cspec.data</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.detector"><code class="docutils literal notranslate"><span class="pre">Cspec.detector</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.ebounds"><code class="docutils literal notranslate"><span class="pre">Cspec.ebounds</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.energy_range"><code class="docutils literal notranslate"><span class="pre">Cspec.energy_range</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.filename"><code class="docutils literal notranslate"><span class="pre">Cspec.filename</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.gti"><code class="docutils literal notranslate"><span class="pre">Cspec.gti</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.hdulist"><code class="docutils literal notranslate"><span class="pre">Cspec.hdulist</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.headers"><code class="docutils literal notranslate"><span class="pre">Cspec.headers</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.num_chans"><code class="docutils literal notranslate"><span class="pre">Cspec.num_chans</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.num_hdus"><code class="docutils literal notranslate"><span class="pre">Cspec.num_hdus</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.time_range"><code class="docutils literal notranslate"><span class="pre">Cspec.time_range</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.trigtime"><code class="docutils literal notranslate"><span class="pre">Cspec.trigtime</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.close"><code class="docutils literal notranslate"><span class="pre">Cspec.close()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.column"><code class="docutils literal notranslate"><span class="pre">Cspec.column()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.columns_as_array"><code class="docutils literal notranslate"><span class="pre">Cspec.columns_as_array()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.from_data"><code class="docutils literal notranslate"><span class="pre">Cspec.from_data()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.get_column_names"><code class="docutils literal notranslate"><span class="pre">Cspec.get_column_names()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.get_exposure"><code class="docutils literal notranslate"><span class="pre">Cspec.get_exposure()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.merge"><code class="docutils literal notranslate"><span class="pre">Cspec.merge()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.open"><code class="docutils literal notranslate"><span class="pre">Cspec.open()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.rebin_energy"><code class="docutils literal notranslate"><span class="pre">Cspec.rebin_energy()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.rebin_time"><code class="docutils literal notranslate"><span class="pre">Cspec.rebin_time()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.set_ebounds"><code class="docutils literal notranslate"><span class="pre">Cspec.set_ebounds()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.slice_energy"><code class="docutils literal notranslate"><span class="pre">Cspec.slice_energy()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.slice_time"><code class="docutils literal notranslate"><span class="pre">Cspec.slice_time()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.to_lightcurve"><code class="docutils literal notranslate"><span class="pre">Cspec.to_lightcurve()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.to_pha"><code class="docutils literal notranslate"><span class="pre">Cspec.to_pha()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.to_spectrum"><code class="docutils literal notranslate"><span class="pre">Cspec.to_spectrum()</span></code></a></li>
+<li><a class="reference internal" href="#gdt.missions.gifts.phaii.Cspec.write"><code class="docutils literal notranslate"><span class="pre">Cspec.write()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="gdt.missions.gifts.phaii.Ctime.html"
+                          title="previous chapter">Ctime</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../missions/gifts/catalogs.html"
+                          title="next chapter">GIFTS Catalogs (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.catalogs</span></code>)</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/api/gdt.missions.gifts.phaii.Cspec.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<form action="../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="../_sources/api/gdt.missions.gifts.phaii.Cspec.rst.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright .<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 7.2.6. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

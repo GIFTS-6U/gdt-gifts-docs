@@ -1,0 +1,11 @@
+<map id="inheritance18c610674d" name="inheritance18c610674d">
+<area shape="rect" id="node1" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.headers.FileHeaders.html#gdt.core.headers.FileHeaders" target="_top" title="A collection of FITS headers. This class should be further sub&#45;classed " alt="" coords="5,129,104,155"/>
+<area shape="rect" id="node7" href="../../api/gdt.missions.gifts.headers.PosHistHeaders.html#gdt.missions.gifts.headers.PosHistHeaders" target="_top" title="FITS headers for position history files" alt="" coords="154,153,279,179"/>
+<area shape="rect" id="node3" href="../../api/gdt.missions.gifts.headers.HealpixHeaders.html#gdt.missions.gifts.headers.HealpixHeaders" target="_top" title="FITS headers for localization HEALPix files" alt="" coords="349,5,476,31"/>
+<area shape="rect" id="node8" href="../../api/gdt.missions.gifts.headers.TcatHeaders.html#gdt.missions.gifts.headers.TcatHeaders" target="_top" title="FITS headers for trigger catalog files" alt="" coords="361,104,464,129"/>
+<area shape="rect" id="node9" href="../../api/gdt.missions.gifts.headers.TrigdatHeaders.html#gdt.missions.gifts.headers.TrigdatHeaders" target="_top" title="FITS headers for TRIGDAT files" alt="" coords="353,153,473,179"/>
+<area shape="rect" id="node5" href="../../api/gdt.missions.gifts.headers.PhaiiHeaders.html#gdt.missions.gifts.headers.PhaiiHeaders" target="_top" title="FITS headers for continuous TODO CTIME and CSPEC files" alt="" coords="566,31,674,56"/>
+<area shape="rect" id="node6" href="../../api/gdt.missions.gifts.headers.PhaiiTriggerHeaders.html#gdt.missions.gifts.headers.PhaiiTriggerHeaders" target="_top" title="FITS headers for trigger TODO CTIME and CSPEC files" alt="" coords="544,80,696,105"/>
+<area shape="rect" id="node11" href="../../api/gdt.missions.gifts.headers.TteHeaders.html#gdt.missions.gifts.headers.TteHeaders" target="_top" title="FITS headers for continuous TTE files" alt="" coords="571,177,669,203"/>
+<area shape="rect" id="node12" href="../../api/gdt.missions.gifts.headers.TteTriggerHeaders.html#gdt.missions.gifts.headers.TteTriggerHeaders" target="_top" title="FITS headers for trigger TTE files" alt="" coords="549,227,691,252"/>
+</map>

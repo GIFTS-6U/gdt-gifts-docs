@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GIFTS Spacecraft Frame (gdt.missions.gifts.frame) &#8212; GIFTS Gamma-ray Data Tools 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-astropy.css?v=cfc02a30" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+    
+    <script src="../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script type="text/javascript" src="../../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../../_static/copybutton.js"></script>
+    <link rel="icon" href="../../_static/gdt_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="gifts_to_icrs" href="../../api/gdt.missions.gifts.frame.gifts_to_icrs.html" />
+    <link rel="prev" title="GiftsBurstNumber" href="../../api/gdt.missions.gifts.time.GiftsBurstNumber.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../../index.html"><span id="logotext1">gdt</span><span id="logotext2">-gifts</span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="../../api/gdt.missions.gifts.frame.gifts_to_icrs.html" title="gifts_to_icrs">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="../../api/gdt.missions.gifts.time.GiftsBurstNumber.html" title="GiftsBurstNumber">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../../index.html">GIFTS Gamma-ray Data Tools 0.1.0 documentation</a>
+	 &#187;
+      </li>
+      
+      <li>GIFTS Spacecraft Frame (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.frame</span></code>)</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="gifts-frame"></span><section id="gifts-spacecraft-frame-gdt-missions-gifts-frame">
+<h1>GIFTS Spacecraft Frame (<a class="reference internal" href="#module-gdt.missions.gifts.frame" title="gdt.missions.gifts.frame"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.frame</span></code></a>)<a class="headerlink" href="#gifts-spacecraft-frame-gdt-missions-gifts-frame" title="Link to this heading">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The GIFTS spacecraft frame implementation and this document are currently based on those provided by
+the <a class="reference external" href="https://astro-gdt.readthedocs.io/projects/astro-gdt-fermi/en/latest/index.html#gdt-fermi" title="(in The Gamma-ray Data Tools v2.2.2)"><span class="xref std std-ref">Fermi Gamma-ray Data Tools</span></a>, and will be revised in future versions.</p>
+</div>
+<p>The GIFTS spacecraft frame, <a class="reference internal" href="../../api/gdt.missions.gifts.frame.GiftsFrame.html#gdt.missions.gifts.frame.GiftsFrame" title="gdt.missions.gifts.frame.GiftsFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">GiftsFrame</span></code></a>, is the frame that is aligned
+with the GIFTS spacecraft coordinate frame, and is represented by a
+quaternion that defines the rotation from spacecraft coordinates to the ICRS
+coordinate frame.  This frame takes advantage of the Astropy coordinate frame
+design, so we can use the <code class="docutils literal notranslate"><span class="pre">GiftsFrame</span></code> to convert Astropy <code class="docutils literal notranslate"><span class="pre">SkyCoord</span></code> objects
+between the <code class="docutils literal notranslate"><span class="pre">GiftsFrame</span></code> and any celestial frame.</p>
+<p>While the <code class="docutils literal notranslate"><span class="pre">GiftsFrame</span></code> is typically initialized when reading from a mission
+position history file (e.g. <code class="xref py py-class docutils literal notranslate"><span class="pre">GiftsPosHist</span></code>) instead of manually by a user, we
+can manually define the frame with a <a class="reference external" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.coords.Quaternion.html#gdt.core.coords.Quaternion" title="(in The Gamma-ray Data Tools v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Quaternion</span></code></a>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gdt.core.coords</span> <span class="kn">import</span> <span class="n">Quaternion</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gdt.missions.gifts.frame</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">quat</span> <span class="o">=</span> <span class="n">Quaternion</span><span class="p">([</span><span class="o">-</span><span class="mf">0.218</span><span class="p">,</span>  <span class="mf">0.009</span><span class="p">,</span>  <span class="mf">0.652</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.726</span><span class="p">],</span> <span class="n">scalar_first</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gifts_frame</span> <span class="o">=</span> <span class="n">GiftsFrame</span><span class="p">(</span><span class="n">quaternion</span><span class="o">=</span><span class="n">quat</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gifts_frame</span>
+<span class="go">&lt;GiftsFrame: 1 frames;</span>
+<span class="go">obstime=[J2000.000]</span>
+<span class="go">obsgeoloc=[(0., 0., 0.) m]</span>
+<span class="go">obsgeovel=[(0., 0., 0.) m / s]</span>
+<span class="go">quaternion=[(x, y, z, w) [-0.218,  0.009,  0.652, -0.726]]&gt;</span>
+</pre></div>
+</div>
+<p>Notice that we can also define the frame with an <code class="docutils literal notranslate"><span class="pre">obstime</span></code>, which is useful
+for transforming between the <code class="docutils literal notranslate"><span class="pre">GiftsFrame</span></code> and a non-inertial time-dependent frame;
+an <code class="docutils literal notranslate"><span class="pre">obsgeoloc</span></code>, which can define the spacecraft location in orbit; and
+<code class="docutils literal notranslate"><span class="pre">obsgeovel</span></code>, which defines the spacecraft orbital velocity.</p>
+<p>Now let us define a SkyCoord in RA and Dec:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">coord</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="mf">100.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">30.0</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;deg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This can be rotated into the GIFTS frame with the following:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gifts_coord</span> <span class="o">=</span> <span class="n">coord</span><span class="o">.</span><span class="n">transform_to</span><span class="p">(</span><span class="n">gifts_frame</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">gifts_coord</span><span class="o">.</span><span class="n">az</span><span class="p">,</span> <span class="n">gifts_coord</span><span class="o">.</span><span class="n">el</span><span class="p">)</span>
+<span class="go">(&lt;Longitude [200.39733555] deg&gt;, &lt;Latitude [-41.88750942] deg&gt;)</span>
+</pre></div>
+</div>
+<p>We can also transform from the GIFTS frame to other frames.  For example, we
+define a coordinate in the GIFTS frame this way:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gifts_coord</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="mf">50.0</span><span class="p">,</span> <span class="mf">25.0</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="n">gifts_frame</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;deg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now we can tranform to ICRS coordinates:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gifts_coord</span><span class="o">.</span><span class="n">icrs</span>
+<span class="go">&lt;SkyCoord (ICRS): (ra, dec) in deg</span>
+<span class="go">    [(313.69000519, 26.89158349)]&gt;</span>
+</pre></div>
+</div>
+<p>or Galactic coordinates:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">gifts_coord</span><span class="o">.</span><span class="n">galactic</span>
+<span class="go">&lt;SkyCoord (Galactic): (l, b) in deg</span>
+<span class="go">    [(71.5141302, -11.56931006)]&gt;</span>
+</pre></div>
+</div>
+<p>or any other coordinate frames provided by <a class="reference external" href="https://docs.astropy.org/en/stable/coordinates/frames.html">Astropy</a>.</p>
+<section id="reference-api">
+<h2>Reference/API<a class="headerlink" href="#reference-api" title="Link to this heading">¶</a></h2>
+<section id="module-gdt.missions.gifts.frame">
+<span id="gdt-missions-gifts-frame-module"></span><h3>gdt.missions.gifts.frame Module<a class="headerlink" href="#module-gdt.missions.gifts.frame" title="Link to this heading">¶</a></h3>
+<section id="functions">
+<h4>Functions<a class="headerlink" href="#functions" title="Link to this heading">¶</a></h4>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../api/gdt.missions.gifts.frame.gifts_to_icrs.html#gdt.missions.gifts.frame.gifts_to_icrs" title="gdt.missions.gifts.frame.gifts_to_icrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gifts_to_icrs</span></code></a>(gifts_frame, icrs_frame)</p></td>
+<td><p>Convert from the GIFTS frame to the ICRS frame.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../api/gdt.missions.gifts.frame.icrs_to_gifts.html#gdt.missions.gifts.frame.icrs_to_gifts" title="gdt.missions.gifts.frame.icrs_to_gifts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">icrs_to_gifts</span></code></a>(icrs_frame, gifts_frame)</p></td>
+<td><p>Convert from the ICRS frame to the GIFTS frame.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="classes">
+<h4>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h4>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../api/gdt.missions.gifts.frame.GiftsFrame.html#gdt.missions.gifts.frame.GiftsFrame" title="gdt.missions.gifts.frame.GiftsFrame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GiftsFrame</span></code></a>(*args[, copy, ...])</p></td>
+<td><p>The GIFTS spacecraft frame in azimuth and elevation.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="class-inheritance-diagram">
+<h4>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Link to this heading">¶</a></h4>
+<div class="graphviz"><img src="../../_images/inheritance-3fcbe9863c8808e315e9707292cfddc43d0b8d50.png" alt="Inheritance diagram of gdt.missions.gifts.frame.GiftsFrame" usemap="#inheritance61f828887c" class="inheritance graphviz" /></div>
+<map id="inheritance61f828887c" name="inheritance61f828887c">
+<area shape="rect" id="node4" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.coords.SpacecraftFrame.html#gdt.core.coords.SpacecraftFrame" target="_top" title="Spacecraft frame. The frame is defined by spacecraft&#39;s quaternion that " alt="" coords="536,4,645,26"/>
+<area shape="rect" id="node3" href="../../api/gdt.missions.gifts.frame.GiftsFrame.html#gdt.missions.gifts.frame.GiftsFrame" target="_top" title="The GIFTS spacecraft frame in azimuth and elevation. &#160;The frame is defined " alt="" coords="685,4,764,26"/>
+</map></section>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">GIFTS Spacecraft Frame (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.frame</span></code>)</a><ul>
+<li><a class="reference internal" href="#reference-api">Reference/API</a><ul>
+<li><a class="reference internal" href="#module-gdt.missions.gifts.frame">gdt.missions.gifts.frame Module</a><ul>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#class-inheritance-diagram">Class Inheritance Diagram</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../../api/gdt.missions.gifts.time.GiftsBurstNumber.html"
+                          title="previous chapter">GiftsBurstNumber</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../../api/gdt.missions.gifts.frame.gifts_to_icrs.html"
+                          title="next chapter">gifts_to_icrs</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/missions/gifts/frame.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<form action="../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="../../_sources/missions/gifts/frame.rst.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright .<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 7.2.6. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

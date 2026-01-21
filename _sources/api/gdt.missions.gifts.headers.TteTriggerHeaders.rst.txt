@@ -1,0 +1,39 @@
+TteTriggerHeaders
+=================
+
+.. currentmodule:: gdt.missions.gifts.headers
+
+.. autoclass:: TteTriggerHeaders
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~TteTriggerHeaders.filetype
+      ~TteTriggerHeaders.num_headers
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~TteTriggerHeaders.copy
+      ~TteTriggerHeaders.creator
+      ~TteTriggerHeaders.from_file_headers
+      ~TteTriggerHeaders.from_headers
+      ~TteTriggerHeaders.keys
+      ~TteTriggerHeaders.update
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: filetype
+   .. autoattribute:: num_headers
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: copy
+   .. automethod:: creator
+   .. automethod:: from_file_headers
+   .. automethod:: from_headers
+   .. automethod:: keys
+   .. automethod:: update

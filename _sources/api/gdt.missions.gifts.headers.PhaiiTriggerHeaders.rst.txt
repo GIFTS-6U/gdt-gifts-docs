@@ -1,0 +1,39 @@
+PhaiiTriggerHeaders
+===================
+
+.. currentmodule:: gdt.missions.gifts.headers
+
+.. autoclass:: PhaiiTriggerHeaders
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~PhaiiTriggerHeaders.filetype
+      ~PhaiiTriggerHeaders.num_headers
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~PhaiiTriggerHeaders.copy
+      ~PhaiiTriggerHeaders.creator
+      ~PhaiiTriggerHeaders.from_file_headers
+      ~PhaiiTriggerHeaders.from_headers
+      ~PhaiiTriggerHeaders.keys
+      ~PhaiiTriggerHeaders.update
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: filetype
+   .. autoattribute:: num_headers
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: copy
+   .. automethod:: creator
+   .. automethod:: from_file_headers
+   .. automethod:: from_headers
+   .. automethod:: keys
+   .. automethod:: update

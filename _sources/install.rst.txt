@@ -1,0 +1,43 @@
+.. _install:
+
+
+Installation
+============
+
+How to Install
+--------------
+
+
+The GDT-GIFTS package may be downloaded from the `GitHub repository <https://github.com/GIFTS-6U/gdt-gifts>`_.
+For now, it assumes that the :external:ref:`GDT Core Package<gdt-core>` and :external:ref:`Fermi Gamma-ray Data Tools<gdt-fermi>`
+have been preinstalled.
+
+.. note::
+   Future versions of the GDT-GIFTS package will be installed from PyPI, for example, using:
+ 
+   .. code-block:: sh
+
+      pip install astro-gdt-gifts
+      gdt-data init
+
+
+.. _download_test_data:
+
+
+Quickstart
+----------
+You can load GIFTS instrument modules with the following examples::
+    
+    >>> # import the GIFTS epoch
+    >>> from gdt.missions.gifts.time import Time
+    >>> # import the data interface for Tcat data
+    >>> from gdt.missions.gifts.tcat import Tcat
+
+
+Known Issues
+------------
+
+.. warning::
+   This is a prototype toolkit, with ongoing development prior to GIFTS mission launch. 
+   Current issues may be found `here <https://github.com/GIFTS-6U/gdt-gifts/issues>`_. 
+

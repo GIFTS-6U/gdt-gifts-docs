@@ -1,0 +1,39 @@
+TcatHeaders
+===========
+
+.. currentmodule:: gdt.missions.gifts.headers
+
+.. autoclass:: TcatHeaders
+   :show-inheritance:
+
+   .. rubric:: Attributes Summary
+
+   .. autosummary::
+
+      ~TcatHeaders.filetype
+      ~TcatHeaders.num_headers
+
+   .. rubric:: Methods Summary
+
+   .. autosummary::
+
+      ~TcatHeaders.copy
+      ~TcatHeaders.creator
+      ~TcatHeaders.from_file_headers
+      ~TcatHeaders.from_headers
+      ~TcatHeaders.keys
+      ~TcatHeaders.update
+
+   .. rubric:: Attributes Documentation
+
+   .. autoattribute:: filetype
+   .. autoattribute:: num_headers
+
+   .. rubric:: Methods Documentation
+
+   .. automethod:: copy
+   .. automethod:: creator
+   .. automethod:: from_file_headers
+   .. automethod:: from_headers
+   .. automethod:: keys
+   .. automethod:: update

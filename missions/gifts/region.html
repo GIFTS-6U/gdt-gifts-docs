@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>GIFTS High Particle Flux Region Boundary Definitions (gdt.missions.gifts.region) &#8212; GIFTS Gamma-ray Data Tools 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-astropy.css?v=cfc02a30" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+    
+    <script src="../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script type="text/javascript" src="../../_static/sidebar.js"></script>
+    <script type="text/javascript" src="../../_static/copybutton.js"></script>
+    <link rel="icon" href="../../_static/gdt_favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="HighParticleFluxRegion" href="../../api/gdt.missions.gifts.region.HighParticleFluxRegion.html" />
+    <link rel="prev" title="GiftsGbmDetectors" href="../../api/gdt.missions.gifts.detectors.GiftsGbmDetectors.html" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,600' rel='stylesheet' type='text/css'/>
+
+  </head><body>
+<div class="topbar">
+  <a class="brand" title="Documentation Home" href="../../index.html"><span id="logotext1">gdt</span><span id="logotext2">-gifts</span><span id="logotext3">:docs</span></a>
+  <ul>
+    
+    <li><a class="homelink" title="Astropy Homepage" href="http://www.astropy.org"></a></li>
+    <li><a title="General Index" href="../../genindex.html">Index</a></li>
+    <li><a title="Module Index" href="../../py-modindex.html">Modules</a></li>
+    <li>
+      
+      
+<form action="../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+      
+    </li>
+  </ul>
+</div>
+
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+      <li class="right">
+	<a href="../../api/gdt.missions.gifts.region.HighParticleFluxRegion.html" title="HighParticleFluxRegion">
+	  next &raquo;
+	</a>
+      </li>
+      <li class="right">
+	<a href="../../api/gdt.missions.gifts.detectors.GiftsGbmDetectors.html" title="GiftsGbmDetectors">
+	  &laquo; previous
+	</a>
+	 |
+      </li>
+      <li>
+	<a href="../../index.html">GIFTS Gamma-ray Data Tools 0.1.0 documentation</a>
+	 &#187;
+      </li>
+      
+      <li>GIFTS High Particle Flux Region Boundary Definitions (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.region</span></code>)</li> 
+    </ul>
+</div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="gifts-region"></span><section id="gifts-high-particle-flux-region-boundary-definitions-gdt-missions-gifts-region">
+<h1>GIFTS High Particle Flux Region Boundary Definitions (<a class="reference internal" href="#module-gdt.missions.gifts.region" title="gdt.missions.gifts.region"><code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.region</span></code></a>)<a class="headerlink" href="#gifts-high-particle-flux-region-boundary-definitions-gdt-missions-gifts-region" title="Link to this heading">¶</a></h1>
+<p>As GIFTS will have a sun-synchronous orbit, it will traverse two high particle flux regions,
+in the northern and southern
+hemisphere respectively, with the South Atlantic Anomaly (SAA) region contained in the latter.
+When GIFTS is within these regions, the detectors are turned off
+and data collection is paused. Regions are defined at multiple alitudes as polygons in
+latitude and longitude using instances of the <a class="reference internal" href="../../api/gdt.missions.gifts.region.HighParticleFluxRegion.html#gdt.missions.gifts.region.HighParticleFluxRegion" title="gdt.missions.gifts.region.HighParticleFluxRegion"><code class="xref py py-class docutils literal notranslate"><span class="pre">HighParticleFluxRegion</span></code></a> class,
+where this library currently provides definitions for altitudes of 500 km and 300 km
+(it is envisaged that additional definitons will be provided during the mission).</p>
+<p>The boundary values for a polygon are retrieved using the corresponding class, for example, looking
+at the north region at 500 km:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gdt.missions.gifts.region</span> <span class="kn">import</span> <span class="n">GiftsNorthRegion300</span><span class="p">,</span> <span class="n">GiftsSouthRegion300</span><span class="p">,</span> <span class="n">GiftsNorthRegion500</span><span class="p">,</span> <span class="n">GiftsSouthRegion500</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">north500_region</span> <span class="o">=</span> <span class="n">GiftsNorthRegion500</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">north500_region</span><span class="o">.</span><span class="n">latitude</span>
+<span class="go">array([39., 39., 39., 39., 39., 39., 39., 39., 39., 39., 39., 39., 39.,</span>
+<span class="go">       41., 41., 41., 43., 43., 43., 45., 45., 45., 47., 47., 49., 49.,</span>
+<span class="go">       49., 49., 51., 51., 51., 51., 51., 53., 53., 53., 53., 53., 53.,</span>
+<span class="go">       53., 53., 53., 53., 55., 55., 55., 55., 55., 55., 55., 55., 55.,</span>
+<span class="go">       55., 55., 55., 55., 55., 55., 55., 55., 55., 55., 55., 57., 57.,</span>
+<span class="go">       57., 57., 57., 57., 57., 57., 57., 57., 57., 57., 57., 57., 57.,</span>
+<span class="go">       57., 57., 57., 57., 57., 57., 57., 57., 57., 57., 57., 57., 57.,</span>
+<span class="go">       57., 55., 55., 57., 59., 61., 63., 65., 67., 69., 71., 73., 73.,</span>
+<span class="go">       75., 75., 75., 75., 75., 75., 75., 75., 75., 75., 75., 75., 75.,</span>
+<span class="go">       77., 77., 77., 77., 77., 77., 77., 77., 77., 77., 77., 75., 75.,</span>
+<span class="go">       75., 75., 75., 75., 75., 75., 75., 75., 75., 75., 75., 75., 75.,</span>
+<span class="go">       75., 75., 75., 75., 75., 73., 73., 73., 73., 73., 73., 73., 73.,</span>
+<span class="go">       73., 71., 71., 71., 71., 71., 69., 69., 69., 69., 69., 67., 67.,</span>
+<span class="go">       67., 67., 65., 65., 65., 63., 63., 63., 61., 61., 61., 59., 59.,</span>
+<span class="go">       59., 57., 57., 57., 57., 57., 55., 55., 55., 57., 57., 57., 59.,</span>
+<span class="go">       57., 57., 59., 61., 59., 61., 63., 63., 63., 65., 65., 65., 65.,</span>
+<span class="go">       67., 67., 67., 69., 69., 71., 71., 71., 71., 71., 71., 73., 73.,</span>
+<span class="go">       73., 73., 71., 69., 67., 65., 63., 61., 59., 57., 55., 55., 55.,</span>
+<span class="go">       55., 53., 53., 53., 53., 51., 51., 51., 49., 49., 49., 47., 47.,</span>
+<span class="go">       47., 45., 45., 45., 45., 43., 43., 43., 41., 41., 41., 39.])</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">north500_region</span><span class="o">.</span><span class="n">longitude</span>
+<span class="go">array([ -99.,  -96.,  -93.,  -90.,  -87.,  -84.,  -81.,  -78.,  -75.,</span>
+<span class="go">        -72.,  -69.,  -66.,  -63.,  -60.,  -57.,  -54.,  -51.,  -48.,</span>
+<span class="go">        -45.,  -42.,  -39.,  -36.,  -33.,  -30.,  -27.,  -24.,  -21.,</span>
+<span class="go">        -18.,  -15.,  -12.,   -9.,   -6.,   -3.,    0.,    3.,    6.,</span>
+<span class="go">          9.,   12.,   15.,   18.,   21.,   24.,   27.,   30.,   33.,</span>
+<span class="go">         36.,   39.,   42.,   45.,   48.,   51.,   54.,   57.,   60.,</span>
+<span class="go">         63.,   66.,   69.,   72.,   75.,   78.,   81.,   84.,   87.,</span>
+<span class="go">         90.,   93.,   96.,   99.,  102.,  105.,  108.,  111.,  114.,</span>
+<span class="go">        117.,  120.,  123.,  126.,  129.,  132.,  135.,  138.,  141.,</span>
+<span class="go">        144.,  147.,  150.,  153.,  156.,  159.,  162.,  165.,  168.,</span>
+<span class="go">        171.,  174.,  177.,  180.,  180.,  180.,  180.,  180.,  180.,</span>
+<span class="go">        180.,  180.,  180.,  180.,  177.,  174.,  171.,  168.,  165.,</span>
+<span class="go">        162.,  159.,  156.,  153.,  150.,  147.,  144.,  141.,  138.,</span>
+<span class="go">        135.,  132.,  129.,  126.,  123.,  120.,  117.,  114.,  111.,</span>
+<span class="go">        108.,  105.,  102.,   99.,   96.,   93.,   90.,   87.,   84.,</span>
+<span class="go">         81.,   78.,   75.,   72.,   69.,   66.,   63.,   60.,   57.,</span>
+<span class="go">         54.,   51.,   48.,   45.,   42.,   39.,   36.,   33.,   30.,</span>
+<span class="go">         27.,   24.,   21.,   18.,   15.,   12.,    9.,    6.,    3.,</span>
+<span class="go">          0.,   -3.,   -6.,   -9.,  -12.,  -15.,  -18.,  -21.,  -24.,</span>
+<span class="go">        -27.,  -30.,  -33.,  -36.,  -39.,  -42.,  -45.,  -48.,  -51.,</span>
+<span class="go">        -54.,  -57.,  -60.,  -63.,  -66.,  -69.,  -72.,  -75.,  -78.,</span>
+<span class="go">        -81.,  -84.,  -87.,  -90.,  -93.,  -96.,  -99., -102., -105.,</span>
+<span class="go">       -108., -111., -114., -117., -120., -123., -126., -129., -132.,</span>
+<span class="go">       -135., -138., -141., -144., -147., -150., -153., -156., -159.,</span>
+<span class="go">       -162., -165., -168., -171., -174., -177., -180., -180., -180.,</span>
+<span class="go">       -180., -180., -180., -180., -180., -180., -180., -177., -174.,</span>
+<span class="go">       -171., -168., -165., -162., -159., -156., -153., -150., -147.,</span>
+<span class="go">       -144., -141., -138., -135., -132., -129., -126., -123., -120.,</span>
+<span class="go">       -117., -114., -111., -108., -105., -102.,  -99.])</span>
+</pre></div>
+</div>
+<p>Region boundaries may be plotted using <a class="reference internal" href="../../api/gdt.missions.gifts.plot.GiftsEarthPlot.html#gdt.missions.gifts.plot.GiftsEarthPlot" title="gdt.missions.gifts.plot.GiftsEarthPlot"><code class="xref py py-class docutils literal notranslate"><span class="pre">GiftsEarthPlot</span></code></a>. Here the regions at an altitude of 500 km are plotted:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">gdt.missions.gifts.plot</span> <span class="kn">import</span> <span class="n">GiftsEarthPlot</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plot</span> <span class="o">=</span> <span class="n">GiftsEarthPlot</span><span class="p">(</span><span class="n">regions</span><span class="o">=</span><span class="p">[</span><span class="n">GiftsNorthRegion500</span><span class="p">(),</span> <span class="n">GiftsSouthRegion500</span><span class="p">()])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<img alt="../../_images/gifts_high_particle_flux_polygons_500km.png" src="../../_images/gifts_high_particle_flux_polygons_500km.png" />
+<p>These polygons have been used with an example daily orbit to illustrate when the detectors will be turned off
+(where orbit lines are red):</p>
+<img alt="../../_images/gifts_high_particle_flux_polygons_daily_orbit_500km.png" src="../../_images/gifts_high_particle_flux_polygons_daily_orbit_500km.png" />
+<p>Here, the polygons for altitudes of 500 km and 300 km are plotted:</p>
+<img alt="../../_images/gifts_high_particle_flux_polygons_500_300km.png" src="../../_images/gifts_high_particle_flux_polygons_500_300km.png" />
+<section id="reference-api">
+<h2>Reference/API<a class="headerlink" href="#reference-api" title="Link to this heading">¶</a></h2>
+<section id="module-gdt.missions.gifts.region">
+<span id="gdt-missions-gifts-region-module"></span><h3>gdt.missions.gifts.region Module<a class="headerlink" href="#module-gdt.missions.gifts.region" title="Link to this heading">¶</a></h3>
+<section id="classes">
+<h4>Classes<a class="headerlink" href="#classes" title="Link to this heading">¶</a></h4>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../api/gdt.missions.gifts.region.HighParticleFluxRegion.html#gdt.missions.gifts.region.HighParticleFluxRegion" title="gdt.missions.gifts.region.HighParticleFluxRegion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">HighParticleFluxRegion</span></code></a>()</p></td>
+<td><p>A base class for a high particle flux region boundary in Earth latitude and longitude.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../api/gdt.missions.gifts.region.GiftsNorthRegion500.html#gdt.missions.gifts.region.GiftsNorthRegion500" title="gdt.missions.gifts.region.GiftsNorthRegion500"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GiftsNorthRegion500</span></code></a>([region, altitude])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../api/gdt.missions.gifts.region.GiftsSouthRegion500.html#gdt.missions.gifts.region.GiftsSouthRegion500" title="gdt.missions.gifts.region.GiftsSouthRegion500"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GiftsSouthRegion500</span></code></a>([region, altitude])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="../../api/gdt.missions.gifts.region.GiftsNorthRegion300.html#gdt.missions.gifts.region.GiftsNorthRegion300" title="gdt.missions.gifts.region.GiftsNorthRegion300"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GiftsNorthRegion300</span></code></a>([region, altitude])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../api/gdt.missions.gifts.region.GiftsSouthRegion300.html#gdt.missions.gifts.region.GiftsSouthRegion300" title="gdt.missions.gifts.region.GiftsSouthRegion300"><code class="xref py py-obj docutils literal notranslate"><span class="pre">GiftsSouthRegion300</span></code></a>([region, altitude])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="class-inheritance-diagram">
+<h4>Class Inheritance Diagram<a class="headerlink" href="#class-inheritance-diagram" title="Link to this heading">¶</a></h4>
+<div class="graphviz"><img src="../../_images/inheritance-3de18330a058ec761c486c106725ba29f612a2e2.png" alt="Inheritance diagram of gdt.missions.gifts.region.HighParticleFluxRegion, gdt.missions.gifts.region.GiftsNorthRegion500, gdt.missions.gifts.region.GiftsSouthRegion500, gdt.missions.gifts.region.GiftsNorthRegion300, gdt.missions.gifts.region.GiftsSouthRegion300" usemap="#inheritancef97489596d" class="inheritance graphviz" /></div>
+<map id="inheritancef97489596d" name="inheritancef97489596d">
+<area shape="rect" id="node1" href="../../api/gdt.missions.gifts.region.GiftsNorthRegion300.html#gdt.missions.gifts.region.GiftsNorthRegion300" target="_top" title="GiftsNorthRegion300(region: str = &#39;north&#39;, altitude: int = 300)" alt="" coords="442,5,599,31"/>
+<area shape="rect" id="node2" href="../../api/gdt.missions.gifts.region.HighParticleFluxRegion.html#gdt.missions.gifts.region.HighParticleFluxRegion" target="_top" title="A base class for a high particle flux region boundary in Earth " alt="" coords="220,80,393,105"/>
+<area shape="rect" id="node3" href="../../api/gdt.missions.gifts.region.GiftsNorthRegion500.html#gdt.missions.gifts.region.GiftsNorthRegion500" target="_top" title="GiftsNorthRegion500(region: str = &#39;north&#39;, altitude: int = 500)" alt="" coords="442,55,599,80"/>
+<area shape="rect" id="node4" href="../../api/gdt.missions.gifts.region.GiftsSouthRegion300.html#gdt.missions.gifts.region.GiftsSouthRegion300" target="_top" title="GiftsSouthRegion300(region: str = &#39;south&#39;, altitude: int = 300)" alt="" coords="441,104,600,129"/>
+<area shape="rect" id="node5" href="../../api/gdt.missions.gifts.region.GiftsSouthRegion500.html#gdt.missions.gifts.region.GiftsSouthRegion500" target="_top" title="GiftsSouthRegion500(region: str = &#39;south&#39;, altitude: int = 500)" alt="" coords="441,153,600,179"/>
+<area shape="rect" id="node6" href="https://astro-gdt.readthedocs.io/en/latest/api/gdt.core.geomagnetic.SouthAtlanticAnomaly.html#gdt.core.geomagnetic.SouthAtlanticAnomaly" target="_top" title="A base class for a South Atlantic Anomaly (SAA) boundary in Earth " alt="" coords="5,80,172,105"/>
+</map></section>
+</section>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><h3>Page Contents</h3>
+<ul>
+<li><a class="reference internal" href="#">GIFTS High Particle Flux Region Boundary Definitions (<code class="xref py py-mod docutils literal notranslate"><span class="pre">gdt.missions.gifts.region</span></code>)</a><ul>
+<li><a class="reference internal" href="#reference-api">Reference/API</a><ul>
+<li><a class="reference internal" href="#module-gdt.missions.gifts.region">gdt.missions.gifts.region Module</a><ul>
+<li><a class="reference internal" href="#classes">Classes</a></li>
+<li><a class="reference internal" href="#class-inheritance-diagram">Class Inheritance Diagram</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../../api/gdt.missions.gifts.detectors.GiftsGbmDetectors.html"
+                          title="previous chapter">GiftsGbmDetectors</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../../api/gdt.missions.gifts.region.HighParticleFluxRegion.html"
+                          title="next chapter">HighParticleFluxRegion</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/missions/gifts/region.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<form action="../../search.html" method="get">
+  <input type="text" name="q" placeholder="Search" />
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+<footer class="footer">
+  <p class="pull-right">
+    <a href="../../_sources/missions/gifts/region.rst.txt"
+       rel="nofollow">Page Source</a> &nbsp;
+    <a href="#">Back to Top</a></p>
+  <p>
+    &copy; Copyright .<br/>
+    Created using <a href="http://www.sphinx-doc.org/en/stable/">Sphinx</a> 7.2.6. &nbsp;
+  </p>
+</footer>
+  </body>
+</html>

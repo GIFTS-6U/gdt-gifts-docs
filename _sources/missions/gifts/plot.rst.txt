@@ -1,0 +1,47 @@
+.. _gifts-plot:
+.. |McIlwainL| replace:: :class:`~gdt.missions.gifts.plot.McIlwainL`
+.. |GiftsEarthPlot| replace:: :class:`~gdt.missions.gifts.plot.GiftsEarthPlot`
+.. |GiftsLightcurve| replace:: :class:`~gdt.missions.gifts.plot.GiftsLightcurve`
+.. |Trigdat| replace:: :class:`~gdt.missions.gifts.trigdat.Trigdat`
+.. |GiftsTte| replace:: :class:`~gdt.missions.gifts.tte.GiftsTte`
+
+**************************************************************
+GIFTS-specific Plot Classes (:mod:`gdt.missions.gifts.plot`)
+**************************************************************
+
+There are a few GIFTS-specific plot classes that extend the functionality of  
+those provided in :external:ref:`The Plot Package<plot>`.  These classes 
+include |GiftsEarthPlot|, which may be used to create plots of 
+:ref:`High Particle Flux Region Boundary Definitions <gifts-region>`,
+and |GiftsLightcurve|, which temporally bins a set of TTEs and 
+generates corresponding detector lightcurve plots, similar to 
+the `quicklook lightcurve plots provided by the Fermi-GBM catalog <https://heasarc.gsfc.nasa.gov/FTP/fermi/data/gbm/triggers/2022/bn220624124/quicklook/glg_lc_all_bn220624124.gif>`_:
+
+Creating a |GiftsLightcurve| plot is demonstrated using GRB products contained
+in the :ref:`exemplar GIFTS burst catalog <gifts-catalogs>`:
+
+    >>> from gdt.missions.gifts.catalogs import BurstCatalog
+    >>> burstcat = BurstCatalog()
+    >>> trigger_name = "bn220624124"
+    >>> trigdat = burstcat.get_trigdat(trigger_name=trigger_name)
+    >>> ttes = burstcat.get_tte(trigger_name=trigger_name)
+
+The |Trigdat| and list of |GiftsTte| instances are then used to create the plot:
+
+    >>> import matplotlib.pyplot as plt
+    >>> from gdt.missions.gifts.plot import GiftsLightcurve
+    >>> lcplot = GiftsLightcurve(trigdat=trigdat,
+                                 ttes=ttes,
+                                 energy_range=(50, 300))
+    >>> plt.show()
+
+.. image:: figs/lightcurvefig1.png
+
+
+Reference/API
+=============
+
+.. automodapi:: gdt.missions.gifts.plot
+   :inherited-members:
+
+
