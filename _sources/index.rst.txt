@@ -29,7 +29,8 @@ by corresponding future versions of the toolkit.
 
    All :ref:`GIFTS data product types <gifts-data-types>` are described using products contained in the 
    :ref:`current exemplar GIFTS burst catalog <gifts-catalogs>`, which were created using the approach described in 
-   `O'Callaghan et al., CubeSat Payload Processing Pipeline Development For Gamma-Ray Burst Detection (2026) (will be updated following publication) <http://2026_GIFTS_paper>`_.
+   `O'Callaghan et al., CubeSat payload processing pipeline development for gamma-ray burst detection, Journal of Astronomical Telescopes, 
+   Instruments, and Systems, Vol. 12, Issue 1 (2026) <https://doi.org/10.1117/1.JATIS.12.1.018004>`_.
 
 .. rubric:: Citing
 
@@ -38,19 +39,20 @@ please acknowledgment and cite this work (the entry for the journal paper will u
 
 ::
 
- @article{OCallaghanCubesatPayloadProcessingGrb2026,
-          author = {Derek O'Callaghan and Alexey Uliyanov and Cathal McCabe and Pádraig McDermott and Cuán de Barra and Sheila McBreen},
-          title = {{CubeSat Payload Processing Pipeline Development For Gamma-Ray Burst Detection}},
-          volume = {TODO},
-          journal = {TODO},
-          number = {TODO},
-          publisher = {TODO},
-          pages = {TODO},
+ @article{10.1117/1.JATIS.12.1.018004,
+          author = {Derek O'Callaghan and Alexey Uliyanov and Cathal McCabe and P{\'a}draig McDermott and Cu{\'a}n de Barra and Sheila McBreen},
+          title = {{CubeSat payload processing pipeline development for gamma-ray burst detection}},
+          volume = {12},
+          journal = {Journal of Astronomical Telescopes, Instruments, and Systems},
+          number = {1},
+          publisher = {SPIE},
+          pages = {018004},
+          keywords = {CubeSat, gamma-ray burst, payload, detection, simulation, catalog},
           year = {2026},
-          doi = {TODO_doi},
-          URL = {https://doi.org/TODO_doi}
+          doi = {10.1117/1.JATIS.12.1.018004},
+          URL = {https://doi.org/10.1117/1.JATIS.12.1.018004}
  }
- 
+
 ::
 
  @misc{GDT-GIFTS,
