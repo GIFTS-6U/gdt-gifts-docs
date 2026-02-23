@@ -35,7 +35,7 @@ by corresponding future versions of the toolkit.
 .. rubric:: Citing
 
 If you use the GIFTS Gamma-ray Data Tools in your research and publications, 
-please acknowledgment and cite this work (the entry for the journal paper will updated following publication) using the following BibTex entries:
+please acknowledge and cite this work using the following BibTex entries:
 
 ::
 
